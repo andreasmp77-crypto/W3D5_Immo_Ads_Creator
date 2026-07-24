@@ -8,18 +8,28 @@ data, then calls the Responses API and returns the generated draft text.
 from __future__ import annotations
 
 import os
+import logging
 from dataclasses import dataclass, field
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence
 
-from prompt_templates import (
-    DEFAULT_BRAND_TONE_CHECKLIST,
-    DEFAULT_OUTPUT_LANGUAGE,
-    build_ad_generation_bundle,
-)
+try:
+    from src.prompt_templates import (
+        DEFAULT_BRAND_TONE_CHECKLIST,
+        DEFAULT_OUTPUT_LANGUAGE,
+        build_ad_generation_bundle,
+    )
+except ImportError:  # pragma: no cover - script execution fallback
+    from prompt_templates import (
+        DEFAULT_BRAND_TONE_CHECKLIST,
+        DEFAULT_OUTPUT_LANGUAGE,
+        build_ad_generation_bundle,
+    )
 
 # Default to a lower-cost model; override with IMMOADS_LLM_MODEL when needed.
 DEFAULT_MODEL = os.getenv("IMMOADS_LLM_MODEL", "gpt-4o-mini")
-DEFAULT_REASONING_EFFORT = os.getenv("IMMOADS_REASONING_EFFORT", "medium")
+DEFAULT_REASONING_EFFORT = os.getenv("IMMOADS_REASONING_EFFORT") or None
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -126,6 +136,12 @@ def build_generation_bundle(request: AdGenerationRequest) -> Any:
     )
 
 
+def _model_supports_reasoning(model: str) -> bool:
+    """Return True only for models that are expected to accept reasoning controls."""
+    normalized_model = model.lower()
+    return normalized_model.startswith(("o1", "o3", "gpt-5"))
+
+
 def generate_ad_copy(
     request: AdGenerationRequest,
     *,
@@ -140,8 +156,13 @@ def generate_ad_copy(
 
     # Send the assembled prompt to the Responses API.
     create_kwargs: Dict[str, Any] = {"model": request.model, **request_payload}
-    if request.reasoning_effort:
+    if request.reasoning_effort and _model_supports_reasoning(request.model):
         create_kwargs["reasoning"] = {"effort": request.reasoning_effort}
+    elif request.reasoning_effort:
+        # Keep the caller's request intact, but avoid sending unsupported params.
+        logger.warning(
+            f"Skipping reasoning.effort for model '{request.model}' because this model does not accept it."
+        )
     if request.max_output_tokens is not None:
         create_kwargs["max_output_tokens"] = request.max_output_tokens
 

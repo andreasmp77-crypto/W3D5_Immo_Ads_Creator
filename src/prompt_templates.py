@@ -17,6 +17,7 @@ DEFAULT_BRAND_TONE_CHECKLIST: Sequence[str] = (
     "Do not invent amenities, distances, certifications, or neighborhood claims.",
     "Highlight the strongest property benefits without sounding generic or exaggerated.",
     "Omit any detail that is missing or uncertain instead of filling gaps.",
+    "Do not invent fictional street names or district names if they are omitted from the owner info; rely solely on the provided PLZ and location context."
 )
 
 DEFAULT_OUTPUT_LANGUAGE = "English"
