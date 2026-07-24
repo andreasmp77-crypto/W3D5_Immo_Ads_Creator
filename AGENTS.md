@@ -12,8 +12,6 @@ aren't tied to a Must ID or explicitly listed as an MVP scope item below.
 ## MVP Scope (do not exceed without asking)
 - NO real authentication/login system. Owner vs. tenant is a simple role flag passed into
   the CLI/UI, not a user account system.
-- NO floor-plan/diagram image parsing. Property details (rooms, dimensions, features) are
-  entered as structured text/form fields, not extracted from images.
 - Address → nearby amenities (Kita, train station) is a SINGLE deterministic API/geocode
   lookup per listing, injected directly into the prompt as a fact. This is NOT a RAG
   retrieval step — do not add embeddings or similarity search for this.
@@ -26,8 +24,7 @@ aren't tied to a Must ID or explicitly listed as an MVP scope item below.
 - LLM: OpenAI or Anthropic API (see `.env.example` for required keys — never commit `.env`)
 - Install: `pip install -r requirements.txt`
 - Run: `python src/main.py`
-- Env vars expected: `OPENAI_API_KEY`, `GEOCODE_API_KEY` (if using a
-  real amenities lookup service)
+- Env vars expected: `OPENAI_API_KEY`, `GEOCODE_API_KEY` (if using a real amenities lookup service)
 
 ## Repo Map
 - `knowledge_base/primary/` — agency branding, property listings, past sold-over-asking
@@ -39,6 +36,7 @@ aren't tied to a Must ID or explicitly listed as an MVP scope item below.
 - `src/prompt_templates.py` — pitch/neighborhood-guide prompt templates
 - `src/llm_integration.py` — LLM API wrapper
 - `src/content_pipeline.py` — document → monitor → brief → publish → iterate
+- `src/main.py`- entry point; wires the above modules together and runs the pipeline end-to-end (`python src/main.py`)
 - `templates/` — reusable prompt template files referenced by `prompt_templates.py`
 
 ## Conventions
