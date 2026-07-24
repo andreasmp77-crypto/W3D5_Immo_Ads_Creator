@@ -4,4 +4,4 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
-.pytest_cache/
+*.pytest_cache/
