@@ -20,13 +20,13 @@
         │                   │
         ▼                   ▼
 ┌──────────────────────┐  ┌──────────────────────────────────────┐
-│ knowledge_base.py    │  │ location_data.py                      │
+│ knowledge_base.py    │  │ location_data.py                     │
 │                      │  │                                      │
-│ Loads primary +      │  │ Loads local amenity workbook / CSV,   │
-│ secondary markdown   │  │ derives cached PLZ spatial summaries, │
-│ context (M2)         │  │ optional GeoPandas centroid path,     │
-└──────────┬───────────┘  │ then returns deterministic facts (M3) │
-           │              └──────────┬─────────────────────────────┘
+│ Loads primary +      │  │ Loads local amenity workbook / CSV,  │
+│ secondary markdown   │  │ derives cached PLZ spatial summaries,│
+│ context (M2)         │  │ optional GeoPandas centroid path,    │
+└──────────┬───────────┘  │ then returns deterministic facts (M3)│
+           │              └──────────┬───────────────────────────┘
            │                         │
            └──────────────┬──────────┘
                           ▼
@@ -48,13 +48,12 @@
                    │
                    ▼
 ┌──────────────────────────────────────┐
-│ Reviewed / Publish-Ready Payload      │
-│ build_publish_payload()               │
+│ Reviewed / Publish-Ready Payload     │
+│ build_publish_payload()              │
 └──────────────────────────────────────┘
 
 Notes:
 - `document_processor.py` currently supports dict, JSON, TXT, and file-path input.
 - `location_data.py` uses GeoPandas when available, but keeps a deterministic pandas
   fallback so PLZ facts still load without a spatial dependency.
-- `M6` is not implemented yet in code; the current pipeline stops at a publish-ready
-  payload rather than PDF/UI rendering.
+
