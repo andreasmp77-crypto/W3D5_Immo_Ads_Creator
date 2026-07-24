@@ -30,10 +30,7 @@
 | M3 | Look up schools, public transport, and Kita info by PLZ | `location_data.py` | Returns non-empty result for 5 test PLZs across different Berlin districts |
 | M4 | Generate ad copy via LLM using owner info + KB context + location data | `llm_integration.py`, `prompt_templates.py` | Manual review of output against brand tone checklist |
 | M5 | Human review/edit before finalizing PDF/UI Posting | `content_pipeline.py` | Manual test: reviewer can edit draft text before final PDF/UI is generated |
-| M6 | Render final ad as a PDF/UI posting | `pdf_export.py` or publish_UI.py | Generated PDF or post on UI correctly and contains all required fields |
-
-
-Nice to Have: Refer to the 
+| M6 | Render final ad as a PDF/UI posting | `pdf_export.py` (nice-to-have) and/or `publish_UI.py` — UI posting is the required MVP path; PDF export may be dropped if time-constrained | Generated post appears correctly on the UI and contains all required fields; PDF export tested only if built |
 
 **Won't**
 - Won't support cities outside Berlin in the MVP
@@ -52,11 +49,12 @@ Nice to Have: Refer to the
    2.3 Source/prepare PLZ-based schools/transport/Kita dataset
 3. **Core pipeline**
    3.1 Build `document_processor.py` (owner input ingestion)
-   3.2 Build `knowledge_base.py` (load/select KB content)
-   3.3 Build `location_data.py` (PLZ lookup)
-   3.4 Build `prompt_templates.py`
-   3.5 Build `llm_integration.py`
-   3.6 Build `content_pipeline.py` (orchestration)
+   3.2 Build 2D floor plan ingestion within `document_processor.py`
+   3.3 Build `knowledge_base.py` (load/select KB content)
+   3.4 Build `location_data.py` (PLZ lookup)
+   3.5 Build `prompt_templates.py`
+   3.6 Build `llm_integration.py`
+   3.7 Build `content_pipeline.py` (orchestration)
 4. **Output & review**
    4.1 Build `pdf_export.py`
    4.2 Implement human review/edit step
@@ -71,7 +69,7 @@ Nice to Have: Refer to the
 
 | Risk | Probability | Impact | Strategy | Concrete action |
 |---|---|---|---|---|
-| PLZ-based schools/transport/Kita dataset is unavailable or incomplete for some districts | M | L | Reduction | Do not display any such information |
+| PLZ-based schools/transport/Kita dataset is unavailable or incomplete for some districts | M | M | Reduction | Do not display any such information; note in ad that full neighborhood data wasn't available for that PLZ |
 | 2-day time constraint causes scope creep beyond MVP | M | M | Mitigation | Freeze WBS after Day 1 morning; defer extras (live APIs, multi-city support) to the Won't list |
 | Generated ad content reads as generic/AI-like, failing the uniqueness requirement | M | H | Mitigation | Build 2+ prompt style variants and require human-in-the-loop review before PDF export |
 

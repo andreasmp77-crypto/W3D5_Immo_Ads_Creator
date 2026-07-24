@@ -1,7 +1,7 @@
 # AGENTS.md — Niche Real Estate Pitch Engine
 
 ## Project Purpose
-This repo builds ImmoAds, a listing-ad generator for Berlin apartments. It ingests owner-provided listing details, loads brand and market knowledge from markdown, looks up local amenities by PLZ, and generates publish-ready ad copy with a human review step. See `project_structure.md` for the full PM kickoff and Must-ID list; every change in this repo should trace back to one of the Must IDs there (`M1`-`M6`). Do not add features that are not tied to a Must ID or explicitly listed in the MVP / Won't sections of that file.
+This repo builds ImmoAds, a listing-ad generator for Berlin apartments. It ingests owner-provided listing details (including a 2D floor plan), loads brand and market knowledge from markdown, looks up local amenities by PLZ, and generates publish-ready ad copy with a human review step. See `project_structure.md` for the full PM kickoff and Must-ID list; every change in this repo should trace back to one of the Must IDs there (`M1`-`M6`). Do not add features that are not tied to a Must ID or explicitly listed in the MVP / Won't sections of that file.
 
 ## Stack & How to Run
 - Python 3.8+
@@ -13,13 +13,17 @@ This repo builds ImmoAds, a listing-ad generator for Berlin apartments. It inges
 ## Repo Map
 - `knowledge_base/primary/` — brand/tone guidelines, property listings, and past ads
 - `knowledge_base/secondary/` — Berlin market context and other supporting summaries, written in our own words
-- `src/document_processor.py` — owner input ingestion
+- `src/document_processor.py` — owner input ingestion, including 2D floor plan input (M1)
 - `src/knowledge_base.py` — KB loading and selection
+- `src/location_data.py` — PLZ-based schools/transport/Kita lookup (M3)
 - `src/prompt_templates.py` — ad-generation prompt templates
 - `src/llm_integration.py` — LLM API wrapper
 - `src/content_pipeline.py` — orchestration from input to draft/review/final output
 - `src/main.py` — entry point for `python src/main.py`
 - `templates/` — reusable prompt template files referenced by `prompt_templates.py`
+- `src/pdf_export.py` — **nice-to-have**, not required for MVP Must completion; renders the
+  final reviewed ad as a PDF (M6 can also be satisfied via UI posting alone — see
+  `project_structure.md`)
 
 ## Conventions
 - All knowledge base content is markdown, one topic per file, with a short frontmatter
