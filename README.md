@@ -1,6 +1,6 @@
 # ImmoAds
 
-ImmoAds is a Gradio-based property ad generator for Berlin listings. It normalizes owner input, loads brand and market knowledge from Markdown, enriches the listing with PLZ-based location facts, generates ad copy with OpenAI, and can render a reviewed PDF export.
+ImmoAds is a Gradio-based property ad generator for Berlin listings. It normalizes owner input, loads brand and market knowledge from Markdown, enriches the listing with PLZ-based truth location facts, generates ad copy with OpenAI, and can render a reviewed PDF export.
 
 ## What It Does
 
