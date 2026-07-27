@@ -235,7 +235,7 @@ def fetch_nearby_transit(plz: str, max_results: int = 5, max_distance_m: int = 8
         logger.warning("BVG lookup failed for PLZ %s: %s", normalized_plz, exc)
         return "Public transport: data unavailable for this PLZ."
 
-    named_stops = [s["name"] for s in stops if s.get("type") == "stop" and s.get("name")]
+    named_stops = [f"{s['name']} ({s.get('distance')}m)" for s in stops if s.get("type") == "stop" and s.get("name")]
     if not named_stops:
         result = "Public transport: no stops found within range for this PLZ."
     else:
