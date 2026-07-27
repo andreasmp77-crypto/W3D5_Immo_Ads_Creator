@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import re
 import tempfile
 from typing import Any, Dict, Sequence
 
@@ -33,7 +35,13 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
     import threading
     import time
 
-    from src import app as app_module
+    # Resolve the app module (so tests can monkeypatch generate_content_draft /
+    # verify_address_with_geopy on it) whether the package is imported as
+    # `src.app` or, when src/ is on sys.path at runtime, as top-level `app`.
+    try:
+        from src import app as app_module
+    except ModuleNotFoundError:  # pragma: no cover - depends on launch cwd
+        import app as app_module
 
     def _tick(fraction: float, desc: str) -> None:
         if progress is not None:
@@ -121,9 +129,19 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
 SAVE_EXPORT_FIELD_NAMES = FORM_FIELD_NAMES[:-3] + ["generated_ad_copy"]
 
 
+def _slugify_filename(text: str, fallback: str = "listing") -> str:
+    """Turn an address into a filesystem-safe filename stem (no extension)."""
+    slug = re.sub(r"[^\w\s-]", "", text, flags=re.UNICODE).strip()
+    slug = re.sub(r"[\s]+", "_", slug)
+    return slug or fallback
+
+
 def _save_and_export_pdf_callback(*form_values: Any) -> str:
     """Render the reviewed listing to a PDF that looks like the review page
-    (browser-style "Print to PDF"), with all photos on one dedicated page."""
+    (browser-style "Print to PDF"), with all photos on one dedicated page.
+    The downloaded filename is derived from the listing address, since
+    Gradio's DownloadButton uses the returned path's basename as the file
+    name it offers to the browser."""
 
     field_values = form_values[:-3]
     photo_paths = [p for p in form_values[-3:] if p]
@@ -131,7 +149,21 @@ def _save_and_export_pdf_callback(*form_values: Any) -> str:
     ad_copy = str(values_map.get("generated_ad_copy") or "").strip()
 
     pdf_bytes = render_listing_webpage_pdf(values_map, ad_copy, photo_paths)
-    tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
-    tmp_file.write(pdf_bytes)
-    tmp_file.close()
-    return tmp_file.name
+
+    address_parts = [
+        values_map.get("street_name"),
+        values_map.get("house_number"),
+        values_map.get("postal_code"),
+        values_map.get("city"),
+    ]
+    address = " ".join(str(p) for p in address_parts if p)
+    filename = f"{_slugify_filename(address)}.pdf"
+
+    # Write into a fresh temp directory (not tempfile.NamedTemporaryFile, whose
+    # random name would otherwise become the download filename) so concurrent
+    # exports don't collide on the same address-derived filename.
+    tmp_dir = tempfile.mkdtemp()
+    tmp_path = os.path.join(tmp_dir, filename)
+    with open(tmp_path, "wb") as f:
+        f.write(pdf_bytes)
+    return tmp_path
