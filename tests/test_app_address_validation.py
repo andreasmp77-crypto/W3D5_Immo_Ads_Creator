@@ -106,7 +106,10 @@ def test_build_listing_payload_keeps_address_fields():
     assert payload["city"] == "Berlin"
 
 
-def test_generate_listing_callback_surfaces_address_warnings(monkeypatch):
+def test_generate_listing_callback_hides_debug_summary(monkeypatch):
+    # Non-fatal address warnings (e.g. PLZ not in the local lookup, geopy not
+    # installed) are developer-facing and must NOT be dumped onto the review
+    # page; the status box stays hidden and generation still succeeds.
     fake_gradio = SimpleNamespace(update=lambda **kwargs: kwargs)
     monkeypatch.setitem(sys.modules, "gradio", fake_gradio)
     monkeypatch.setattr(
@@ -125,9 +128,12 @@ def test_generate_listing_callback_surfaces_address_warnings(monkeypatch):
 
     result = _generate_listing_callback(*ordered_values)
 
-    assert result[-1]["visible"] is True
-    assert "not present in the local Berlin lookup data" in result[-1]["value"]
-    assert result[0]["value"] == "Generated copy here"
+    # index 0 = intro (switched to the review heading), index 1 = generated copy,
+    # last = generation_status (hidden, no parsed-intake / warning dump).
+    assert "Review your listing" in result[0]["value"]
+    assert result[1]["value"] == "Generated copy here"
+    assert result[-1]["visible"] is False
+    assert result[-1]["value"] == ""
 
 
 def test_validate_address_payload_uses_cached_geopy_verification(monkeypatch):
