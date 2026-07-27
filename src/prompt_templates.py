@@ -16,6 +16,7 @@ DEFAULT_BRAND_TONE_CHECKLIST: Sequence[str] = (
     "Use only facts present in the provided owner info, KB context, and location data.",
     "Do not invent amenities, distances, certifications, or neighborhood claims.",
     "Highlight the strongest property benefits without sounding generic or exaggerated.",
+    "Do not repeat the same information more than once.",
     "Omit any detail that is missing or uncertain instead of filling gaps."
 )
 
@@ -97,6 +98,7 @@ def build_ad_generation_bundle(
             "Stay strictly within the facts provided below.",
         "If a fact is missing, omit it rather than inventing it.",
         "Always include the provided location facts when they exist, especially Kita and public transport facts.",
+        "Do not repeat the same information more than once.",
         "Do not mention that you are an AI model or refer to internal prompting.",
         ]
     )
@@ -115,6 +117,7 @@ def build_ad_generation_bundle(
         "- Do not add unsupported claims.\n"
         "- Include the provided Kita and public transport facts if they are present in the location data.\n"
         "- If the public transport section says data unavailable, state that briefly rather than omitting it.\n"
+        "- Do not repeat the same information more than once.\n"
         "- If useful, emphasize location and apartment strengths in a balanced way.",
     ]
 
