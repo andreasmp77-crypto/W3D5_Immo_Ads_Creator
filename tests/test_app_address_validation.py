@@ -117,6 +117,15 @@ def test_generate_listing_callback_hides_debug_summary(monkeypatch):
         "generate_content_draft",
         lambda _inputs: SimpleNamespace(draft_text="Generated copy **here**"),
     )
+    monkeypatch.setattr(
+        app_module,
+        "verify_address_with_geopy",
+        lambda *args, **kwargs: SimpleNamespace(
+            status="verified",
+            verified=True,
+            message="Address verified by the external geocoding service.",
+        ),
+    )
 
     form_values = {
         "street_name": "Example Street",

@@ -1102,8 +1102,8 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
         form_values_map.pop("photo_3", None),
     ]
 
-    def _form_state(error_message: str):
-        """Outputs that keep the user on the form (page 1) and surface an error."""
+    def _form_state(error_message: str, *, status_visible: bool = True):
+        """Outputs that keep the user on the form (page 1) and surface a status."""
         return (
             gr.update(value=INTRO_HTML),  # intro (stay on the form heading)
             gr.update(value="", visible=False),  # generated_ad_copy
@@ -1113,11 +1113,11 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
             gr.update(visible=True),  # tone_section
             gr.update(visible=True),  # submit
             gr.update(visible=False),  # save_export_btn
-            gr.update(value=error_message, visible=True),  # generation_status
+            gr.update(value=error_message, visible=status_visible),  # generation_status
         )
 
     try:
-        normalized, _summary = normalize_listing_submission(
+        normalized, summary = normalize_listing_submission(
             strict_address_validation=True,
             verify_external_address=True,
             **form_values_map,
@@ -1171,8 +1171,6 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
         gr.update(visible=False),  # tone_section
         gr.update(visible=False),  # submit
         gr.update(visible=True),  # save_export_btn
-        # The "Parsed intake" summary is developer-only info, so it is never
-        # shown to the landlord; only real errors above use this status box.
         gr.update(value="", visible=False),  # generation_status
     )
 
