@@ -1,0 +1,5045 @@
+{
+  "10557": [
+    {
+      "bsn": "01B01",
+      "name": "OSZ Banken, Immobilien und Versicherungen",
+      "address": "Alt-Moabit 10"
+    },
+    {
+      "bsn": "01G15",
+      "name": "Anne-Frank-Grundschule",
+      "address": "Paulstr. 20B"
+    },
+    {
+      "bsn": "01G16",
+      "name": "Moabiter Grundschule",
+      "address": "Paulstr. 28"
+    }
+  ],
+  "10555": [
+    {
+      "bsn": "01B02",
+      "name": "Staatliche Technikerschule Berlin",
+      "address": "Bochumer Str. 8B"
+    },
+    {
+      "bsn": "01G19",
+      "name": "Hansa-Grundschule",
+      "address": "Lessingstr. 5"
+    },
+    {
+      "bsn": "01G47",
+      "name": "Miriam-Makeba-Grundschule",
+      "address": "Zinzendorfstr. 15-16"
+    },
+    {
+      "bsn": "01Y12",
+      "name": "Gymnasium Tiergarten",
+      "address": "Altonaer Str. 26"
+    }
+  ],
+  "13359": [
+    {
+      "bsn": "01B03",
+      "name": "OSZ Kommunikations-, Informations- und Medientechnik",
+      "address": "Osloer Str. 23-26"
+    },
+    {
+      "bsn": "01G29",
+      "name": "Wilhelm-Hauff-Grundschule",
+      "address": "Gotenburger Str. 8"
+    },
+    {
+      "bsn": "01G32",
+      "name": "Carl-Kraemer-Grundschule",
+      "address": "Zechliner Str. 4"
+    },
+    {
+      "bsn": "01G36",
+      "name": "Andersen-Grundschule",
+      "address": "Kattegatstr. 26"
+    }
+  ],
+  "13349": [
+    {
+      "bsn": "01B04",
+      "name": "OSZ Gesundheit I",
+      "address": "Schwyzer Str. 6/8"
+    },
+    {
+      "bsn": "01G24",
+      "name": "Gottfried-Röhl-Grundschule",
+      "address": "Ungarnstr. 75"
+    },
+    {
+      "bsn": "01K08",
+      "name": "Schule am Schillerpark (Integrierte Sekundarschule)",
+      "address": "Ofener Str. 6"
+    },
+    {
+      "bsn": "01Y08",
+      "name": "Lessing-Gymnasium",
+      "address": "Schöningstr. 17"
+    },
+    {
+      "bsn": "01B04",
+      "name": ")",
+      "address": "Schwyzer Str. 6-8"
+    }
+  ],
+  "10115": [
+    {
+      "bsn": "01G01",
+      "name": "Grundschule am Arkonaplatz",
+      "address": "Ruppiner Str. 47"
+    },
+    {
+      "bsn": "01G02",
+      "name": "Papageno-Grundschule",
+      "address": "Bergstr. 58"
+    },
+    {
+      "bsn": "01G05",
+      "name": "Grundschule Neues Tor",
+      "address": "Hannoversche Str. 20"
+    },
+    {
+      "bsn": "01G46",
+      "name": "Grundschule am Koppenplatz",
+      "address": "Koppenplatz 12"
+    },
+    {
+      "bsn": "01G48",
+      "name": "Grundschule am Nordhafen",
+      "address": "Boyenstr. 1"
+    },
+    {
+      "bsn": "01K07",
+      "name": "Hemingway-Schule",
+      "address": "Gartenstraße 10-17"
+    },
+    {
+      "bsn": "01P03",
+      "name": "Jüdisches Gymnasium Moses Mendelssohn",
+      "address": "Große Hamburger Str. 27"
+    },
+    {
+      "bsn": "01P16",
+      "name": "Berlin Metropolitan School (Integrierte Sekundarschule)",
+      "address": "Linienstr. 122"
+    },
+    {
+      "bsn": "01P51",
+      "name": "mediencollege Berlin gGmbH",
+      "address": "Invalidenstr. 17"
+    },
+    {
+      "bsn": "01Y04",
+      "name": "Musikgymnasium Carl Philipp Emanuel Bach",
+      "address": "Rheinsberger Str. 4-5"
+    }
+  ],
+  "10119": [
+    {
+      "bsn": "01G04",
+      "name": "Kastanienbaum-Grundschule",
+      "address": "Gipsstr. 23A"
+    },
+    {
+      "bsn": "01P22",
+      "name": "Berlin Cosmopolitan School",
+      "address": "Rückerstr. 9"
+    },
+    {
+      "bsn": "01Y02",
+      "name": "John-Lennon-Gymnasium",
+      "address": "Zehdenicker Str. 17"
+    },
+    {
+      "bsn": "03G16",
+      "name": "Grundschule am Teutoburger Platz",
+      "address": "Templiner Str. 1-3"
+    },
+    {
+      "bsn": "03P36",
+      "name": "WETEK - Fachschule für Sozialpädagogik",
+      "address": "Christinenstr. 18-19"
+    },
+    {
+      "bsn": "03P43",
+      "name": "Pfefferwerk - Fachschule für Sozialpädagogik",
+      "address": "Christinenstr. 18-19"
+    }
+  ],
+  "10179": [
+    {
+      "bsn": "01G07",
+      "name": "GutsMuths-Grundschule",
+      "address": "Singerstr. 8"
+    },
+    {
+      "bsn": "01G10",
+      "name": "City-Grundschule",
+      "address": "Sebastianstr. 57"
+    },
+    {
+      "bsn": "01G49",
+      "name": "Grundschule Luisenstadt",
+      "address": "Adalbertstr. 53"
+    },
+    {
+      "bsn": "01P14",
+      "name": "BEST-Sabel Berufsakademie",
+      "address": "Littenstr. 109"
+    },
+    {
+      "bsn": "01P23",
+      "name": "Evangelische Schule Berlin Zentrum (Gemeinschaftsschule)",
+      "address": "Wallstr. 32"
+    },
+    {
+      "bsn": "01Y11",
+      "name": "Max-Planck-Gymnasium",
+      "address": "Singerstr. 8A"
+    }
+  ],
+  "10117": [
+    {
+      "bsn": "01G08",
+      "name": "Grundschule am Brandenburger Tor",
+      "address": "Wilhelmstr. 52"
+    },
+    {
+      "bsn": "01P39",
+      "name": "GPB College gGmbH",
+      "address": "Beuthstr. 8"
+    },
+    {
+      "bsn": "01P55",
+      "name": "FRÖBEL Akademie gGmbH - Fachschule für Sozialpädagogik",
+      "address": "Leipziger Str. 54"
+    }
+  ],
+  "10559": [
+    {
+      "bsn": "01G11",
+      "name": "Kurt-Tucholsky-Grundschule",
+      "address": "Rathenower Str. 18"
+    },
+    {
+      "bsn": "01K09",
+      "name": "Hedwig-Dohm-Schule (Integrierte Sekundarschule)",
+      "address": "Stephanstr. 27"
+    },
+    {
+      "bsn": "01K10",
+      "name": "Theodor-Heuss-Gemeinschaftsschule",
+      "address": "Quitzowstr. 141"
+    },
+    {
+      "bsn": "01P40",
+      "name": "Berufsfachschule  Paulo Freire im Zentrum ÜBERLEBEN",
+      "address": "Turmstr. 21, Haus K"
+    }
+  ],
+  "10551": [
+    {
+      "bsn": "01G18",
+      "name": "Carl-Bolle-Grundschule",
+      "address": "Waldenserstr. 20-21"
+    },
+    {
+      "bsn": "01P05",
+      "name": "Katholische Schule Sankt Paulus (Grundschule)",
+      "address": "Waldenserstr. 27"
+    },
+    {
+      "bsn": "01P54",
+      "name": "CeFi - Fachschule für Sozialpädagogik",
+      "address": "Turmstr. 44"
+    },
+    {
+      "bsn": "01Y13",
+      "name": "Rosalind-Franklin-Gymnasium",
+      "address": "Turmstr. 75A"
+    }
+  ],
+  "13357": [
+    {
+      "bsn": "01G25",
+      "name": "Rudolf-Wissell-Grundschule",
+      "address": "Ellerbeker Str. 7-8"
+    },
+    {
+      "bsn": "01G27",
+      "name": "Gesundbrunnen-Grundschule",
+      "address": "Prinzenallee 9"
+    },
+    {
+      "bsn": "01G43",
+      "name": "Albert-Gutzmann-Schule (Grundschule)",
+      "address": "Pankstr. 70"
+    },
+    {
+      "bsn": "01K01",
+      "name": "Willy-Brandt-Schule",
+      "address": "Grüntaler Str. 5"
+    },
+    {
+      "bsn": "01K06",
+      "name": "Herbert-Hoover-Schule (Integrierte Sekundarschule)",
+      "address": "Pankstr. 18-19"
+    },
+    {
+      "bsn": "01S06",
+      "name": "Albert-Gutzmann-Schule",
+      "address": "Pankstr. 70"
+    },
+    {
+      "bsn": "01Y09",
+      "name": "Diesterweg-Gymnasium",
+      "address": "Böttgerstr. 2-6"
+    }
+  ],
+  "13353": [
+    {
+      "bsn": "01G28",
+      "name": "Brüder-Grimm-Grundschule",
+      "address": "Tegeler Str. 18-19"
+    },
+    {
+      "bsn": "01G45",
+      "name": "Leo-Lionni-Grundschule",
+      "address": "Willdenowstr. 11"
+    },
+    {
+      "bsn": "01K02",
+      "name": "Ernst-Schering-Schule",
+      "address": "Lütticher Str. 47-48"
+    },
+    {
+      "bsn": "01P50",
+      "name": "Kristall Grundschule - Inklusive Grundschule in freier Trägerschaft",
+      "address": "Tegeler Str. 13"
+    },
+    {
+      "bsn": "01S05",
+      "name": "Schule in der Charité",
+      "address": "Augustenburger Platz 1"
+    }
+  ],
+  "13347": [
+    {
+      "bsn": "01G31",
+      "name": "Wedding-Grundschule",
+      "address": "Antonstr. 10"
+    },
+    {
+      "bsn": "01G41",
+      "name": "Erika-Mann-Grundschule",
+      "address": "Utrechter Str. 25-27"
+    },
+    {
+      "bsn": "01G42",
+      "name": "Anna-Lindh-Schule (Grundschule)",
+      "address": "Reinickendorfer Str. 60"
+    },
+    {
+      "bsn": "01P48",
+      "name": "meco Akademie gGmbH",
+      "address": "Seestr. 64"
+    },
+    {
+      "bsn": "01S01",
+      "name": "Schule am Zille-Park",
+      "address": "Ravenéstr. 10-12"
+    }
+  ],
+  "13355": [
+    {
+      "bsn": "01G35",
+      "name": "Humboldthain-Grundschule",
+      "address": "Grenzstr. 7"
+    },
+    {
+      "bsn": "01G37",
+      "name": "Heinrich-Seidel-Grundschule",
+      "address": "Ramlerstr. 9-10"
+    },
+    {
+      "bsn": "01G38",
+      "name": "Gustav-Falke-Grundschule",
+      "address": "Strelitzer Str. 42"
+    },
+    {
+      "bsn": "01G39",
+      "name": "Vineta-Grundschule",
+      "address": "Demminer Str. 27"
+    },
+    {
+      "bsn": "01K03",
+      "name": "Ernst-Reuter-Schule",
+      "address": "Stralsunder Str. 57"
+    },
+    {
+      "bsn": "01P07",
+      "name": "Lazarus Schulen der Hoffnungstaler Stiftung Lobetal",
+      "address": "Bernauer Str. 115-118"
+    },
+    {
+      "bsn": "01P13",
+      "name": "Freie Schule am Mauerpark (Grundschule)",
+      "address": "Wolliner Str. 25-26"
+    },
+    {
+      "bsn": "01P18",
+      "name": "Bilinguale Schule Phorms Berlin Mitte",
+      "address": "Ackerstr. 76"
+    },
+    {
+      "bsn": "01P46",
+      "name": "DDA Destiny Diversity Academy GmbH",
+      "address": "Brunnenstr. 110D"
+    }
+  ],
+  "13351": [
+    {
+      "bsn": "01G40",
+      "name": "Möwensee-Grundschule",
+      "address": "Afrikanische Str. 123-125"
+    }
+  ],
+  "10785": [
+    {
+      "bsn": "01G44",
+      "name": "Allegro-Grundschule",
+      "address": "Lützowstr. 83-85"
+    },
+    {
+      "bsn": "01P06",
+      "name": "Canisius-Kolleg",
+      "address": "Tiergartenstr. 30-31"
+    },
+    {
+      "bsn": "01P25",
+      "name": "Internationale Lomonossow-Schule Berlin (Gemeinschaftsschule)",
+      "address": "Genthiner Str. 20"
+    },
+    {
+      "bsn": "01P47",
+      "name": "Ecole Voltaire (Grundschule)",
+      "address": "Kurfürstenstr. 53"
+    },
+    {
+      "bsn": "01Y07",
+      "name": "Französisches Gymnasium",
+      "address": "Derfflingerstr. 7"
+    }
+  ],
+  "10553": [
+    {
+      "bsn": "01K04",
+      "name": "Heinrich-von-Stephan-Gemeinschaftsschule",
+      "address": "Neues Ufer 6"
+    },
+    {
+      "bsn": "01P52",
+      "name": "Schulen der ASIG Stiftung e.V.",
+      "address": "Kaiserin-Augusta-Allee 14"
+    }
+  ],
+  "10178": [
+    {
+      "bsn": "01P01",
+      "name": "Evangelische Schule Berlin Mitte (Gemeinschaftsschule)",
+      "address": "Rochstr. 7"
+    },
+    {
+      "bsn": "01P04",
+      "name": "Freie Waldorfschule Berlin Mitte",
+      "address": "Weinmeisterstr. 16"
+    },
+    {
+      "bsn": "01P36",
+      "name": "BTB Schulzentrum gGmbH",
+      "address": "Alexanderstr. 5"
+    },
+    {
+      "bsn": "01P42",
+      "name": "WWV Bildungsakademie gGmbH",
+      "address": "Alexanderstr. 1"
+    },
+    {
+      "bsn": "01S07",
+      "name": "Charlotte-Pfeffer-Schule",
+      "address": "Berolinastr. 8"
+    }
+  ],
+  "13409": [
+    {
+      "bsn": "01P49",
+      "name": "Quinoa-Schule Freie Sekundarschule Berlin Wedding",
+      "address": "Kühnemannstr. 26"
+    },
+    {
+      "bsn": "08A10",
+      "name": "VHS Neukölln - Otto-Suhr / Tannenhofschule",
+      "address": "Kühleweinstr. 5"
+    },
+    {
+      "bsn": "12B01",
+      "name": "Georg-Schlesinger-Schule (OSZ Maschinen- und Fertigungstechnik)",
+      "address": "Kühleweinstr. 5"
+    },
+    {
+      "bsn": "12G03",
+      "name": "Reginhard-Grundschule",
+      "address": "Letteallee 39-41"
+    },
+    {
+      "bsn": "12G05",
+      "name": "Kolumbus-Grundschule",
+      "address": "Büchsenweg 23A"
+    },
+    {
+      "bsn": "12G06",
+      "name": "Hausotter-Grundschule",
+      "address": "Hausotterplatz 4"
+    },
+    {
+      "bsn": "12K05",
+      "name": "Gustav-Freytag-Schule (Integrierte Sekundarschule)",
+      "address": "Breitkopfstr. 66-80"
+    },
+    {
+      "bsn": "12Y02",
+      "name": "Europäisches Gymnasium Bertha-von-Suttner",
+      "address": "Reginhardstr. 172"
+    }
+  ],
+  "10245": [
+    {
+      "bsn": "02B01",
+      "name": "August-Sander-Schule",
+      "address": "Naglerstr. 1-3"
+    },
+    {
+      "bsn": "02G09",
+      "name": "Zille-Grundschule",
+      "address": "Boxhagener Str. 46"
+    },
+    {
+      "bsn": "02G10",
+      "name": "Modersohn-Grundschule",
+      "address": "Niemannstr. 3"
+    },
+    {
+      "bsn": "02G11",
+      "name": "Thalia-Grundschule",
+      "address": "Alt-Stralau 34"
+    },
+    {
+      "bsn": "02K06",
+      "name": "Emanuel-Lasker-Schule (Gemeinschaftsschule)",
+      "address": "Corinthstr. 5"
+    },
+    {
+      "bsn": "02P23",
+      "name": "Concept Berufliche Schulen gGmbH Berlin",
+      "address": "Revaler Str. 100"
+    }
+  ],
+  "10969": [
+    {
+      "bsn": "02B02",
+      "name": "Hans-Böckler-Schule (OSZ Konstruktionsbautechnik)",
+      "address": "Lobeckstr. 76"
+    },
+    {
+      "bsn": "02B03",
+      "name": "Modeschule Berlin (OSZ Bekleidung und Mode)",
+      "address": "Kochstr. 9"
+    },
+    {
+      "bsn": "02G12",
+      "name": "Kurt-Schumacher-Grundschule",
+      "address": "Puttkamerstr. 19"
+    },
+    {
+      "bsn": "02G14",
+      "name": "Galilei-Grundschule",
+      "address": "Friedrichstr. 13"
+    },
+    {
+      "bsn": "02G24",
+      "name": "Otto-Wels-Grundschule",
+      "address": "Alexandrinenstr. 12"
+    },
+    {
+      "bsn": "02P04",
+      "name": "Freie Waldorfschule Kreuzberg",
+      "address": "Ritterstr. 78"
+    },
+    {
+      "bsn": "02P07",
+      "name": "Campus Berufsbildung e.V.",
+      "address": "Friedrichstr. 231"
+    },
+    {
+      "bsn": "02P19",
+      "name": "FORUM Berufsbildung e.V.",
+      "address": "Charlottenstr. 2"
+    },
+    {
+      "bsn": "02P34",
+      "name": "Weiterdenker-Fachschule für Sozialpädagogik",
+      "address": "Axel-Springer-Str. 42"
+    },
+    {
+      "bsn": "02S06",
+      "name": "Liebmann-Schule",
+      "address": "Friedrichstr. 13"
+    }
+  ],
+  "11099": [
+    {
+      "bsn": "02B04",
+      "name": "OSZ Handel",
+      "address": "7Wrangelstr. 98"
+    }
+  ],
+  "10249": [
+    {
+      "bsn": "02B05",
+      "name": "Jane-Addams-Schule (OSZ Sozialwesen)",
+      "address": "Straßmannstr. 14-16"
+    },
+    {
+      "bsn": "02G01",
+      "name": "Spartacus-Grundschule",
+      "address": "Friedenstr. 40-45"
+    },
+    {
+      "bsn": "02G02",
+      "name": "Hausburg-Grundschule",
+      "address": "Hausburgstr. 20"
+    },
+    {
+      "bsn": "02G373",
+      "name": "7. Schule (Grundschule)",
+      "address": "Pufendorfstr. 10"
+    },
+    {
+      "bsn": "02K05",
+      "name": "Schule am Königstor (Integrierte Sekundarschule)",
+      "address": "Weinstr. 3"
+    },
+    {
+      "bsn": "02K07",
+      "name": "Georg-Weerth-Schule",
+      "address": "Eckertstr. 16A"
+    },
+    {
+      "bsn": "02P11",
+      "name": "Berlin Bilingual School (Grundschule)",
+      "address": "Weinstr. 1"
+    },
+    {
+      "bsn": "02P25",
+      "name": "Evangelische Schule Berlin Friedrichshain (Grundschule)",
+      "address": "Petersburger Platz 5"
+    },
+    {
+      "bsn": "03P47",
+      "name": "Bilinguale Schule Phorms Berlin Prenzlauer Berg (Grundschule)",
+      "address": "Hermann-Blankenstein-Straße 16"
+    }
+  ],
+  "10247": [
+    {
+      "bsn": "02G03",
+      "name": "Justus-von-Liebig-Grundschule",
+      "address": "Liebigstr. 18A"
+    },
+    {
+      "bsn": "02G04",
+      "name": "Pettenkofer-Grundschule",
+      "address": "Pettenkoferstr. 20-24"
+    },
+    {
+      "bsn": "02G08",
+      "name": "Grundschule am Traveplatz",
+      "address": "Jessnerstr. 24-32"
+    },
+    {
+      "bsn": "02G34",
+      "name": "Jane-Goodall-Grundschule",
+      "address": "Scharnweberstr. 19"
+    },
+    {
+      "bsn": "02Y03",
+      "name": "Heinrich-Hertz-Gymnasium",
+      "address": "Rigaer Str. 81-82"
+    },
+    {
+      "bsn": "02Y04",
+      "name": "Georg-Friedrich-Händel-Gymnasium",
+      "address": "Frankfurter Allee 6A"
+    }
+  ],
+  "10243": [
+    {
+      "bsn": "02G07",
+      "name": "Ludwig-Hoffmann-Grundschule",
+      "address": "Lasdehner Str. 21-23"
+    },
+    {
+      "bsn": "02G36",
+      "name": "Blumen-Grundschule",
+      "address": "Andreasstr. 50"
+    },
+    {
+      "bsn": "02K01",
+      "name": "Ellen-Key-Schule",
+      "address": "Rüdersdorfer Str. 20-27"
+    },
+    {
+      "bsn": "02K11",
+      "name": "Temple-Grandin-Schule (Gemeinschaftsschule)",
+      "address": "Lasdehner Str. 19"
+    },
+    {
+      "bsn": "02P12",
+      "name": "KreativitätsGrundschule Berlin Friedrichshain",
+      "address": "Strausberger Str. 38"
+    },
+    {
+      "bsn": "02P13",
+      "name": "Netzwerk-Schule (Gemeinschaftsschule)",
+      "address": "Marchlewskistr. 40"
+    },
+    {
+      "bsn": "02P30",
+      "name": "Concept - Fachschule für Sozialpädagogik",
+      "address": "Gubener Str. 47"
+    },
+    {
+      "bsn": "02S03",
+      "name": "Margarethe-von-Witzleben-Schule",
+      "address": "Palisadenstr. 76-77"
+    },
+    {
+      "bsn": "02Y01",
+      "name": "Andreas-Gymnasium",
+      "address": "Koppenstr. 76"
+    },
+    {
+      "bsn": "02Y05",
+      "name": "Dathe-Gymnasium",
+      "address": "Helsingforser Str. 11-13"
+    }
+  ],
+  "10965": [
+    {
+      "bsn": "02G13",
+      "name": "Charlotte-Salomon-Grundschule",
+      "address": "Großbeerenstr. 40"
+    },
+    {
+      "bsn": "02G31",
+      "name": "Adolf-Glaßbrenner-Grundschule",
+      "address": "Hagelberger Str. 34"
+    },
+    {
+      "bsn": "07B03",
+      "name": "OSZ Lotis (Logistik, Touristik und Steuern)",
+      "address": "Dudenstr. 35-37"
+    }
+  ],
+  "10997": [
+    {
+      "bsn": "02G18",
+      "name": "Nürtingen-Grundschule",
+      "address": "Mariannenplatz 28"
+    },
+    {
+      "bsn": "02G23",
+      "name": "Fichtelgebirge-Grundschule",
+      "address": "Görlitzer Ufer 2"
+    },
+    {
+      "bsn": "02G29",
+      "name": "Heinrich-Zille-Grundschule",
+      "address": "Waldemarstr. 118"
+    },
+    {
+      "bsn": "02K08",
+      "name": "Refik-Veseli-Schule (Integrierte Sekundarschule)",
+      "address": "Skalitzer Str. 55"
+    },
+    {
+      "bsn": "02P09",
+      "name": "Freie Schule Kreuzberg (Grundschule)",
+      "address": "Wrangelstr. 128"
+    },
+    {
+      "bsn": "02P22",
+      "name": "Pro Inklusio - Fachschule für Sozialpädagogik",
+      "address": "Muskauer Str. 53"
+    }
+  ],
+  "10963": [
+    {
+      "bsn": "02G19",
+      "name": "Fanny-Hensel-Grundschule",
+      "address": "Schöneberger Str. 24"
+    },
+    {
+      "bsn": "02G32",
+      "name": "Clara-Grunwald-Grundschule",
+      "address": "Hallesche Str. 24"
+    },
+    {
+      "bsn": "02K03",
+      "name": "Hector-Peterson-Schule",
+      "address": "Tempelhofer Ufer 15"
+    },
+    {
+      "bsn": "02P05",
+      "name": "Sozialpädagogisches Institut Berlin „Walter May“ - Stiftung SPI",
+      "address": "Hallesches Ufer 32-38"
+    },
+    {
+      "bsn": "02P31",
+      "name": "procon College gGmbH",
+      "address": "Stresemannstr. 78"
+    }
+  ],
+  "10961": [
+    {
+      "bsn": "02G20",
+      "name": "Bürgermeister-Herz-Grundschule",
+      "address": "Wilmsstr. 10"
+    },
+    {
+      "bsn": "02G21",
+      "name": "Reinhardswald-Grundschule",
+      "address": "Gneisenaustr. 73-74"
+    },
+    {
+      "bsn": "02G33",
+      "name": "Aziz-Nesin-Grundschule",
+      "address": "Urbanstr. 15"
+    },
+    {
+      "bsn": "02K02",
+      "name": "Carl-von-Ossietzky-Gemeinschaftsschule",
+      "address": "Blücherstr. 46-47"
+    },
+    {
+      "bsn": "02K04",
+      "name": "Bergmannkiez-Gemeinschaftsschule",
+      "address": "Gneisenaustr. 7"
+    },
+    {
+      "bsn": "02K10",
+      "name": "Ferdinand-Freiligrath-Schule (Integrierte Sekundarschule)",
+      "address": "Bergmannstr. 64"
+    },
+    {
+      "bsn": "02P32",
+      "name": "sfe Schule für Erwachsenenbildung e.V.",
+      "address": "Gneisenaustr. 2A"
+    },
+    {
+      "bsn": "02Y06",
+      "name": "Leibniz-Gymnasium",
+      "address": "Schleiermacherstr. 23"
+    }
+  ],
+  "10999": [
+    {
+      "bsn": "02G22",
+      "name": "Jens-Nydahl-Grundschule",
+      "address": "Regina-Jonas-Str. 20"
+    },
+    {
+      "bsn": "02G27",
+      "name": "Hunsrück-Grundschule",
+      "address": "Manteuffelstr. 79"
+    },
+    {
+      "bsn": "02G35",
+      "name": "Rosa-Parks-Grundschule",
+      "address": "Reichenberger Str. 65"
+    },
+    {
+      "bsn": "02P33",
+      "name": "Freie Schule Windrose (Grundschule)",
+      "address": "Wiener Str. 1-6"
+    },
+    {
+      "bsn": "02S02",
+      "name": "Gustav-Meyer-Schule",
+      "address": "Kohlfurter Str. 22"
+    }
+  ],
+  "10967": [
+    {
+      "bsn": "02G26",
+      "name": "Lemgo-Grundschule",
+      "address": "Böckhstr. 5"
+    },
+    {
+      "bsn": "02K09",
+      "name": "Albrecht-von-Graefe-Schule (Integrierte Sekundarschule)",
+      "address": "Graefestr. 85"
+    },
+    {
+      "bsn": "02P03",
+      "name": "Islamische Grundschule",
+      "address": "Boppstr. 4"
+    },
+    {
+      "bsn": "02Y07",
+      "name": "Robert-Koch-Gymnasium",
+      "address": "Dieffenbachstr. 60"
+    },
+    {
+      "bsn": "02Y08",
+      "name": "Hermann-Hesse-Gymnasium",
+      "address": "Böckhstr. 16"
+    }
+  ],
+  "10439": [
+    {
+      "bsn": "03A04",
+      "name": "Abendgymnasium Prenzlauer Berg",
+      "address": "Driesener Str. 22"
+    },
+    {
+      "bsn": "03G14",
+      "name": "Bornholmer Grundschule",
+      "address": "Ibsenstr. 17"
+    },
+    {
+      "bsn": "03G25",
+      "name": "Carl-Humann-Grundschule",
+      "address": "Stahlheimer Str. 22"
+    },
+    {
+      "bsn": "03K11",
+      "name": "Wilhelm-von-Humboldt-Gemeinschaftsschule",
+      "address": "Erich-Weinert-Str. 70"
+    },
+    {
+      "bsn": "03P14",
+      "name": "Freie Grundschule Pfefferwerk",
+      "address": "Schönfließer Str. 7"
+    },
+    {
+      "bsn": "03Y03",
+      "name": "Käthe-Kollwitz-Gymnasium",
+      "address": "Dunckerstr. 65-66"
+    },
+    {
+      "bsn": "03Y04",
+      "name": "Heinrich-Schliemann-Gymnasium",
+      "address": "Dunckerstr. 64"
+    }
+  ],
+  "13158": [
+    {
+      "bsn": "03B02",
+      "name": "Berufliche Schule für Sozialwesen Pankow",
+      "address": "Erbeskopfweg 6-8"
+    },
+    {
+      "bsn": "03G13",
+      "name": "Grundschule in Rosenthal",
+      "address": "Kastanienallee 59"
+    },
+    {
+      "bsn": "03G43",
+      "name": "Grundschule Wilhelmsruh",
+      "address": "Lessingstr. 44"
+    },
+    {
+      "bsn": "03Y17",
+      "name": "Inge-Deutschkron-Gymnasium",
+      "address": "Kopenhagener Str. 83-87"
+    }
+  ],
+  "13088": [
+    {
+      "bsn": "03B04",
+      "name": "Brillat-Savarin-Schule (OSZ Gastgewerbe)",
+      "address": "Buschallee 23A"
+    },
+    {
+      "bsn": "03G17",
+      "name": "Grundschule am Weißen See",
+      "address": "Falkenberger Str. 31"
+    },
+    {
+      "bsn": "03G18",
+      "name": "Picasso-Grundschule",
+      "address": "Gounodstr. 71"
+    },
+    {
+      "bsn": "03G20",
+      "name": "Grundschule im Moselviertel",
+      "address": "Brodenbacher Weg 31"
+    },
+    {
+      "bsn": "03G44",
+      "name": "Georg-Zacharias-Grundschule",
+      "address": "Sulzfelder Str. 15"
+    },
+    {
+      "bsn": "03P18",
+      "name": "dreieins-Grundschule Berlin-Pankow",
+      "address": "Bizetstr. 64"
+    }
+  ],
+  "13156": [
+    {
+      "bsn": "03B06",
+      "name": "Konrad-Zuse-Schule",
+      "address": "Hermann-Hesse-Str. 34/36"
+    },
+    {
+      "bsn": "03G28",
+      "name": "Hasengrund-Schule (Grundschule)",
+      "address": "Hermann-Hesse-Str. 48-52"
+    },
+    {
+      "bsn": "03G32",
+      "name": "Grundschule an den Buchen",
+      "address": "Wilhelm-Wolff-Str. 19"
+    },
+    {
+      "bsn": "03G36",
+      "name": "Elisabeth-Christinen-Grundschule",
+      "address": "Buchholzer Str. 3"
+    },
+    {
+      "bsn": "03G515",
+      "name": "1. Schule (Grundschule)",
+      "address": "Lindenberger Str. 12"
+    },
+    {
+      "bsn": "03K03",
+      "name": "Konrad-Duden-Schule (Integrierte Sekundarschule)",
+      "address": "Rolandstr. 35"
+    },
+    {
+      "bsn": "03P13",
+      "name": "Freie Schule Pankow (Integrierte Sekundarschule)",
+      "address": "Grabbeallee 66"
+    },
+    {
+      "bsn": "03P48",
+      "name": "Freie Humanistische Grundschule",
+      "address": "Grabbeallee 36-40"
+    },
+    {
+      "bsn": "03Y15",
+      "name": "Max-Delbrück-Gymnasium",
+      "address": "Kuckhoffstr. 2"
+    }
+  ],
+  "10409": [
+    {
+      "bsn": "03B07",
+      "name": "Elinor-Ostrom-Schule (OSZ Bürowirtschaft und Dienstleistungen)",
+      "address": "Mandelstr. 6-8"
+    },
+    {
+      "bsn": "03B08",
+      "name": "Staatliche Ballett- und Artistikschule Berlin",
+      "address": "Erich-Weinert-Str. 103"
+    },
+    {
+      "bsn": "03G12",
+      "name": "Paul-Lincke-Grundschule",
+      "address": "Pieskower Weg 39"
+    },
+    {
+      "bsn": "03K04",
+      "name": "Gustave-Eiffel-Schule",
+      "address": "Hanns-Eisler-Str. 78-80"
+    },
+    {
+      "bsn": "03P30",
+      "name": "Freie Waldorfschule am Prenzlauer Berg",
+      "address": "Gürtelstr. 16"
+    },
+    {
+      "bsn": "03P45",
+      "name": "PepperMont Freie Sekundarschule für ganzheitliches Lernen",
+      "address": "Greifswalder Str. 88"
+    }
+  ],
+  "13086": [
+    {
+      "bsn": "03B10",
+      "name": "Max-Bill-Schule (OSZ Planen, Bauen, Gestalten)",
+      "address": "Gustav-Adolf-Str. 66"
+    },
+    {
+      "bsn": "03G01",
+      "name": "Schule am Hamburger Platz (Grundschule)",
+      "address": "Gustav-Adolf-Str. 21"
+    },
+    {
+      "bsn": "03G49",
+      "name": "Grundschule an der Rennbahn",
+      "address": "Rennbahnstr. 46"
+    },
+    {
+      "bsn": "03K05",
+      "name": "Heinz-Brandt-Schule",
+      "address": "Langhansstr. 120"
+    },
+    {
+      "bsn": "03K08",
+      "name": "Hagenbeck-Schule",
+      "address": "Gustav-Adolf-Str. 60"
+    },
+    {
+      "bsn": "03P10",
+      "name": "Katholische Theresienschule (Gymnasium)",
+      "address": "Behaimstr. 29"
+    },
+    {
+      "bsn": "03P11",
+      "name": "Stephanus-Schule",
+      "address": "Albertinenstr. 20"
+    },
+    {
+      "bsn": "03P27",
+      "name": "Klax Berufsakademie",
+      "address": "Langhansstr. 74B"
+    },
+    {
+      "bsn": "03P39",
+      "name": "Stephanus-Grundschule",
+      "address": "Parkstr. 22"
+    },
+    {
+      "bsn": "03Y14",
+      "name": "Primo-Levi-Gymnasium",
+      "address": "Pistoriusstr. 133"
+    }
+  ],
+  "10405": [
+    {
+      "bsn": "03G02",
+      "name": "Heinrich-Roller-Grundschule",
+      "address": "Heinrich-Roller-Str. 18"
+    },
+    {
+      "bsn": "03G04",
+      "name": "Grundschule an der Marie",
+      "address": "Christburger Str. 7"
+    },
+    {
+      "bsn": "03G08",
+      "name": "Grundschule am Planetarium",
+      "address": "Ella-Kay-Str. 47"
+    },
+    {
+      "bsn": "03K01",
+      "name": "Kurt-Schwitters-Schule",
+      "address": "Greifswalder Str. 25"
+    },
+    {
+      "bsn": "03P03",
+      "name": "Schulen Christburg Campus Prenzlauer Berg",
+      "address": "Christburger Str. 14"
+    },
+    {
+      "bsn": "03P26",
+      "name": "Lauder Beth-Zion Schule (Gemeinschaftsschule)",
+      "address": "Rykestr. 53"
+    },
+    {
+      "bsn": "03P38",
+      "name": "S.K.O.U.T. - Fachschule für Sozialpädagogik",
+      "address": "Marienburger Str. 18"
+    },
+    {
+      "bsn": "03S03",
+      "name": "Helene-Haeusler-Schule",
+      "address": "Mendelssohnstr. 10"
+    }
+  ],
+  "10435": [
+    {
+      "bsn": "03G03",
+      "name": "Grundschule am Kollwitzplatz",
+      "address": "Knaackstr. 67"
+    },
+    {
+      "bsn": "03G15",
+      "name": "Schule am Senefelderplatz",
+      "address": "Schönhauser Allee 165"
+    },
+    {
+      "bsn": "03G45",
+      "name": "Grundschule im Hofgarten",
+      "address": "Danziger Str. 50"
+    }
+  ],
+  "10407": [
+    {
+      "bsn": "03G05",
+      "name": "Homer-Grundschule",
+      "address": "Pasteurstr. 10/12"
+    },
+    {
+      "bsn": "03G06",
+      "name": "Bötzow-Grundschule",
+      "address": "John-Schehr-Str. 38"
+    },
+    {
+      "bsn": "03G38",
+      "name": "Grundschule im Blumenviertel",
+      "address": "Syringenplatz 30"
+    },
+    {
+      "bsn": "03G48",
+      "name": "Maria-Leo-Grundschule",
+      "address": "Conrad-Blenkle-Str. 20"
+    },
+    {
+      "bsn": "03K07",
+      "name": "Tesla-Schule (Gemeinschaftsschule)",
+      "address": "Rudi-Arndt-Str. 18"
+    },
+    {
+      "bsn": "03P15",
+      "name": "GPB-College gGmbH",
+      "address": "Storkower Str. 115A"
+    },
+    {
+      "bsn": "03P50",
+      "name": "IB-Berlin-Brandenburg gGmbH - Fachschule für Sozialpädagogik",
+      "address": "Storkowerstr. 139B"
+    },
+    {
+      "bsn": "03Y13",
+      "name": "Felix-Mendelssohn-Bartholdy-Gymnasium",
+      "address": "Pasteurstr. 7"
+    }
+  ],
+  "10437": [
+    {
+      "bsn": "03G09",
+      "name": "Thomas-Mann-Grundschule",
+      "address": "Greifenhagener Str. 58"
+    },
+    {
+      "bsn": "03G11",
+      "name": "Schule am Falkplatz (Grundschule)",
+      "address": "Gleimstr. 49"
+    },
+    {
+      "bsn": "03G46",
+      "name": "Grundschule im Eliashof",
+      "address": "Senefelderstr. 6"
+    }
+  ],
+  "13125": [
+    {
+      "bsn": "03G10",
+      "name": "Grundschule am Hohen Feld",
+      "address": "Bedeweg 1"
+    },
+    {
+      "bsn": "03G23",
+      "name": "Grundschule Alt-Karow",
+      "address": "Bahnhofstr. 32"
+    },
+    {
+      "bsn": "03G24",
+      "name": "Grundschule im Panketal",
+      "address": "Achillesstr. 31"
+    },
+    {
+      "bsn": "03G29",
+      "name": "Grundschule Am Sandhaus",
+      "address": "Wiltbergstr. 37-39"
+    },
+    {
+      "bsn": "03G50",
+      "name": "Grundschule am Campus Buch",
+      "address": "Ernst-Ludwig-Heim-Str. 14"
+    },
+    {
+      "bsn": "03K10",
+      "name": "Hufeland-Schule (Integrierte Sekundarschule)",
+      "address": "Walter-Friedrich-Str. 16-18"
+    },
+    {
+      "bsn": "03P32",
+      "name": "Montessori-Gemeinschaftsschule Berlin Buch",
+      "address": "Wiltbergstr. 90, Haus 23-25"
+    },
+    {
+      "bsn": "03P33",
+      "name": "Evangelische Schule Berlin Buch (Grundschule)",
+      "address": "Wiltbergstr. 90, Haus 27"
+    },
+    {
+      "bsn": "03S10",
+      "name": "Marianne-Buggenhagen-Schule",
+      "address": "Ernst-Busch-Str. 29"
+    },
+    {
+      "bsn": "03Y16",
+      "name": "Robert-Havemann-Gymnasium",
+      "address": "Achillesstr. 79"
+    }
+  ],
+  "13129": [
+    {
+      "bsn": "03G21",
+      "name": "Grundschule unter den Bäumen",
+      "address": "Alt-Blankenburg 26"
+    }
+  ],
+  "13089": [
+    {
+      "bsn": "03G22",
+      "name": "Grundschule am Wasserturm",
+      "address": "Tino-Schwierzina-Str. 66"
+    },
+    {
+      "bsn": "03P40",
+      "name": "SAfS - Spektrum Akademie für Sozialpädagogik (KEIN Schulbetrieb)",
+      "address": "Tino-Schiwerzina-Str. 32"
+    }
+  ],
+  "13187": [
+    {
+      "bsn": "03G26",
+      "name": "Arnold-Zweig-Grundschule",
+      "address": "Wollankstr. 131"
+    },
+    {
+      "bsn": "03G27",
+      "name": "Elizabeth-Shaw-Grundschule",
+      "address": "Grunowstr. 17"
+    },
+    {
+      "bsn": "03G34",
+      "name": "Mendel-Grundschule",
+      "address": "Stiftsweg 3"
+    },
+    {
+      "bsn": "03G37",
+      "name": "Klecks-Grundschule",
+      "address": "Brixener Str. 40"
+    },
+    {
+      "bsn": "03G474",
+      "name": "7. Schule (Grundschule)",
+      "address": "Mendelstr. 54"
+    },
+    {
+      "bsn": "03K06",
+      "name": "Reinhold-Burger-Schule",
+      "address": "Neue Schönholzer Str. 32"
+    },
+    {
+      "bsn": "03K09",
+      "name": "Janusz-Korczak-Schule (Integrierte Sekundarschule)",
+      "address": "Dolomitenstr. 94"
+    },
+    {
+      "bsn": "03P12",
+      "name": "Evangelische Schule Pankow (Grundschule)",
+      "address": "Galenusstr. 60A"
+    },
+    {
+      "bsn": "03P20",
+      "name": "SchuleEins (Gemeinschaftsschule)",
+      "address": "Berliner Str. 120-121"
+    },
+    {
+      "bsn": "03P21",
+      "name": "Freie Integrative Montessori Grundschule Pankow",
+      "address": "Hadlichstr. 2"
+    },
+    {
+      "bsn": "03P28",
+      "name": "Platanus Schule Berlin (Gemeinschaftsschule)",
+      "address": "Berliner Str. 12"
+    },
+    {
+      "bsn": "03S08",
+      "name": "Panke-Schule",
+      "address": "Galenusstr. 64"
+    },
+    {
+      "bsn": "03S09",
+      "name": "Schule an der Strauchwiese",
+      "address": "Mendelstr. 54"
+    },
+    {
+      "bsn": "03Y08",
+      "name": "Carl-von-Ossietzky-Gymnasium",
+      "address": "Görschstr. 42-44"
+    }
+  ],
+  "13127": [
+    {
+      "bsn": "03G33",
+      "name": "Jeanne-Barez-Schule (Grundschule)",
+      "address": "Hauptstr. 66"
+    },
+    {
+      "bsn": "03G40",
+      "name": "Schule am Birkenhof",
+      "address": "Arnouxstr. 18"
+    },
+    {
+      "bsn": "03S06",
+      "name": "Schule am Birkenhof",
+      "address": "Arnouxstr. 18"
+    }
+  ],
+  "13159": [
+    {
+      "bsn": "03G35",
+      "name": "Platanengrundschule",
+      "address": "Hauptstr. 20"
+    },
+    {
+      "bsn": "03P23",
+      "name": "Freie Naturschule im StadtGUT (Grundschule)",
+      "address": "Hauptstr. 26"
+    }
+  ],
+  "13189": [
+    {
+      "bsn": "03G39",
+      "name": "Grundschule Wolkenstein",
+      "address": "Thulestraße 73a"
+    },
+    {
+      "bsn": "03G41",
+      "name": "Trelleborg-Schule (Grundschule)",
+      "address": "Eschengraben 40"
+    },
+    {
+      "bsn": "03K02",
+      "name": "Kurt-Tucholsky-Schule (Integrierte Sekundarschule)",
+      "address": "Neumannstr. 9-11"
+    },
+    {
+      "bsn": "03P22",
+      "name": "Klax International School (Gemeinschaftsschule)",
+      "address": "Neumannstr. 13A"
+    },
+    {
+      "bsn": "03P24",
+      "name": "Ting-Schule (Integrierte Sekundarschule)",
+      "address": "Berliner Str. 21"
+    },
+    {
+      "bsn": "03P37",
+      "name": "Berlin Bilingual School (Integrierte Sekundarschule)",
+      "address": "Granitzstr. 38A"
+    },
+    {
+      "bsn": "03Y10",
+      "name": "Rosa-Luxemburg-Gymnasium",
+      "address": "Kissingenstr. 12"
+    }
+  ],
+  "10627": [
+    {
+      "bsn": "04A04",
+      "name": "Charlotte-Wolff-Kolleg",
+      "address": "Pestalozzistr. 40-41"
+    },
+    {
+      "bsn": "04P37",
+      "name": "Campus Berufsbildung e.V.",
+      "address": "Wilmersdorfer Str. 126-127"
+    }
+  ],
+  "10713": [
+    {
+      "bsn": "04A06",
+      "name": "Peter-A.-Silbermann-Schule",
+      "address": "Blissestr. 22"
+    },
+    {
+      "bsn": "04S06",
+      "name": "Finkenkrug-Schule",
+      "address": "Mannheimer Str. 21-22"
+    },
+    {
+      "bsn": "04S07",
+      "name": "Comenius-Schule",
+      "address": "Gieselerstr. 4"
+    },
+    {
+      "bsn": "04Y07",
+      "name": "Friedrich-Ebert-Gymnasium",
+      "address": "Blissestr. 22"
+    }
+  ],
+  "14053": [
+    {
+      "bsn": "04A08",
+      "name": "Sportschule im Olympiapark - Poelchau-Schule",
+      "address": "Prinz-Friedrich-Karl-Weg 1"
+    }
+  ],
+  "13627": [
+    {
+      "bsn": "04A44",
+      "name": "Willkommensschule TXL",
+      "address": "Saatwinkler Damm 42"
+    },
+    {
+      "bsn": "04B05",
+      "name": "Anna-Freud-Schule (OSZ Sozialwesen)",
+      "address": "Halemweg 22"
+    },
+    {
+      "bsn": "04G09",
+      "name": "Erwin-von-Witzleben-Grundschule",
+      "address": "Halemweg 34"
+    },
+    {
+      "bsn": "04G11",
+      "name": "Helmuth-James-von-Moltke-Grundschule",
+      "address": "Heckerdamm 221"
+    }
+  ],
+  "10587": [
+    {
+      "bsn": "04B01",
+      "name": "Loschmidt-Oberschule",
+      "address": "Loschmidtstr. 19"
+    },
+    {
+      "bsn": "04G07",
+      "name": "Ludwig-Cauer-Grundschule",
+      "address": "Cauerstr. 36-38"
+    },
+    {
+      "bsn": "04P05",
+      "name": "Evangelische Schule Charlottenburg (Integrierte Sekundarschule)",
+      "address": "Guerickestr. 4-6"
+    },
+    {
+      "bsn": "04P35",
+      "name": "Mentora Gymnasium (KEIN Schulbetrieb)",
+      "address": "Salzufer 6"
+    },
+    {
+      "bsn": "04P48",
+      "name": "Grone - Bildungszentren Berlin GmbH - gemeinnützig",
+      "address": "Ernst-Reuter-Platz 10"
+    }
+  ],
+  "14059": [
+    {
+      "bsn": "04B02",
+      "name": "Hans-Litten-Schule (OSZ Recht und Wirtschaft)",
+      "address": "Danckelmannstr. 26-28"
+    },
+    {
+      "bsn": "04G13",
+      "name": "Nehring-Grundschule",
+      "address": "Nehringstr. 9-10"
+    },
+    {
+      "bsn": "04K06",
+      "name": "Schule am Schloss (Integrierte Sekundarschule)",
+      "address": "Schloßstr. 55A"
+    }
+  ],
+  "10585": [
+    {
+      "bsn": "04B03",
+      "name": "OSZ Kraftfahrzeugtechnik",
+      "address": "Gierkeplatz 1-3"
+    },
+    {
+      "bsn": "04G12",
+      "name": "Schinkel-Grundschule",
+      "address": "Nithackstr. 8"
+    },
+    {
+      "bsn": "04P47",
+      "name": "Privates Europa-Gymnasium Berlin",
+      "address": "Haubachstr. 8"
+    },
+    {
+      "bsn": "04S02",
+      "name": "Arno-Fuchs-Schule",
+      "address": "Richard-Wagner-Str. 30"
+    }
+  ],
+  "10625": [
+    {
+      "bsn": "04B04",
+      "name": "Ruth-Cohn-Schule (OSZ Sozialwesen)",
+      "address": "Bismarckstr. 20"
+    },
+    {
+      "bsn": "04B07",
+      "name": "OSZ Ästhetik und Technik",
+      "address": "Schillerstr. 120"
+    },
+    {
+      "bsn": "04G01",
+      "name": "Eichendorff-Grundschule",
+      "address": "Goethestr. 19-24"
+    },
+    {
+      "bsn": "04Y01",
+      "name": "Schiller-Gymnasium",
+      "address": "Schillerstr. 125-127"
+    }
+  ],
+  "10715": [
+    {
+      "bsn": "04B06",
+      "name": "Leopold-Ullstein-Schule (OSZ Wirtschaft)",
+      "address": "Prinzregentenstr. 32"
+    },
+    {
+      "bsn": "04G18",
+      "name": "Ernst-Habermann-Grundschule",
+      "address": "Prinzregentenstr. 33-34"
+    },
+    {
+      "bsn": "04G26",
+      "name": "Birger-Forell-Grundschule",
+      "address": "Koblenzer Str. 22-24"
+    },
+    {
+      "bsn": "04K10",
+      "name": "Wangari-Maathai-Internationale-Schule",
+      "address": "Babelsberger Str. 24"
+    },
+    {
+      "bsn": "04Y10",
+      "name": "Marie-Curie-Gymnasium",
+      "address": "Weimarische Str. 21"
+    }
+  ],
+  "14057": [
+    {
+      "bsn": "04G02",
+      "name": "Lietzensee-Grundschule",
+      "address": "Witzlebenstr. 34-35"
+    },
+    {
+      "bsn": "04K08",
+      "name": "Peter-Ustinov-Schule",
+      "address": "Kuno-Fischer-Str. 22-26"
+    }
+  ],
+  "10623": [
+    {
+      "bsn": "04G04",
+      "name": "Joan-Miró-Grundschule",
+      "address": "Bleibtreustr. 43"
+    },
+    {
+      "bsn": "04K02",
+      "name": "Friedensburg-Schule",
+      "address": "Goethestr. 8-9"
+    },
+    {
+      "bsn": "04P20",
+      "name": "Rackow-Schulen Berlin",
+      "address": "Fasanenstr. 81"
+    }
+  ],
+  "14050": [
+    {
+      "bsn": "04G05",
+      "name": "Dietrich-Bonhoeffer-Grundschule",
+      "address": "Spandauer Damm 205-215"
+    },
+    {
+      "bsn": "04G14",
+      "name": "Reinhold-Otto-Grundschule",
+      "address": "Leistikowstr. 7-8"
+    },
+    {
+      "bsn": "04P04",
+      "name": "Katholische Schule Liebfrauen (Gymnasium)",
+      "address": "Ahornallee 33"
+    },
+    {
+      "bsn": "04P27",
+      "name": "Schule am Westend",
+      "address": "Spandauer Damm 130"
+    }
+  ],
+  "14055": [
+    {
+      "bsn": "04G06",
+      "name": "Wald-Grundschule",
+      "address": "Waldschulallee 83-93"
+    },
+    {
+      "bsn": "04G15",
+      "name": "Charles-Dickens-Grundschule",
+      "address": "Dickensweg 15"
+    },
+    {
+      "bsn": "04K111",
+      "name": "1. Schule (Gemeinschaftsschule) Neugründung zum 01.08.2026",
+      "address": "Maikäferpfad 30"
+    },
+    {
+      "bsn": "04P01",
+      "name": "Katholische Schule Herz Jesu (Grundschule)",
+      "address": "Insterburgallee 8-10"
+    },
+    {
+      "bsn": "04P03",
+      "name": "Heinz-Galinski-Schule (Grundschule)",
+      "address": "Waldschulallee 73-75"
+    },
+    {
+      "bsn": "04P39",
+      "name": "Berlin British School (Grundschule)",
+      "address": "Dickensweg 17-19"
+    },
+    {
+      "bsn": "04P40",
+      "name": "Berlin British School (Integrierte Sekundarschule)",
+      "address": "Am Postfenn 31"
+    },
+    {
+      "bsn": "04S04",
+      "name": "Reinfelder-Schule",
+      "address": "Maikäferpfad 30"
+    },
+    {
+      "bsn": "04S05",
+      "name": "Ernst-Adolf-Eschke-Schule für Gehörlose",
+      "address": "Waldschulallee 29"
+    },
+    {
+      "bsn": "04Y02",
+      "name": "Wald-Gymnasium",
+      "address": "Waldschulallee 95"
+    }
+  ],
+  "10589": [
+    {
+      "bsn": "04G08",
+      "name": "Mierendorff-Grundschule",
+      "address": "Mierendorffstr. 20-24"
+    },
+    {
+      "bsn": "04Y04",
+      "name": "Gottfried-Keller-Gymnasium",
+      "address": "Olbersstr. 38"
+    }
+  ],
+  "10719": [
+    {
+      "bsn": "04G17",
+      "name": "Johann-Peter-Hebel-Grundschule",
+      "address": "Emser Str. 50"
+    },
+    {
+      "bsn": "04P10",
+      "name": "Katholische Schule Sankt Ludwig (Grundschule)",
+      "address": "Düsseldorfer Str. 13"
+    }
+  ],
+  "14197": [
+    {
+      "bsn": "04G19",
+      "name": "Grundschule am Rüdesheimer Platz",
+      "address": "Rüdesheimer Str. 24-30"
+    },
+    {
+      "bsn": "07G16",
+      "name": "Ruppin-Grundschule",
+      "address": "Offenbacher Str. 5a"
+    }
+  ],
+  "10709": [
+    {
+      "bsn": "04G20",
+      "name": "Katharina-Heinroth-Grundschule",
+      "address": "Münstersche Str. 15-17"
+    },
+    {
+      "bsn": "04K09",
+      "name": "Otto-von-Guericke-Schule (Integrierte Sekundarschule)",
+      "address": "Eisenzahnstr. 47-48"
+    },
+    {
+      "bsn": "04P12",
+      "name": "Annie-Heuser-Schule",
+      "address": "Eisenzahnstr. 37"
+    },
+    {
+      "bsn": "04P23",
+      "name": "Jüdische Traditionsschule",
+      "address": "Westfälische Str. 15"
+    }
+  ],
+  "10711": [
+    {
+      "bsn": "04G21",
+      "name": "Halensee-Grundschule",
+      "address": "Joachim-Friedrich-Str. 35-36"
+    }
+  ],
+  "14193": [
+    {
+      "bsn": "04G22",
+      "name": "Grunewald-Grundschule",
+      "address": "Delbrückstr. 20A"
+    },
+    {
+      "bsn": "04P11",
+      "name": "Evangelisches Gymnasium zum Grauen Kloster",
+      "address": "Salzbrunner Str. 41"
+    },
+    {
+      "bsn": "04Y08",
+      "name": "Hildegard-Wegscheider-Gymnasium",
+      "address": "Lassenstr. 16-20"
+    },
+    {
+      "bsn": "04Y09",
+      "name": "Walther-Rathenau-Gymnasium",
+      "address": "Herbertstr. 2-6"
+    }
+  ],
+  "14199": [
+    {
+      "bsn": "04G23",
+      "name": "Alt-Schmargendorf-Grundschule",
+      "address": "Reichenhaller Str. 8"
+    },
+    {
+      "bsn": "04G24",
+      "name": "Carl-Orff-Grundschule",
+      "address": "Berkaer Str. 10"
+    },
+    {
+      "bsn": "04G27",
+      "name": "Judith-Kerr-Grundschule",
+      "address": "Friedrichshaller Str. 13"
+    },
+    {
+      "bsn": "04K07",
+      "name": "Integrierte Sekundarschule Wilmersdorf",
+      "address": "Kranzer Str. 3"
+    }
+  ],
+  "10717": [
+    {
+      "bsn": "04G25",
+      "name": "Cecilien-Schule (Grundschule)",
+      "address": "Nikolsburger Platz 5"
+    },
+    {
+      "bsn": "04K04",
+      "name": "Nelson-Mandela-Schule",
+      "address": "Pfalzburger Str. 30"
+    },
+    {
+      "bsn": "04P41",
+      "name": "Freudberg-Gemeinschaftsschule",
+      "address": "Bundesallee 35"
+    },
+    {
+      "bsn": "04Y11",
+      "name": "Goethe-Gymnasium",
+      "address": "Gasteiner Str. 23"
+    }
+  ],
+  "10707": [
+    {
+      "bsn": "04K03",
+      "name": "Robert-Jungk-Schule",
+      "address": "Sächsische Str. 58"
+    },
+    {
+      "bsn": "04P21",
+      "name": "Evangelische Schule Wilmersdorf (Grundschule)",
+      "address": "Brandenburgische Str. 51"
+    },
+    {
+      "bsn": "04P46",
+      "name": "Hasenschule (Grundschule)",
+      "address": "Lietzenburger Str. 107"
+    }
+  ],
+  "10629": [
+    {
+      "bsn": "04K05",
+      "name": "Paula-Fürst-Schule (Gemeinschaftsschule)",
+      "address": "Sybelstr. 20-21"
+    },
+    {
+      "bsn": "04P45",
+      "name": "Jewish International School - Masorti-Grundschule",
+      "address": "Roscherstr. 6"
+    },
+    {
+      "bsn": "04Y03",
+      "name": "Sophie-Charlotte-Gymnasium",
+      "address": "Sybelstr. 2"
+    }
+  ],
+  "14052": [
+    {
+      "bsn": "04P02",
+      "name": "Schele-Schule (Gemeinschaftsschule)",
+      "address": "Olympische Str. 23"
+    },
+    {
+      "bsn": "04P15",
+      "name": "Freie Schule Charlottenburg",
+      "address": "Frankenallee 6"
+    },
+    {
+      "bsn": "04P22",
+      "name": "Erste Aktivschule Charlottenburg (Grundschule)",
+      "address": "Württembergallee 32"
+    },
+    {
+      "bsn": "04P24",
+      "name": "Moser-Schule - Schweizer Gymnasium",
+      "address": "Badenallee 31-32"
+    },
+    {
+      "bsn": "04Y05",
+      "name": "Herder-Gymnasium",
+      "address": "Westendallee 45-46"
+    },
+    {
+      "bsn": "04Y06",
+      "name": "Heinz-Berggruen-Gymnasium",
+      "address": "Bayernallee 4"
+    }
+  ],
+  "14195": [
+    {
+      "bsn": "04P42",
+      "name": "Private Kant-Schule - Berlin International School",
+      "address": "Lentzeallee 8-14"
+    },
+    {
+      "bsn": "06G04",
+      "name": "Erich-Kästner-Grundschule",
+      "address": "Bachstelzenweg 2-8"
+    },
+    {
+      "bsn": "06G06",
+      "name": "Mühlenau-Grundschule",
+      "address": "Molsheimer Str. 7"
+    },
+    {
+      "bsn": "06G12",
+      "name": "Quentin-Blake-Grundschule",
+      "address": "Hüttenweg 40"
+    },
+    {
+      "bsn": "06K09",
+      "name": "Gail-S.-Halvorsen-Integrierte Sekundarschule",
+      "address": "Im Gehege 6"
+    },
+    {
+      "bsn": "06P04",
+      "name": "Rudolf-Steiner-Schule Berlin",
+      "address": "Auf dem Grat 3"
+    },
+    {
+      "bsn": "06P06",
+      "name": "Königin-Luise-Stiftung",
+      "address": "Podbielskiallee 78"
+    },
+    {
+      "bsn": "06S02",
+      "name": "Biesalski-Schule",
+      "address": "Hüttenweg 40"
+    },
+    {
+      "bsn": "06Y03",
+      "name": "Arndt-Gymnasium Dahlem",
+      "address": "Königin-Luise-Str. 80-84"
+    }
+  ],
+  "13597": [
+    {
+      "bsn": "05A03",
+      "name": "VHS Spandau - Harri-Reinert",
+      "address": "Carl-Schurz-Str. 59"
+    },
+    {
+      "bsn": "05G01",
+      "name": "Ernst-Ludwig-Heim-Grundschule",
+      "address": "Grunewaldstr. 8"
+    },
+    {
+      "bsn": "05Y01",
+      "name": "Freiherr-vom-Stein-Gymnasium",
+      "address": "Galenstr. 40-44"
+    },
+    {
+      "bsn": "05Y05",
+      "name": "Lily-Braun-Gymnasium",
+      "address": "Münsingerstr. 2"
+    }
+  ],
+  "13599": [
+    {
+      "bsn": "05B01",
+      "name": "OSZ TIEM (Technische Informatik, Industrieelektronik und EnergieManagement)",
+      "address": "Goldbeckweg 8-14"
+    },
+    {
+      "bsn": "05B02",
+      "name": "Knobelsdorff-Schule (OSZ Bautechnik I)",
+      "address": "Nonnendammallee 140-143"
+    },
+    {
+      "bsn": "05G13",
+      "name": "Bernd-Ryke-Grundschule",
+      "address": "Daumstr. 12"
+    },
+    {
+      "bsn": "05G28",
+      "name": "Grundschule an der Pulvermühle",
+      "address": "Grützmacherweg 7"
+    },
+    {
+      "bsn": "05K101",
+      "name": "0. Schule (Gemeinschaftsschule)",
+      "address": "Gartenfelder Str. 28"
+    }
+  ],
+  "13587": [
+    {
+      "bsn": "05G02",
+      "name": "Grundschule am Eichenwald",
+      "address": "Gaismannshofer Weg 2"
+    },
+    {
+      "bsn": "05G20",
+      "name": "Carl-Schurz-Grundschule",
+      "address": "Hakenfelder Str. 32"
+    },
+    {
+      "bsn": "05G31",
+      "name": "Havel-Grundschule",
+      "address": "Goltzstr. 25"
+    },
+    {
+      "bsn": "05K04",
+      "name": "Heinrich-Böll-Oberschule (Integrierte Sekundarschule)",
+      "address": "Am Forstacker 9-9a"
+    },
+    {
+      "bsn": "05P03",
+      "name": "Evangelische Schule Spandau im Johannesstift",
+      "address": "Schönwalder Allee 26, Haus 27"
+    },
+    {
+      "bsn": "05P04",
+      "name": "August-Hermann-Francke-Schule",
+      "address": "Schönwalder Allee 26"
+    },
+    {
+      "bsn": "05P10",
+      "name": "Soziale Fachschulen Johannesstift Diakonie gGmbH",
+      "address": "Schönwalder Allee 26, Haus46"
+    }
+  ],
+  "13583": [
+    {
+      "bsn": "05G04",
+      "name": "Klosterfeld-Grundschule",
+      "address": "Seegefelder Str. 125"
+    },
+    {
+      "bsn": "05G15",
+      "name": "Askanier-Grundschule",
+      "address": "Borkzeile 34"
+    },
+    {
+      "bsn": "05K05",
+      "name": "B.-Traven-Gemeinschaftsschule",
+      "address": "Recklinghauser Weg 26"
+    }
+  ],
+  "13595": [
+    {
+      "bsn": "05G05",
+      "name": "Christoph-Földerich-Grundschule",
+      "address": "Földerichplatz 5"
+    },
+    {
+      "bsn": "05G21",
+      "name": "Paul-Moor-Grundschule",
+      "address": "Adamstr. 24-25"
+    },
+    {
+      "bsn": "05K03",
+      "name": "Bertolt-Brecht-Oberschule (Integrierte Sekundarschule)",
+      "address": "Wilhelmstr. 10"
+    },
+    {
+      "bsn": "05K08",
+      "name": "Schule an der Haveldüne (Integrierte Sekundarschule)",
+      "address": "Jaczostr. 53-67"
+    }
+  ],
+  "13589": [
+    {
+      "bsn": "05G06",
+      "name": "Siegerland-Grundschule",
+      "address": "Hermann-Schmidt-Weg 4"
+    },
+    {
+      "bsn": "05G18",
+      "name": "Grundschule im Beerwinkel",
+      "address": "Im Spektefeld 31"
+    },
+    {
+      "bsn": "05G25",
+      "name": "Grundschule am Wasserwerk",
+      "address": "Pionierstr. 197"
+    },
+    {
+      "bsn": "05K01",
+      "name": "Martin-Buber-Oberschule (Integrierte Sekundarschule)",
+      "address": "Im Spektefeld 33"
+    },
+    {
+      "bsn": "05P15",
+      "name": "Immanuel-Grundschule",
+      "address": "Stadtrandstr. 465"
+    },
+    {
+      "bsn": "05S04",
+      "name": "Schule am Stadtrand",
+      "address": "Pionierstr. 197"
+    }
+  ],
+  "13585": [
+    {
+      "bsn": "05G07",
+      "name": "Lynar-Grundschule",
+      "address": "Lutherstr. 19-20"
+    },
+    {
+      "bsn": "05G27",
+      "name": "Peter-Härtling-Grundschule",
+      "address": "Falkenseer Damm 22"
+    },
+    {
+      "bsn": "05G30",
+      "name": "Birken-Grundschule",
+      "address": "Hügelschanze 8"
+    },
+    {
+      "bsn": "05G323",
+      "name": "2. Schule (Grundschule)",
+      "address": "Fehrbelliner Tor 2"
+    },
+    {
+      "bsn": "05K06",
+      "name": "Wolfgang-Borchert-Schule (Integrierte Sekundarschule)",
+      "address": "Blumenstr. 13"
+    },
+    {
+      "bsn": "05P02",
+      "name": "Katholische Schule Bernhard Lichtenberg (Grundschule)",
+      "address": "Hohenzollernring 159"
+    },
+    {
+      "bsn": "05S01",
+      "name": "Schule am Grüngürtel",
+      "address": "Askanierring 42"
+    },
+    {
+      "bsn": "05Y02",
+      "name": "Kant-Gymnasium",
+      "address": "Bismarckstr. 54"
+    }
+  ],
+  "13581": [
+    {
+      "bsn": "05G08",
+      "name": "Konkordia-Grundschule",
+      "address": "Elsflether Weg 26"
+    },
+    {
+      "bsn": "05G10",
+      "name": "Grundschule am Birkenhain",
+      "address": "Seeburger Str. 59"
+    },
+    {
+      "bsn": "05K02",
+      "name": "Carlo-Schmid-Oberschule (Integrierte Sekundarschule)",
+      "address": "Lutoner Str. 15-19"
+    },
+    {
+      "bsn": "05S03",
+      "name": "Schule am Gartenfeld",
+      "address": "Seecktstr. 2"
+    }
+  ],
+  "13629": [
+    {
+      "bsn": "05G11",
+      "name": "Robert-Reinick-Grundschule",
+      "address": "Jungfernheideweg 32-48"
+    },
+    {
+      "bsn": "05K07",
+      "name": "Schule an der Jungfernheide (Integrierte Sekundarschule)",
+      "address": "Lenther Steig 1-3"
+    },
+    {
+      "bsn": "05P06",
+      "name": "Werner-von-Siemens-Werkberufsschule der Siemens AG",
+      "address": "Nonnendammallee 104"
+    },
+    {
+      "bsn": "05Y04",
+      "name": "Carl-Friedrich-von-Siemens-Gymnasium",
+      "address": "Jungfernheideweg 79"
+    }
+  ],
+  "13593": [
+    {
+      "bsn": "05G12",
+      "name": "Grundschule am Weinmeisterhorn",
+      "address": "Daberkowstr. 27"
+    },
+    {
+      "bsn": "05G22",
+      "name": "Christian-Morgenstern-Grundschule",
+      "address": "Räcknitzer Steig 12"
+    },
+    {
+      "bsn": "05G26",
+      "name": "Grundschule am Amalienhof",
+      "address": "Weinmeisterhornweg 122"
+    },
+    {
+      "bsn": "05P13",
+      "name": "Wilhelmstadt Schulen",
+      "address": "Wilhelmstr. 28-30"
+    },
+    {
+      "bsn": "05P19",
+      "name": "SIS Swiss International School Berlin",
+      "address": "Heerstr. 463"
+    }
+  ],
+  "13591": [
+    {
+      "bsn": "05G14",
+      "name": "Linden-Grundschule",
+      "address": "Staakener Feldstr. 6-8"
+    },
+    {
+      "bsn": "05G16",
+      "name": "Zeppelin-Grundschule",
+      "address": "Heidebergplan 3-4"
+    },
+    {
+      "bsn": "05G17",
+      "name": "Astrid-Lindgren-Grundschule",
+      "address": "Südekumzeile 5"
+    },
+    {
+      "bsn": "05G23",
+      "name": "Grundschule am Brandwerder",
+      "address": "Spandauer Str. 86"
+    },
+    {
+      "bsn": "05G333",
+      "name": "3. Schule (Grundschule) Neugründung zum 01.08.2026",
+      "address": "Heerstr. 580"
+    },
+    {
+      "bsn": "05K09",
+      "name": "Schule am Staakener Kleeblatt (Integrierte Sekundarschule)",
+      "address": "Brunsbütteler Damm 431-437"
+    },
+    {
+      "bsn": "05P18",
+      "name": "Freie Georgschule",
+      "address": "Metropolitan Park 70"
+    }
+  ],
+  "14089": [
+    {
+      "bsn": "05G19",
+      "name": "Grundschule am Ritterfeld",
+      "address": "Schallweg 31"
+    },
+    {
+      "bsn": "05G24",
+      "name": "Grundschule am Windmühlenberg",
+      "address": "Am Kinderdorf 23"
+    },
+    {
+      "bsn": "05G29",
+      "name": "Mary-Poppins-Grundschule",
+      "address": "Am Flugplatz Gatow 20"
+    },
+    {
+      "bsn": "05P01",
+      "name": "Freie Waldorfschule Havelhöhe",
+      "address": "Neukladower Allee 1"
+    },
+    {
+      "bsn": "05P05",
+      "name": "Berufsschule des Rotkreuz-Instituts",
+      "address": "Krampnitzer Weg 83-87"
+    },
+    {
+      "bsn": "05Y03",
+      "name": "Hans-Carossa-Gymnasium",
+      "address": "Am Landschaftspark Gatow 40"
+    }
+  ],
+  "12207": [
+    {
+      "bsn": "06A05",
+      "name": "ZBW Steglitz-Zehlendorf an der Victor-Gollancz VHS",
+      "address": "Goethestr. 9-11"
+    },
+    {
+      "bsn": "06B02",
+      "name": "Louise-Schroeder-Schule (OSZ Bürowirtschaft und Verwaltung)",
+      "address": "Lippstädter Str. 9-11"
+    },
+    {
+      "bsn": "06G22",
+      "name": "Giesensdorfer Grundschule",
+      "address": "Ostpreußendamm 63"
+    },
+    {
+      "bsn": "06G30",
+      "name": "Mercator-Grundschule",
+      "address": "Mercatorweg 8-10"
+    },
+    {
+      "bsn": "06Y12",
+      "name": "Willi-Graf-Gymnasium",
+      "address": "Ostpreußendamm 166"
+    }
+  ],
+  "14163": [
+    {
+      "bsn": "06B01",
+      "name": "Peter-Lenné-Schule (OSZ Natur und Umwelt)",
+      "address": "Hartmannsweilerweg 29"
+    },
+    {
+      "bsn": "06G01",
+      "name": "Nord-Grundschule",
+      "address": "Potsdamer Str. 7"
+    },
+    {
+      "bsn": "06G07",
+      "name": "Zinnowwald-Grundschule",
+      "address": "Wilskistr. 78"
+    },
+    {
+      "bsn": "06P02",
+      "name": "Johanna-Gerdes-Grundschule",
+      "address": "Salzachstr. 4"
+    },
+    {
+      "bsn": "06P07",
+      "name": "Parzival-Schule",
+      "address": "Quermatenweg 6"
+    },
+    {
+      "bsn": "06S01",
+      "name": "Pestalozzi-Schule",
+      "address": "Hartmannsweilerweg 47"
+    },
+    {
+      "bsn": "06Y01",
+      "name": "Schadow-Gymnasium",
+      "address": "Beuckestr. 27-29"
+    }
+  ],
+  "11220": [
+    {
+      "bsn": "06B03",
+      "name": "OSZ Bürowirtschaft",
+      "address": "7Ostpreußendamm 40"
+    }
+  ],
+  "12169": [
+    {
+      "bsn": "06B04",
+      "name": "Wilhelm-Ostwald-Schule (OSZ Gestaltung)",
+      "address": "Immenweg 6"
+    },
+    {
+      "bsn": "06G17",
+      "name": "Grundschule am Insulaner",
+      "address": "Hanstedter Weg 11-15"
+    },
+    {
+      "bsn": "06G34",
+      "name": "Grundschule in der Plantagenstraße",
+      "address": "Plantagenstr. 8-9"
+    },
+    {
+      "bsn": "06K10",
+      "name": "Helene-Lange-Schule (Integrierte Sekundarschule)",
+      "address": "Lauenburger Str. 110-114"
+    },
+    {
+      "bsn": "06P11",
+      "name": "Private Kant-Schule",
+      "address": "Körnerstr. 11"
+    },
+    {
+      "bsn": "06Y08",
+      "name": "Hermann-Ehlers-Gymnasium",
+      "address": "Elisenstr. 3-4"
+    },
+    {
+      "bsn": "06Y13",
+      "name": "Gymnasium Steglitz",
+      "address": "Heesestr. 15"
+    }
+  ],
+  "14165": [
+    {
+      "bsn": "06G02",
+      "name": "Süd-Grundschule",
+      "address": "Claszeile 56"
+    },
+    {
+      "bsn": "06G10",
+      "name": "Grundschule am Buschgraben",
+      "address": "Ludwigsfelder Str. 43-47"
+    },
+    {
+      "bsn": "06P05",
+      "name": "Emil-Molt-Schule",
+      "address": "Claszeile 60"
+    },
+    {
+      "bsn": "06P24",
+      "name": "Evangelische Grundschule Zehlendorf",
+      "address": "Ludwigsfelder Str. 30"
+    },
+    {
+      "bsn": "06Y02",
+      "name": "Droste-Hülshoff-Gymnasium",
+      "address": "Schönower Str. 8"
+    }
+  ],
+  "14129": [
+    {
+      "bsn": "06G03",
+      "name": "Johannes-Tews-Grundschule",
+      "address": "Wasgenstr. 50"
+    },
+    {
+      "bsn": "06P09",
+      "name": "Caroline-von-Heydebrand-Schule",
+      "address": "Klopstockstr. 36-42"
+    },
+    {
+      "bsn": "06S066",
+      "name": ". Schule",
+      "address": "Potsdamer Chaussee 90"
+    },
+    {
+      "bsn": "06Y05",
+      "name": "Werner-von-Siemens-Gymnasium",
+      "address": "Beskidenstr. 3"
+    }
+  ],
+  "14109": [
+    {
+      "bsn": "06G05",
+      "name": "Conrad-Schule (Grundschule)",
+      "address": "Schulstr. 4"
+    },
+    {
+      "bsn": "06G09",
+      "name": "Dreilinden-Grundschule",
+      "address": "Dreilindenstr. 65"
+    },
+    {
+      "bsn": "06P08",
+      "name": "Sancta-Maria-Schule der Hedwigschwestern",
+      "address": "Dreilindenstr. 24-26"
+    },
+    {
+      "bsn": "06P21",
+      "name": "Internationale Montessorischule Berlin (Grundschule)",
+      "address": "Zum Heckeshorn 38"
+    },
+    {
+      "bsn": "06Y04",
+      "name": "Dreilinden-Gymnasium",
+      "address": "Dreilindenstr. 49"
+    }
+  ],
+  "14167": [
+    {
+      "bsn": "06G08",
+      "name": "Schweizerhof-Grundschule",
+      "address": "Leo-Baeck-Str. 28-30"
+    },
+    {
+      "bsn": "06K01",
+      "name": "John-F.-Kennedy-Schule",
+      "address": "Teltower Damm 87-93"
+    },
+    {
+      "bsn": "06P18",
+      "name": "Bilinguale Schule Phorms Berlin Süd",
+      "address": "Harry-S.-Truman-Allee 3"
+    }
+  ],
+  "12157": [
+    {
+      "bsn": "06G14",
+      "name": "Sachsenwald-Grundschule",
+      "address": "Sachsenwaldstr. 20-21"
+    },
+    {
+      "bsn": "07K12",
+      "name": "Friedenauer Gemeinschaftsschule",
+      "address": "Rubensstr. 63"
+    },
+    {
+      "bsn": "07S01",
+      "name": "Prignitz-Schule",
+      "address": "Pöppelmannstr. 2"
+    }
+  ],
+  "12163": [
+    {
+      "bsn": "06G15",
+      "name": "Dunant-Grundschule",
+      "address": "Gritznerstr. 19-23"
+    },
+    {
+      "bsn": "06K03",
+      "name": "Kopernikus-Schule (Integrierte Sekundarschule)",
+      "address": "Lepsiusstr. 24-28"
+    },
+    {
+      "bsn": "06P25",
+      "name": "Lichtenberg - Kolleg e.V.",
+      "address": "Feuerbachstr. 68"
+    },
+    {
+      "bsn": "06Y07",
+      "name": "Paulsen-Gymnasium",
+      "address": "Gritznerstr. 57"
+    }
+  ],
+  "12165": [
+    {
+      "bsn": "06G16",
+      "name": "Rothenburg-Grundschule",
+      "address": "Rothenburgstr. 16-17"
+    },
+    {
+      "bsn": "06P10",
+      "name": "Private Kant-Schule (Grundschule)",
+      "address": "Grunewaldstr. 44"
+    },
+    {
+      "bsn": "06S05",
+      "name": "J.-A.-Zeune-Schule für Blinde und Berufsfachschule Dr. Silex",
+      "address": "Rothenburgstr. 14"
+    },
+    {
+      "bsn": "06Y09",
+      "name": "Fichtenberg-Oberschule",
+      "address": "Rothenburgstr. 18"
+    }
+  ],
+  "12205": [
+    {
+      "bsn": "06G18",
+      "name": "Athene-Grundschule",
+      "address": "Curtiusstr. 37"
+    },
+    {
+      "bsn": "06G25",
+      "name": "Clemens-Brentano-Grundschule",
+      "address": "Kommandantenstr. 83-84"
+    },
+    {
+      "bsn": "06G33",
+      "name": "Friedrich-Drake-Grundschule",
+      "address": "Drakestr. 80"
+    },
+    {
+      "bsn": "06Y11",
+      "name": "Goethe-Gymnasium Lichterfelde",
+      "address": "Drakestr. 72-74"
+    }
+  ],
+  "12247": [
+    {
+      "bsn": "06G20",
+      "name": "Alt-Lankwitzer Grundschule",
+      "address": "Schulstr. 17-21"
+    },
+    {
+      "bsn": "06S03",
+      "name": "Peter-Frankenfeld-Schule",
+      "address": "Wedellstr. 26"
+    }
+  ],
+  "12249": [
+    {
+      "bsn": "06G21",
+      "name": "Paul-Schneider-Grundschule",
+      "address": "Seydlitzstr. 30-34"
+    },
+    {
+      "bsn": "06G27",
+      "name": "Grundschule am Königsgraben",
+      "address": "Gallwitzallee 136-144"
+    },
+    {
+      "bsn": "06G28",
+      "name": "Ludwig-Bechstein-Grundschule",
+      "address": "Halbauer Weg 25"
+    },
+    {
+      "bsn": "06K04",
+      "name": "Bröndby-Schule (Integrierte Sekundarschule)",
+      "address": "Dessauerstr. 63"
+    },
+    {
+      "bsn": "06Y06",
+      "name": "Beethoven-Gymnasium",
+      "address": "Barbarastr. 9"
+    },
+    {
+      "bsn": "07P04",
+      "name": "Katholische Schule Sankt Alfons (Grundschule)",
+      "address": "Tennstedter Str. 1"
+    }
+  ],
+  "12203": [
+    {
+      "bsn": "06G23",
+      "name": "Kronach-Grundschule",
+      "address": "Moltkestr. 24-26"
+    },
+    {
+      "bsn": "06G26",
+      "name": "Käthe-Kruse-Grundschule",
+      "address": "Tietzenweg 108"
+    },
+    {
+      "bsn": "06G31",
+      "name": "Grundschule an der Bäke",
+      "address": "Haydnstr. 15"
+    },
+    {
+      "bsn": "06K08",
+      "name": "Max-von-Laue-Schule",
+      "address": "Dürerstr. 27"
+    },
+    {
+      "bsn": "06K11",
+      "name": "Anna-Essinger-Gemeinschaftsschule",
+      "address": "Tietzenweg 101"
+    },
+    {
+      "bsn": "06P13",
+      "name": "Gemeinschaftsschule nach der Pädagogik Berthold Ottos",
+      "address": "Holbeinstr. 21"
+    },
+    {
+      "bsn": "06P15",
+      "name": "Oberlin-Seminar",
+      "address": "Tietzenweg 130"
+    },
+    {
+      "bsn": "06Y10",
+      "name": "Lilienthal-Gymnasium",
+      "address": "Ringstr. 2-3"
+    }
+  ],
+  "12209": [
+    {
+      "bsn": "06G24",
+      "name": "Grundschule unter den Kastanien",
+      "address": "Kastanienstr. 6 -8"
+    },
+    {
+      "bsn": "06G29",
+      "name": "Grundschule am Karpfenteich",
+      "address": "Hildburghauser Str. 135"
+    }
+  ],
+  "12167": [
+    {
+      "bsn": "06G32",
+      "name": "Grundschule am Stadtpark Steglitz",
+      "address": "Karl-Stieler-Str. 10-11"
+    },
+    {
+      "bsn": "06P12",
+      "name": "Evangelische Schule Steglitz (Integrierte Sekundarschule)",
+      "address": "Beymestr. 6-7"
+    }
+  ],
+  "14169": [
+    {
+      "bsn": "06K02",
+      "name": "Wilma-Rudolph-Schule (Integrierte Sekundarschule)",
+      "address": "Am Hegewinkel 2A"
+    },
+    {
+      "bsn": "06P01",
+      "name": "Katholische Schule Sankt Ursula (Grundschule)",
+      "address": "Kleinaustr. 4"
+    },
+    {
+      "bsn": "06P20",
+      "name": "Freie Schule Anne-Sophie Berlin",
+      "address": "Clayallee 328-334"
+    }
+  ],
+  "10787": [
+    {
+      "bsn": "07A05",
+      "name": "Kolleg Schöneberg",
+      "address": "Nürnberger Str. 63"
+    }
+  ],
+  "10829": [
+    {
+      "bsn": "07A06",
+      "name": "VHS Tempelhof-Schöneberg",
+      "address": "Ella-Barowsky-Str. 62"
+    },
+    {
+      "bsn": "07G05",
+      "name": "Havelland-Grundschule",
+      "address": "Kolonnenstr. 30-30A"
+    },
+    {
+      "bsn": "07G404",
+      "name": "0. Schule (Grundschule)",
+      "address": "Ella-Barowsky-Str. 62-63"
+    },
+    {
+      "bsn": "07P10",
+      "name": "Campus Berufsbildung e.V.",
+      "address": "Geneststr. 5"
+    },
+    {
+      "bsn": "07P12",
+      "name": "SPI Fachschule für Sozialpädagogik",
+      "address": "Priesterweg 4"
+    },
+    {
+      "bsn": "07P18",
+      "name": "Johannes-Schule Berlin",
+      "address": "Monumentenstr. 13A"
+    },
+    {
+      "bsn": "07P20",
+      "name": "Rudolf Steiner Bildungszentrum gGmbH",
+      "address": "Monumentenstr. 13B"
+    },
+    {
+      "bsn": "07Y01",
+      "name": "Robert-Blum-Gymnasium",
+      "address": "Kolonnenstr. 21"
+    }
+  ],
+  "12101": [
+    {
+      "bsn": "07A44",
+      "name": "Willkommensschule THF",
+      "address": "Tempelhofer Damm 33/35"
+    },
+    {
+      "bsn": "07G21",
+      "name": "Grundschule auf dem Tempelhofer Feld",
+      "address": "Schulenburgring 7-11"
+    },
+    {
+      "bsn": "07G24",
+      "name": "Tempelherren-Grundschule",
+      "address": "Boelckestr. 60"
+    },
+    {
+      "bsn": "07K11",
+      "name": "Hugo-Gaudig-Schule",
+      "address": "Boelckestr. 58-60"
+    }
+  ],
+  "10783": [
+    {
+      "bsn": "07B02",
+      "name": "Marie-Elisabeth-Lüders-Oberschule",
+      "address": "Steinmetzstr. 79"
+    },
+    {
+      "bsn": "07G13",
+      "name": "Neumark-Grundschule",
+      "address": "Steinmetzstr. 46-50"
+    }
+  ],
+  "10781": [
+    {
+      "bsn": "07G01",
+      "name": "Spreewald-Grundschule",
+      "address": "Pallasstr. 15"
+    },
+    {
+      "bsn": "07G03",
+      "name": "Werbellinsee-Grundschule",
+      "address": "Luitpoldstr. 38"
+    },
+    {
+      "bsn": "07G18",
+      "name": "Grundschule am Barbarossaplatz",
+      "address": "Barbarossaplatz 5"
+    },
+    {
+      "bsn": "07K01",
+      "name": "Sophie-Scholl-Schule",
+      "address": "Elßholzstr. 34-37"
+    },
+    {
+      "bsn": "07P01",
+      "name": "Katholische Schule Sankt Franziskus (Integrierte Sekundarschule)",
+      "address": "Hohenstaufenstr. 1-2"
+    },
+    {
+      "bsn": "07P02",
+      "name": "Pestalozzi-Fröbel-Haus",
+      "address": "Karl-Schrader-Str. 7-8"
+    }
+  ],
+  "10777": [
+    {
+      "bsn": "07G02",
+      "name": "Finow-Grundschule",
+      "address": "Welserstr. 16-22"
+    },
+    {
+      "bsn": "07P03",
+      "name": "Lette-Verein Stiftung des öffentlichen Rechts",
+      "address": "Viktoria-Luise-Platz 6"
+    }
+  ],
+  "10825": [
+    {
+      "bsn": "07G06",
+      "name": "Sternberg-Grundschule",
+      "address": "Mettestr. 8"
+    },
+    {
+      "bsn": "07Y02",
+      "name": "Rückert-Gymnasium",
+      "address": "Mettestr. 8"
+    }
+  ],
+  "12105": [
+    {
+      "bsn": "07G07",
+      "name": "Lindenhof-Grundschule",
+      "address": "Reglinstr. 29"
+    },
+    {
+      "bsn": "07G22",
+      "name": "Paul-Klee-Grundschule",
+      "address": "Konradinstr. 15-17"
+    },
+    {
+      "bsn": "07G25",
+      "name": "Mascha-Kaléko-Grundschule",
+      "address": "Königstr. 32"
+    },
+    {
+      "bsn": "07K07",
+      "name": "Johanna-Eck-Schule (Integrierte Sekundarschule)",
+      "address": "Ringstr. 103-106"
+    },
+    {
+      "bsn": "07P05",
+      "name": "Freie Schule in Berlin (Grundschule)",
+      "address": "Viktoriastr. 13"
+    },
+    {
+      "bsn": "07P13",
+      "name": "Deutsch Skandinavische Gemeinschaftsschule",
+      "address": "Machonstr. 54"
+    },
+    {
+      "bsn": "07Y05",
+      "name": "Luise-Henriette-Gymnasium",
+      "address": "Kurfürstenstr. 53-54"
+    },
+    {
+      "bsn": "07Y07",
+      "name": "Eckener-Gymnasium",
+      "address": "Kaiserstr. 17-21"
+    }
+  ],
+  "10827": [
+    {
+      "bsn": "07G10",
+      "name": "Teltow-Grundschule",
+      "address": "Feurigstr. 57"
+    },
+    {
+      "bsn": "07P19",
+      "name": "Freie Schule Schöneberg (Gemeinschaftsschule)",
+      "address": "Hauptstr. 27"
+    }
+  ],
+  "10779": [
+    {
+      "bsn": "07G12",
+      "name": "Scharmützelsee-Grundschule",
+      "address": "Hohenstaufenstr. 49"
+    },
+    {
+      "bsn": "07G14",
+      "name": "Löcknitz-Grundschule",
+      "address": "Berchtesgadener Str. 10-11"
+    },
+    {
+      "bsn": "07K06",
+      "name": "Georg-von-Giesche-Schule",
+      "address": "Hohenstaufenstr. 47-48"
+    }
+  ],
+  "12161": [
+    {
+      "bsn": "07G15",
+      "name": "Fläming-Grundschule",
+      "address": "Illstr. 4-6"
+    },
+    {
+      "bsn": "07G17",
+      "name": "Stechlinsee-Grundschule",
+      "address": "Rheingaustr. 7"
+    },
+    {
+      "bsn": "07Y03",
+      "name": "Rheingau-Gymnasium",
+      "address": "Schwalbacher Str. 3-4"
+    },
+    {
+      "bsn": "07Y04",
+      "name": "Paul-Natorp-Gymnasium",
+      "address": "Goßlerstr. 13-15"
+    }
+  ],
+  "12099": [
+    {
+      "bsn": "07G19",
+      "name": "Paul-Simmel-Grundschule",
+      "address": "Felixstr. 26-58"
+    },
+    {
+      "bsn": "07P22",
+      "name": "WBS Training Schulen gGmbH",
+      "address": "Lorenzweg 5"
+    },
+    {
+      "bsn": "07P23",
+      "name": "Kenntnisreich gGmbH",
+      "address": "Colditzstraße 34-36"
+    },
+    {
+      "bsn": "07S04",
+      "name": "Marianne-Cohn-Schule",
+      "address": "Holzmannstr. 7"
+    }
+  ],
+  "12103": [
+    {
+      "bsn": "07G20",
+      "name": "Maria-Montessori-Grundschule",
+      "address": "Friedrich-Wilhelm-Str. 72-74"
+    },
+    {
+      "bsn": "07K13",
+      "name": "Schule am Berlinickeplatz (Integrierte Sekundarschule)",
+      "address": "Alt-Tempelhof 53-57"
+    },
+    {
+      "bsn": "07Y06",
+      "name": "Askanisches Gymnasium",
+      "address": "Kaiserin-Augusta-Str. 19/20"
+    }
+  ],
+  "12109": [
+    {
+      "bsn": "07G23",
+      "name": "Schätzelberg-Grundschule",
+      "address": "Wolfsburger Weg 13-19"
+    },
+    {
+      "bsn": "07G31",
+      "name": "Carl-Sonnenschein-Grundschule",
+      "address": "Am Hellespont 4-6"
+    },
+    {
+      "bsn": "07P17",
+      "name": "Humanistische Fachschule für Sozialpädagogik",
+      "address": "Ullsteinstr. 130, Turm 2"
+    }
+  ],
+  "12309": [
+    {
+      "bsn": "07G26",
+      "name": "Grundschule im Taunusviertel",
+      "address": "Wiesbadener Str. 20"
+    },
+    {
+      "bsn": "07G35",
+      "name": "Nahariya-Grundschule",
+      "address": "Nahariyastraße 13-17"
+    }
+  ],
+  "12107": [
+    {
+      "bsn": "07G27",
+      "name": "Rudolf-Hildebrand-Grundschule",
+      "address": "Friedenstr. 23-25"
+    },
+    {
+      "bsn": "07G37",
+      "name": "Ikarus-Grundschule",
+      "address": "Körtingstr. 45"
+    }
+  ],
+  "12277": [
+    {
+      "bsn": "07G28",
+      "name": "Kiepert-Grundschule",
+      "address": "Prechtlstr. 21-23"
+    },
+    {
+      "bsn": "07K05",
+      "name": "Solling-Schule",
+      "address": "Alt-Marienfelde 52"
+    },
+    {
+      "bsn": "07P06",
+      "name": "Katholische Schule Sankt Hildegard",
+      "address": "Malteserstr. 171A"
+    },
+    {
+      "bsn": "07P24",
+      "name": "Modellschule Marille-Grundschule",
+      "address": "Nahmitzer Damm 12"
+    },
+    {
+      "bsn": "07S03",
+      "name": "Steinwald-Schule",
+      "address": "Hanielweg 7-9"
+    }
+  ],
+  "12307": [
+    {
+      "bsn": "07G29",
+      "name": "Käthe-Kollwitz-Grundschule",
+      "address": "Mellener Str. 38-42"
+    },
+    {
+      "bsn": "07Y08",
+      "name": "Ulrich-von-Hutten-Gymnasium",
+      "address": "Rehagener Str. 35-37"
+    }
+  ],
+  "12305": [
+    {
+      "bsn": "07G30",
+      "name": "Annedore-Leber-Grundschule",
+      "address": "Halker Zeile 137-149"
+    },
+    {
+      "bsn": "07G32",
+      "name": "Bruno-H.-Bürgel-Grundschule",
+      "address": "Rackebüller Weg 70"
+    },
+    {
+      "bsn": "07G36",
+      "name": "Grundschule am Dielingsgrund",
+      "address": "Dielingsgrund 35"
+    },
+    {
+      "bsn": "07K02",
+      "name": "Carl-Zeiss-Schule",
+      "address": "Barnetstr. 12-14"
+    },
+    {
+      "bsn": "07K04",
+      "name": "Theodor-Haubach-Schule",
+      "address": "Grimmstr. 9-11"
+    },
+    {
+      "bsn": "07Y09",
+      "name": "Georg-Büchner-Gymnasium",
+      "address": "Lichtenrader Damm 224"
+    }
+  ],
+  "12279": [
+    {
+      "bsn": "07G34",
+      "name": "Marienfelder Schule (Grundschule)",
+      "address": "Erbendorfer Weg 13"
+    },
+    {
+      "bsn": "07K03",
+      "name": "Gustav-Heinemann-Oberschule",
+      "address": "Tirschenreuther Ring 48"
+    }
+  ],
+  "10823": [
+    {
+      "bsn": "07K09",
+      "name": "Gustav-Langenscheidt-Schule",
+      "address": "Belziger Str. 43-51"
+    }
+  ],
+  "12159": [
+    {
+      "bsn": "07K10",
+      "name": "Friedrich-Bergius-Schule",
+      "address": "Perelsplatz 6-9"
+    },
+    {
+      "bsn": "07P21",
+      "name": "BBA-Akademie für Immobilienwirtschaft e.V.",
+      "address": "Hauptstr. 78-79"
+    }
+  ],
+  "12359": [
+    {
+      "bsn": "08B01",
+      "name": "Annedore-Leber-Oberschule",
+      "address": "Paster-Behrens-Str. 88"
+    },
+    {
+      "bsn": "08B04",
+      "name": "OSZ Informations- und Medizintechnik",
+      "address": "Haarlemer Str. 23-27"
+    },
+    {
+      "bsn": "08G13",
+      "name": "Bruno-Taut-Schule (Grundschule)",
+      "address": "Bruno-Taut-Ring 9C"
+    },
+    {
+      "bsn": "08G27",
+      "name": "Oskar-Heinroth-Schule (Grundschule)",
+      "address": "Rohrdommelweg 1"
+    },
+    {
+      "bsn": "08K03",
+      "name": "Otto-Hahn-Schule",
+      "address": "Buschkrugallee 63"
+    },
+    {
+      "bsn": "08K06",
+      "name": "Fritz-Karsen-Schule (Gemeinschaftsschule)",
+      "address": "Onkel-Bräsig-Str. 76-78"
+    },
+    {
+      "bsn": "08S08",
+      "name": "Schilling-Schule",
+      "address": "Paster-Behrens-Str. 81"
+    },
+    {
+      "bsn": "08Y03",
+      "name": "Albert-Einstein-Gymnasium",
+      "address": "Parchimer Allee 109"
+    }
+  ],
+  "12351": [
+    {
+      "bsn": "08B02",
+      "name": "Lise-Meitner-Schule (OSZ Chemie, Physik und Biologie)",
+      "address": "Lipschitzallee 25"
+    },
+    {
+      "bsn": "08G22",
+      "name": "Schule am Regenweiher (Grundschule)",
+      "address": "Johannisthaler Chaussee 328"
+    },
+    {
+      "bsn": "08G29",
+      "name": "Wetzlar-Schule (Grundschule)",
+      "address": "Tischlerzeile 34"
+    },
+    {
+      "bsn": "08K01",
+      "name": "Walter-Gropius-Schule (Gemeinschaftsschule)",
+      "address": "Fritz-Erler-Allee 86"
+    }
+  ],
+  "12043": [
+    {
+      "bsn": "08G01",
+      "name": "Rixdorfer Schule (Grundschule)",
+      "address": "Donaustr. 120"
+    },
+    {
+      "bsn": "08G02",
+      "name": "Theodor-Storm-Schule (Grundschule)",
+      "address": "Hobrechtstr. 76"
+    },
+    {
+      "bsn": "08P04",
+      "name": "Katholische Schule Sankt Marien",
+      "address": "Donaustr. 58"
+    },
+    {
+      "bsn": "08Y02",
+      "name": "Albert-Schweitzer-Gymnasium",
+      "address": "Karl-Marx-Str. 14"
+    }
+  ],
+  "12059": [
+    {
+      "bsn": "08G03",
+      "name": "Hans-Fallada-Schule (Grundschule)",
+      "address": "Harzer Str. 73"
+    },
+    {
+      "bsn": "08G18",
+      "name": "Eduard-Mörike-Schule (Grundschule)",
+      "address": "Stuttgarter Str. 35-39"
+    },
+    {
+      "bsn": "08S01",
+      "name": "Adolf-Reichwein-Schule",
+      "address": "Sonnenallee 188"
+    },
+    {
+      "bsn": "08S06",
+      "name": "Hans-Fallada-Schule",
+      "address": "Harzer Str. 73-74"
+    }
+  ],
+  "12045": [
+    {
+      "bsn": "08G05",
+      "name": "Elbe-Schule (Grundschule)",
+      "address": "Elbestr. 11"
+    },
+    {
+      "bsn": "08K08",
+      "name": "Gemeinschaftsschule auf dem Campus Rütli",
+      "address": "Rütlistr. 41"
+    },
+    {
+      "bsn": "08Y04",
+      "name": "Ernst-Abbe-Gymnasium",
+      "address": "Sonnenallee 79"
+    }
+  ],
+  "12049": [
+    {
+      "bsn": "08G06",
+      "name": "Karl-Weise-Schule (Grundschule)",
+      "address": "Weisestr. 20"
+    },
+    {
+      "bsn": "08G08",
+      "name": "Karlsgarten-Schule (Grundschule)",
+      "address": "Karlsgartenstr. 7"
+    },
+    {
+      "bsn": "08P01",
+      "name": "Johann-Georg-Elser-Schule (Grundschule)",
+      "address": "Mahlower Str. 23-24"
+    }
+  ],
+  "12053": [
+    {
+      "bsn": "08G07",
+      "name": "Hermann-Boddin-Schule (Grundschule)",
+      "address": "Boddinstr. 55"
+    },
+    {
+      "bsn": "08G09",
+      "name": "Regenbogen-Schule (Grundschule)",
+      "address": "Morusstr. 32"
+    },
+    {
+      "bsn": "08G12",
+      "name": "Jenaplanschule Neukölln (Grundschule)",
+      "address": "Jonasstr. 15"
+    },
+    {
+      "bsn": "08G14",
+      "name": "Konrad-Agahd-Schule (Grundschule)",
+      "address": "Thomasstr. 39"
+    },
+    {
+      "bsn": "08K10",
+      "name": "Zuckmayer-Schule",
+      "address": "Kopfstr. 55"
+    },
+    {
+      "bsn": "08P03",
+      "name": "Evangelische Schule Neukölln (Integrierte Sekundarschule)",
+      "address": "Mainzer Str. 47"
+    }
+  ],
+  "12355": [
+    {
+      "bsn": "08G11",
+      "name": "Schliemann-Grundschule",
+      "address": "Groß-Ziethener Chaussee 81"
+    },
+    {
+      "bsn": "08G25",
+      "name": "Michael-Ende-Schule (Grundschule)",
+      "address": "Neuhofer Str. 41"
+    },
+    {
+      "bsn": "08G28",
+      "name": "Matthias-Claudius-Schule (Grundschule)",
+      "address": "Köpenicker Str. 148"
+    },
+    {
+      "bsn": "08G37",
+      "name": "Rose-Oehmichen-Schule (Grundschule)",
+      "address": "Lieselotte-Berger-Str. 65"
+    },
+    {
+      "bsn": "08K05",
+      "name": "Clay-Schule",
+      "address": "Neudecker Weg 22"
+    },
+    {
+      "bsn": "08K12",
+      "name": "Kepler-Schule",
+      "address": "Bildhauerweg 9"
+    },
+    {
+      "bsn": "08Y06",
+      "name": "Hannah-Arendt-Gymnasium",
+      "address": "Elfriede-Kuhr-Str. 17"
+    }
+  ],
+  "12051": [
+    {
+      "bsn": "08G15",
+      "name": "Hermann-Sander-Schule (Grundschule)",
+      "address": "Mariendorfer Weg 69"
+    },
+    {
+      "bsn": "08G21",
+      "name": "Silberstein-Schule (Grundschule)",
+      "address": "Silbersteinstr. 42"
+    },
+    {
+      "bsn": "08P09",
+      "name": "MeineSchuleBerlin (Gemeinschaftsschule)",
+      "address": "Delbrückstr. 18"
+    },
+    {
+      "bsn": "08Y01",
+      "name": "Albrecht-Dürer-Gymnasium",
+      "address": "Emser Str. 133-137"
+    }
+  ],
+  "12353": [
+    {
+      "bsn": "08G16",
+      "name": "Hugo-Heimann-Schule (Grundschule)",
+      "address": "Hugo-Heimann-Str. 20"
+    },
+    {
+      "bsn": "08G31",
+      "name": "Janusz-Korczak-Schule (Grundschule)",
+      "address": "Wildhüterweg 5"
+    },
+    {
+      "bsn": "08G34",
+      "name": "Lisa-Tetzner-Schule (Grundschule)",
+      "address": "Hasenhegerweg 12"
+    },
+    {
+      "bsn": "08K02",
+      "name": "Hermann-von-Helmholtz-Schule",
+      "address": "Wutzkyallee 68-78"
+    },
+    {
+      "bsn": "08K04",
+      "name": "Heinrich-Mann-Schule",
+      "address": "Gerlinger Str. 22"
+    },
+    {
+      "bsn": "08P02",
+      "name": "Katholische Schule Sankt Marien (Grundschule)",
+      "address": "Hugo-Heimann-Str. 2"
+    },
+    {
+      "bsn": "08S04",
+      "name": "Schule am Zwickauer Damm",
+      "address": "Zwickauer Damm 17-22"
+    },
+    {
+      "bsn": "08S05",
+      "name": "Schule am Hasenhegerweg",
+      "address": "Hasenhegerweg 12"
+    }
+  ],
+  "12055": [
+    {
+      "bsn": "08G17",
+      "name": "Richard-Schule (Grundschule)",
+      "address": "Richardplatz 14"
+    },
+    {
+      "bsn": "08G36",
+      "name": "Löwenzahn-Schule (Grundschule)",
+      "address": "Drorystr. 3"
+    },
+    {
+      "bsn": "08P13",
+      "name": "b-trend.academy gGmbH",
+      "address": "Lahnstr. 19"
+    }
+  ],
+  "12347": [
+    {
+      "bsn": "08G19",
+      "name": "Herman-Nohl-Schule (Grundschule)",
+      "address": "Hannemannstr. 68"
+    },
+    {
+      "bsn": "08G23",
+      "name": "Zürich-Schule (Grundschule)",
+      "address": "Wederstr. 49"
+    },
+    {
+      "bsn": "08G24",
+      "name": "Schule am Teltowkanal (Grundschule)",
+      "address": "Rungiusstr. 46"
+    },
+    {
+      "bsn": "08G383",
+      "name": "8. Schule (Grundschule)",
+      "address": "Koppelweg 50-54"
+    },
+    {
+      "bsn": "08K11",
+      "name": "Alfred-Nobel-Schule",
+      "address": "Britzer Damm 164"
+    }
+  ],
+  "12057": [
+    {
+      "bsn": "08G20",
+      "name": "Sonnen-Schule (Grundschule)",
+      "address": "Dammweg 228"
+    },
+    {
+      "bsn": "08G35",
+      "name": "Schule in der Köllnischen Heide (Grundschule)",
+      "address": "Hänselstr. 6"
+    }
+  ],
+  "12349": [
+    {
+      "bsn": "08G26",
+      "name": "Christoph-Ruden-Schule (Grundschule)",
+      "address": "An den Achterhöfen 13-17"
+    },
+    {
+      "bsn": "08G30",
+      "name": "Schule am Sandsteinweg (Grundschule)",
+      "address": "Hornblendeweg 2"
+    },
+    {
+      "bsn": "08P17",
+      "name": "DAA - Deutsche Angestellten-Akademie GmbH",
+      "address": "Buckower Damm 114"
+    },
+    {
+      "bsn": "08S07",
+      "name": "Schule am Bienwaldring",
+      "address": "Breitunger Weg 1"
+    },
+    {
+      "bsn": "08S09",
+      "name": "Schule an der Windmühle",
+      "address": "Buckower Damm 176"
+    },
+    {
+      "bsn": "08Y05",
+      "name": "Leonardo-da-Vinci-Gymnasium",
+      "address": "Christoph-Ruden-Str. 3"
+    }
+  ],
+  "12357": [
+    {
+      "bsn": "08G33",
+      "name": "Schule am Fliederbusch (Grundschule)",
+      "address": "Kornradenstr. 2"
+    },
+    {
+      "bsn": "08K13",
+      "name": "Gemeinschaftsschule Campus Efeuweg",
+      "address": "Efeuweg 34"
+    }
+  ],
+  "12435": [
+    {
+      "bsn": "08K09",
+      "name": "Röntgen-Schule",
+      "address": "Wildenbruchstr. 53"
+    },
+    {
+      "bsn": "09G01",
+      "name": "Bouché-Schule (Grundschule)",
+      "address": "Bouchestr. 5"
+    },
+    {
+      "bsn": "09G30",
+      "name": "Kiefholz-Grundschule",
+      "address": "Kiefholzstr. 45"
+    },
+    {
+      "bsn": "09K07",
+      "name": "Sophie-Brahe-Gemeinschaftsschule",
+      "address": "Am Plänterwald 17-23"
+    },
+    {
+      "bsn": "09P21",
+      "name": "NEWSchool (Integrierte Sekundarschule) (KEIN Schulbetrieb bis 31.07.2026)",
+      "address": "Lohmühlenstr. 65"
+    },
+    {
+      "bsn": "09P23",
+      "name": "Technische Jugendfreizeit- und Bildungsgesellschaft (tjfbg) gGmbH",
+      "address": "Am Treptower Park 28-30"
+    }
+  ],
+  "12437": [
+    {
+      "bsn": "09A05",
+      "name": "Treptow-Kolleg (Aufhebung zum 31.07.2026)",
+      "address": "Kiefholzstr. 274"
+    },
+    {
+      "bsn": "09G03",
+      "name": "Schule am Heidekampgraben (Grundschule)",
+      "address": "Hänselstr. 14"
+    },
+    {
+      "bsn": "09G04",
+      "name": "Sonnenblumen-Schule (Grundschule)",
+      "address": "Radenzer Str. 16"
+    },
+    {
+      "bsn": "09S06",
+      "name": "Schule am Wildgarten",
+      "address": "Köpenicker Landstr. 185A"
+    },
+    {
+      "bsn": "09Y121",
+      "name": "2. Schule (Gymnasium)",
+      "address": "Kiefholzstr. 274"
+    }
+  ],
+  "12459": [
+    {
+      "bsn": "09A06",
+      "name": "VHS Treptow-Köpenick",
+      "address": "Zeppelinstr. 76-80"
+    },
+    {
+      "bsn": "09B03",
+      "name": "Hermann-Scheer-Schule (OSZ Wirtschaft)",
+      "address": "Helmholtzstr. 37"
+    },
+    {
+      "bsn": "09G21",
+      "name": "Edison-Grundschule",
+      "address": "Wattstr. 69-70"
+    },
+    {
+      "bsn": "09G22",
+      "name": "Schule an der Wuhlheide (Grundschule)",
+      "address": "Kottmeierstr. 2"
+    },
+    {
+      "bsn": "09G31",
+      "name": "Wildbienen-Grundschule",
+      "address": "Keplerstr. 10"
+    },
+    {
+      "bsn": "09K04",
+      "name": "Isaac-Newton-Schule (Integrierte Sekundarschule)",
+      "address": "Zeppelinstr. 80-88"
+    },
+    {
+      "bsn": "09P20",
+      "name": "Elisabeth-Schulen",
+      "address": "Edisonstr. 63"
+    },
+    {
+      "bsn": "09S03",
+      "name": "Albatros-Schule",
+      "address": "Treskowallee 222"
+    }
+  ],
+  "12559": [
+    {
+      "bsn": "09A07",
+      "name": "Flatow-Oberschule",
+      "address": "Birkenstr. 11"
+    },
+    {
+      "bsn": "09G19",
+      "name": "Amtsfeld-Schule (Grundschule)",
+      "address": "Pablo-Neruda-Str. 8"
+    },
+    {
+      "bsn": "09G20",
+      "name": "Müggelheimer Schule (Grundschule)",
+      "address": "Odernheimer Str. 28"
+    },
+    {
+      "bsn": "09G25",
+      "name": "Müggelschlößchen-Schule (Grundschule)",
+      "address": "Alfred-Randt-Str. 54"
+    },
+    {
+      "bsn": "09Y11",
+      "name": "Emmy-Noether-Gymnasium",
+      "address": "Pablo-Neruda-Str. 6-7"
+    }
+  ],
+  "12487": [
+    {
+      "bsn": "09G05",
+      "name": "Schule am Ginkobaum (Grundschule)",
+      "address": "Springbornstr. 250"
+    },
+    {
+      "bsn": "09G06",
+      "name": "Melli-Beese-Schule (Grundschule)",
+      "address": "Engelhardstr. 18"
+    },
+    {
+      "bsn": "09K06",
+      "name": "Hans-Grade-Schule (Integrierte Sekundarschule)",
+      "address": "Heubergerweg 37"
+    },
+    {
+      "bsn": "09K101",
+      "name": "0. Schule (Gemeinschaftsschule)",
+      "address": "Eisenhutweg 129"
+    },
+    {
+      "bsn": "09Y10",
+      "name": "Gebrüder-Montgolfier-Gymnasium",
+      "address": "Ellernweg 20-22"
+    }
+  ],
+  "12439": [
+    {
+      "bsn": "09G07",
+      "name": "Schule an der alten Feuerwache (Grundschule)",
+      "address": "Schnellerstr. 31"
+    },
+    {
+      "bsn": "09P01",
+      "name": "Freie Waldorfschule Berlin-Südost",
+      "address": "Bruno-Bürgel-Weg 9"
+    },
+    {
+      "bsn": "09P12",
+      "name": "Mosaik-Grundschule",
+      "address": "Adlergestell 133"
+    },
+    {
+      "bsn": "09P16",
+      "name": "KreativitätsGrundschule Berlin Treptow",
+      "address": "Hartriegelstr. 77"
+    },
+    {
+      "bsn": "09P18",
+      "name": "Freie Interkulturelle Waldorfschule Berlin",
+      "address": "Schnellerstr. 1-5"
+    },
+    {
+      "bsn": "09Y03",
+      "name": "Archenhold-Gymnasium",
+      "address": "Rudower Str. 7"
+    }
+  ],
+  "12489": [
+    {
+      "bsn": "09G09",
+      "name": "Heide-Schule (Grundschule)",
+      "address": "Florian-Geyer-Str. 87"
+    },
+    {
+      "bsn": "09K02",
+      "name": "Anna-Seghers-Schule (Gemeinschaftsschule)",
+      "address": "Radickestr. 43"
+    },
+    {
+      "bsn": "09P11",
+      "name": "Berufsbildungszentrum Chemie",
+      "address": "Adlergestell 333"
+    }
+  ],
+  "12524": [
+    {
+      "bsn": "09G10",
+      "name": "Schule am Berg (Grundschule)",
+      "address": "Köpenicker Str. 31"
+    },
+    {
+      "bsn": "09G11",
+      "name": "Schule am Pegasuseck (Grundschule)",
+      "address": "Pegasuseck 5"
+    },
+    {
+      "bsn": "09G13",
+      "name": "Schule am Altglienicker Wasserturm (Grundschule)",
+      "address": "Sachsenstr. 22"
+    },
+    {
+      "bsn": "09G15",
+      "name": "Schule am Mohnweg (Grundschule)",
+      "address": "Mohnweg 20"
+    },
+    {
+      "bsn": "09Y04",
+      "name": "Anne-Frank-Gymnasium",
+      "address": "Uranusstr. 15-17"
+    }
+  ],
+  "12526": [
+    {
+      "bsn": "09G14",
+      "name": "Schule am Buntzelberg (Grundschule)",
+      "address": "Schulzendorfer Str. 112"
+    },
+    {
+      "bsn": "09K03",
+      "name": "Fritz-Kühn-Schule (Integrierte Sekundarschule)",
+      "address": "Dahmestr. 45"
+    }
+  ],
+  "12557": [
+    {
+      "bsn": "09G16",
+      "name": "Wendenschloß-Schule (Grundschule)",
+      "address": "Köpenzeile 123"
+    },
+    {
+      "bsn": "09G18",
+      "name": "Schule in der Köllnischen Vorstadt (Grundschule)",
+      "address": "Rudower Str. 201"
+    },
+    {
+      "bsn": "09K08",
+      "name": "Schule an der Dahme (Integrierte Sekundarschule)",
+      "address": "Glienicker Str. 24-30"
+    },
+    {
+      "bsn": "09P06",
+      "name": "Montessori Campus Berlin Köpenick (Gemeinschaftsschule)",
+      "address": "Köpenzeile 125"
+    },
+    {
+      "bsn": "09P07",
+      "name": "Evangelische Schule Köpenick (Gymnasium)",
+      "address": "Grüne Trift 169"
+    }
+  ],
+  "12555": [
+    {
+      "bsn": "09G17",
+      "name": "Uhlenhorst-Grundschule",
+      "address": "Wongrowitzer Steig 37"
+    },
+    {
+      "bsn": "09G23",
+      "name": "Hauptmann-von-Köpenick-Schule (Grundschule)",
+      "address": "Borgmannstr. 2-3"
+    },
+    {
+      "bsn": "09G333",
+      "name": "3. Schule (Grundschule) Neugründung zum 01.08.2026",
+      "address": "Hirtestr. 10"
+    },
+    {
+      "bsn": "09K01",
+      "name": "Merian-Schule (Integrierte Sekundarschule)",
+      "address": "Hoernlestr. 80"
+    },
+    {
+      "bsn": "09P09",
+      "name": "BEST-Sabel-Oberschule",
+      "address": "Lindenstr. 1"
+    },
+    {
+      "bsn": "09P10",
+      "name": "Bewegte Schule Köpenick (Grundschule)",
+      "address": "Lindenstr. 26"
+    },
+    {
+      "bsn": "09P15",
+      "name": "W-I-R-Grundschule Pfefferwerk",
+      "address": "Friedrichshagener Straße 8P"
+    },
+    {
+      "bsn": "09P22",
+      "name": "BEST-Sabel Berufsakademie",
+      "address": "Lindenstr. 42"
+    },
+    {
+      "bsn": "09Y05",
+      "name": "Alexander-von-Humboldt-Gymnasium",
+      "address": "Oberspreestr. 173"
+    }
+  ],
+  "12587": [
+    {
+      "bsn": "09G24",
+      "name": "Müggelsee-Schule (Grundschule)",
+      "address": "Aßmannstr. 63"
+    },
+    {
+      "bsn": "09G27",
+      "name": "Friedrichshagener Schule (Grundschule)",
+      "address": "Peter-Hille-Str. 7"
+    },
+    {
+      "bsn": "09G32",
+      "name": "Hirschgarten-Grundschule",
+      "address": "Peter-Hille-Str. 18"
+    },
+    {
+      "bsn": "09K05",
+      "name": "Wilhelm-Bölsche-Schule (Integrierte Sekundarschule)",
+      "address": "Aßmannstr. 11"
+    },
+    {
+      "bsn": "09P13",
+      "name": "Evangelische Grundschule Friedrichshagen",
+      "address": "Peter-Hille-Str. 36"
+    },
+    {
+      "bsn": "09S04",
+      "name": "Ahorn-Schule",
+      "address": "Peter-Hille-Str. 118"
+    },
+    {
+      "bsn": "09Y06",
+      "name": "Gerhart-Hauptmann-Gymnasium",
+      "address": "Bruno-Wille-Str. 37-39"
+    }
+  ],
+  "12589": [
+    {
+      "bsn": "09G26",
+      "name": "Schule an den Püttbergen (Grundschule)",
+      "address": "Fürstenwalder Allee 182"
+    }
+  ],
+  "12527": [
+    {
+      "bsn": "09G29",
+      "name": "Schmöckwitzer Insel-Schule (Grundschule)",
+      "address": "Adlergestell 776"
+    },
+    {
+      "bsn": "09K09",
+      "name": "Grünauer Gemeinschaftsschule",
+      "address": "Walchenseestr. 40"
+    }
+  ],
+  "12681": [
+    {
+      "bsn": "10A04",
+      "name": "Victor-Klemperer-Kolleg",
+      "address": "Martha-Arendsee-Str. 15"
+    },
+    {
+      "bsn": "10B01",
+      "name": "Oscar-Tietz-Schule (OSZ Handel II)",
+      "address": "Marzahner Chaussee 231"
+    },
+    {
+      "bsn": "10G14",
+      "name": "Grundschule unter dem Regenbogen",
+      "address": "Murtzaner Ring 35-37"
+    },
+    {
+      "bsn": "10G393",
+      "name": "9. Schule (Grundschule)",
+      "address": "Marzahner Chaussee 165"
+    },
+    {
+      "bsn": "10P03",
+      "name": "Gesellschaft für Pflege- und Sozialberufe gGmbH",
+      "address": "Bitterfelder Str. 13"
+    },
+    {
+      "bsn": "10P19",
+      "name": "DRK - Schule für soziale Berufe Berlin",
+      "address": "Meeraner Str. 5"
+    },
+    {
+      "bsn": "10P20",
+      "name": "Chance Bildung, Jugend und Sport BJS gGmbH",
+      "address": "Allee der Kosmonauten 35A"
+    },
+    {
+      "bsn": "10P21",
+      "name": "Semper Schulen Berlin gGmbH",
+      "address": "Leunaer Str. 7"
+    },
+    {
+      "bsn": "10P22",
+      "name": "MANEGE gGmbH",
+      "address": "Otto-Rosenberg-Str. 1/4"
+    }
+  ],
+  "12627": [
+    {
+      "bsn": "10B02",
+      "name": "Rahel-Hirsch-Schule (OSZ Gesundheit/Medizin)",
+      "address": "Peter-Weiss-Gasse 8"
+    },
+    {
+      "bsn": "10G18",
+      "name": "Pusteblume-Grundschule",
+      "address": "Kastanienallee 118"
+    },
+    {
+      "bsn": "10G19",
+      "name": "Bücherwurm-Schule am Weiher (Grundschule)",
+      "address": "Eilenburger Str. 1"
+    },
+    {
+      "bsn": "10G22",
+      "name": "Kolibri-Grundschule",
+      "address": "Schönewalder Str. 9"
+    },
+    {
+      "bsn": "10G25",
+      "name": "Grundschule am Schleipfuhl",
+      "address": "Nossener Str. 85"
+    },
+    {
+      "bsn": "10G36",
+      "name": "Glückskompass-Grundschule",
+      "address": "Quedlinburger Str. 56"
+    },
+    {
+      "bsn": "10K09",
+      "name": "Konrad-Wachsmann-Schule",
+      "address": "Geithainer Str. 12"
+    },
+    {
+      "bsn": "10K10",
+      "name": "Wolfgang-Amadeus-Mozart-Schule (Gemeinschaftsschule)",
+      "address": "Cottbusser Str. 23"
+    },
+    {
+      "bsn": "10P09",
+      "name": "Sabine-Ball-Grundschule",
+      "address": "Lichtenhainer Str. 2"
+    },
+    {
+      "bsn": "10S07",
+      "name": "Schule am Rosenhain",
+      "address": "Klingenthaler Str. 32"
+    },
+    {
+      "bsn": "10S08",
+      "name": "Schule am Mummelsoll",
+      "address": "Eilenburger Str. 4"
+    },
+    {
+      "bsn": "10Y11",
+      "name": "Melanchthon-Gymnasium",
+      "address": "Adele-Sandrock-Str. 73-75"
+    }
+  ],
+  "12689": [
+    {
+      "bsn": "10G01",
+      "name": "Paavo-Nurmi-Grundschule",
+      "address": "Schorfheidestr. 42"
+    },
+    {
+      "bsn": "10G03",
+      "name": "Selma-Lagerlöf-Grundschule",
+      "address": "Wörlitzer Str. 31"
+    },
+    {
+      "bsn": "10G04",
+      "name": "Falken-Grundschule",
+      "address": "Geraer Ring 2"
+    },
+    {
+      "bsn": "10G05",
+      "name": "Ebereschen-Grundschule",
+      "address": "Borkheider Str. 28"
+    },
+    {
+      "bsn": "10G34",
+      "name": "Schule am grünen Stadtrand (Grundschule)",
+      "address": "Geraer Ring 54"
+    },
+    {
+      "bsn": "10K03",
+      "name": "Kerschensteiner-Schule",
+      "address": "Golliner Str. 2"
+    },
+    {
+      "bsn": "10K08",
+      "name": "Johann-Julius-Hecker-Schule",
+      "address": "Hohenwalder Str. 2"
+    },
+    {
+      "bsn": "10K11",
+      "name": "Marcana-Schule (Gemeinschaftsschule)",
+      "address": "Flämingstr. 16-18"
+    }
+  ],
+  "12687": [
+    {
+      "bsn": "10G07",
+      "name": "Karl-Friedrich-Friesen-Grundschule",
+      "address": "Max-Herrmann-Str. 5"
+    },
+    {
+      "bsn": "10K12",
+      "name": "Gretel-Bergmann-Gemeinschaftsschule",
+      "address": "Liebensteiner Str. 24"
+    },
+    {
+      "bsn": "10P24",
+      "name": "Freie Grundschule Marzahn",
+      "address": "Karl-Holtz-Str. 6"
+    },
+    {
+      "bsn": "10Y01",
+      "name": "Tagore-Gymnasium",
+      "address": "Sella-Hasse-Str. 25"
+    }
+  ],
+  "12679": [
+    {
+      "bsn": "10G08",
+      "name": "Wilhelm-Busch-Grundschule",
+      "address": "Parsteiner Ring 24-46"
+    },
+    {
+      "bsn": "10G09",
+      "name": "Grundschule am Bürgerpark",
+      "address": "Jan-Petersen-Str. 18B"
+    },
+    {
+      "bsn": "10G10",
+      "name": "Peter-Pan-Grundschule",
+      "address": "Stolzenhagener Str. 9"
+    },
+    {
+      "bsn": "10K01",
+      "name": "Rudolf-Virchow-Schule",
+      "address": "Glambecker Ring 90"
+    }
+  ],
+  "12685": [
+    {
+      "bsn": "10G11",
+      "name": "Grundschule an der Mühle",
+      "address": "Kienbergstr. 59"
+    },
+    {
+      "bsn": "10G12",
+      "name": "Grundschule an der Geißenweide",
+      "address": "Amanlisweg 40"
+    },
+    {
+      "bsn": "10G383",
+      "name": "8. Schule (Grundschule)",
+      "address": "Bruno-Baum-Str. 72"
+    }
+  ],
+  "12683": [
+    {
+      "bsn": "10G13",
+      "name": "Johann-Strauss-Grundschule",
+      "address": "Cecilienstr. 80-81"
+    },
+    {
+      "bsn": "10G16",
+      "name": "Fuchsberg-Grundschule",
+      "address": "Apfelwicklerstr. 4-6"
+    },
+    {
+      "bsn": "10G404",
+      "name": "0. Schule (Grundschule)",
+      "address": "Haltoner Str. 24"
+    },
+    {
+      "bsn": "10K06",
+      "name": "Georg-Klingenberg-Schule",
+      "address": "Alberichstr. 24"
+    },
+    {
+      "bsn": "10K151",
+      "name": "5. Schule (Integrierte Sekundarschule)",
+      "address": "Garzauer Str. 30"
+    },
+    {
+      "bsn": "10P10",
+      "name": "Internationale Lomonossow-Schule Berlin Marzahn (Gemeinschaftsschule)",
+      "address": "Brebacher Weg 15, Haus 17"
+    },
+    {
+      "bsn": "10S04",
+      "name": "Schule am Pappelhof",
+      "address": "Ketschendorfer Weg 21"
+    },
+    {
+      "bsn": "10Y02",
+      "name": "Otto-Nagel-Gymnasium",
+      "address": "Schulstr. 11"
+    },
+    {
+      "bsn": "10Y03",
+      "name": "Wilhelm-von-Siemens-Gymnasium",
+      "address": "Allee der Kosmonauten 134"
+    }
+  ],
+  "12629": [
+    {
+      "bsn": "10G17",
+      "name": "Beatrix-Potter-Grundschule",
+      "address": "Ludwigsfelder Str. 7"
+    },
+    {
+      "bsn": "10K02",
+      "name": "Ernst-Haeckel-Schule",
+      "address": "Luckenwalder Str. 53"
+    },
+    {
+      "bsn": "10K05",
+      "name": "Jean-Piaget-Schule",
+      "address": "Mittenwalder Str. 5"
+    },
+    {
+      "bsn": "10K07",
+      "name": "Caspar-David-Friedrich-Schule",
+      "address": "Alte Hellersdorfer Str. 7"
+    },
+    {
+      "bsn": "10Y08",
+      "name": "Sartre-Gymnasium",
+      "address": "Kyritzer Str. 103"
+    }
+  ],
+  "12623": [
+    {
+      "bsn": "10G26",
+      "name": "Friedrich-Schiller-Grundschule",
+      "address": "An der Schule 13-17"
+    },
+    {
+      "bsn": "10G30",
+      "name": "Mahlsdorfer Grundschule",
+      "address": "Feldrain 47"
+    },
+    {
+      "bsn": "10G32",
+      "name": "Kiekemal-Schule (Grundschule)",
+      "address": "Hultschiner Damm 219"
+    },
+    {
+      "bsn": "10G373",
+      "name": "7. Schule (Grundschule)",
+      "address": "Elsenstr. 7-9"
+    },
+    {
+      "bsn": "10K13",
+      "name": "Integrierte Sekundarschule Mahlsdorf",
+      "address": "An der Schule 47"
+    },
+    {
+      "bsn": "10K141",
+      "name": "4. Schule (Gemeinschaftsschule)",
+      "address": "Landsberger Str. 178"
+    },
+    {
+      "bsn": "10P05",
+      "name": "BEST-Sabel-Grundschule Mahlsdorf",
+      "address": "Erich-Baron-Weg 118"
+    },
+    {
+      "bsn": "10P12",
+      "name": "Freie Schule Berlin Mahlsdorf",
+      "address": "Elsenstr. 13A"
+    }
+  ],
+  "12619": [
+    {
+      "bsn": "10G28",
+      "name": "Grundschule am Hollerbusch",
+      "address": "Erich-Kästner-Str. 64"
+    },
+    {
+      "bsn": "10G29",
+      "name": "Grundschule an der Wuhle",
+      "address": "Teterower Ring 79"
+    },
+    {
+      "bsn": "10P13",
+      "name": "BEST-Sabel-Grundschule Kaulsdorf",
+      "address": "Wernerstr. 48"
+    },
+    {
+      "bsn": "10P14",
+      "name": "dreieins-Grundschule Berlin Kaulsdorf",
+      "address": "Peter-Huchel-Str. 35"
+    },
+    {
+      "bsn": "10Y121",
+      "name": "2. Schule (Gymnasium)",
+      "address": "Erich-Kästner-Str. 52"
+    }
+  ],
+  "12621": [
+    {
+      "bsn": "10G31",
+      "name": "Franz-Carl-Achard-Grundschule",
+      "address": "Waplitzer Str. 11A"
+    },
+    {
+      "bsn": "10G33",
+      "name": "Ulmen-Grundschule",
+      "address": "Ulmenstr. 79-85"
+    }
+  ],
+  "13053": [
+    {
+      "bsn": "11A07",
+      "name": "Schul- und Leistungssportzentrum Berlin (Sportforum)",
+      "address": "Fritz-Lesch-Str. 35"
+    },
+    {
+      "bsn": "11G19",
+      "name": "Obersee-Schule (Grundschule)",
+      "address": "Roedernstr. 69-72"
+    },
+    {
+      "bsn": "11G21",
+      "name": "Schule Am Faulen See (Grundschule)",
+      "address": "Degnerstr. 71"
+    },
+    {
+      "bsn": "11G22",
+      "name": "Martin-Niemöller-Grundschule",
+      "address": "Am Breiten Luch 5"
+    },
+    {
+      "bsn": "11K11",
+      "name": "Paul-Schmidt-Schule (Integrierte Sekundarschule)",
+      "address": "Malchower Weg 54"
+    },
+    {
+      "bsn": "11K161",
+      "name": "6. Schule (Integrierte Sekundarschule)",
+      "address": "Falkenberger Chaussee 74"
+    },
+    {
+      "bsn": "11S08",
+      "name": "Schule Am Breiten Luch",
+      "address": "Am Breiten Luch 19"
+    }
+  ],
+  "10315": [
+    {
+      "bsn": "11B01",
+      "name": "Hein-Moeller-Schule (OSZ Energietechnik II)",
+      "address": "Allee der Kosmonauten 18"
+    },
+    {
+      "bsn": "11G06",
+      "name": "Adam-Ries-Schule (Grundschule)",
+      "address": "Alt-Friedrichsfelde 66"
+    },
+    {
+      "bsn": "11G09",
+      "name": "Bürgermeister-Ziethen-Schule (Grundschule)",
+      "address": "Massower Str. 39"
+    },
+    {
+      "bsn": "11G23",
+      "name": "Friedrichsfelder Schule (Grundschule)",
+      "address": "Lincolnstr. 67"
+    },
+    {
+      "bsn": "11K01",
+      "name": "Alexander-Puschkin-Schule",
+      "address": "Massower Str. 37"
+    },
+    {
+      "bsn": "11K15",
+      "name": "Kosmos-Schule (Integrierte Sekundarschule)",
+      "address": "Allee der Kosmonauten 22"
+    },
+    {
+      "bsn": "11P03",
+      "name": "Evangelische Schule Lichtenberg (Grundschule)",
+      "address": "Rummelsburger Str. 3"
+    },
+    {
+      "bsn": "11Y121",
+      "name": "2. Schule (Gymnasium)",
+      "address": "Allee der Kosmonauten 20-22"
+    }
+  ],
+  "10317": [
+    {
+      "bsn": "11B02",
+      "name": "Max-Taut-Schule (OSZ Gebäude, Umwelt, Technik)",
+      "address": "Fischerstr. 36"
+    },
+    {
+      "bsn": "11B04",
+      "name": "Friedrich-List-Schule (OSZ Büromanagement und Wirtschaftssprachen)",
+      "address": "Marktstr. 2-3"
+    },
+    {
+      "bsn": "11G08",
+      "name": "Robinson-Schule (Grundschule)",
+      "address": "Wönnichstr. 7"
+    },
+    {
+      "bsn": "11G16",
+      "name": "Schule an der Victoriastadt (Grundschule)",
+      "address": "Nöldnerstr. 44"
+    },
+    {
+      "bsn": "11Y11",
+      "name": "Immanuel-Kant-Gymnasium",
+      "address": "Lückstr. 63"
+    }
+  ],
+  "10369": [
+    {
+      "bsn": "11G01",
+      "name": "Sonnenuhr-Schule (Grundschule)",
+      "address": "Franz-Jacob-Str. 33"
+    },
+    {
+      "bsn": "11G38",
+      "name": "Schlaufuchs-Grundschule",
+      "address": "Paul-Junius-Str. 69"
+    },
+    {
+      "bsn": "11K13",
+      "name": "May-Ayim-Schule (Integrierte Sekundarschule)",
+      "address": "Storkower Str. 209B"
+    },
+    {
+      "bsn": "11P14",
+      "name": "Schulen der BAWI gGmbH",
+      "address": "Franz-Jacob-Str. 2"
+    },
+    {
+      "bsn": "11P17",
+      "name": "Pädalogik GmbH - Fachschule für Sozialpädagogik",
+      "address": "Rudolf-Seiffert-Str. 50A"
+    },
+    {
+      "bsn": "11S02",
+      "name": "Schule am Fennpfuhl",
+      "address": "Alfred-Jung-Str. 19"
+    },
+    {
+      "bsn": "11S12",
+      "name": "Nils-Holgersson-Schule",
+      "address": "Otto-Marquardt-Str. 14"
+    },
+    {
+      "bsn": "11Y02",
+      "name": "Johann-Gottfried-Herder-Gymnasium",
+      "address": "Franz-Jacob-Str. 8"
+    }
+  ],
+  "10367": [
+    {
+      "bsn": "11G02",
+      "name": "Schule am Roederplatz (Grundschule)",
+      "address": "Bernhard-Bästlein-Str. 22"
+    },
+    {
+      "bsn": "11G03",
+      "name": "Schule im Gutspark (Grundschule)",
+      "address": "Josef-Orlopp-Str. 20"
+    },
+    {
+      "bsn": "11G32",
+      "name": "Hans-Rosenthal-Grundschule",
+      "address": "Bernhard-Bästlein-Str. 56"
+    },
+    {
+      "bsn": "11K06",
+      "name": "Schule am Rathaus",
+      "address": "Rathausstr. 8"
+    },
+    {
+      "bsn": "11P15",
+      "name": "Donner + Kern gGmbH",
+      "address": "Möllendorffstr. 48"
+    },
+    {
+      "bsn": "11P19",
+      "name": "Semper Schulen Berlin gGmbH",
+      "address": "Möllendorffstr. 45-52"
+    },
+    {
+      "bsn": "11P21",
+      "name": "Grundschule am Campus Hedwig",
+      "address": "Möllendorffstr. 33"
+    },
+    {
+      "bsn": "11S07",
+      "name": "Carl-von-Linné-Schule",
+      "address": "Paul-Junius-Str. 15"
+    }
+  ],
+  "10365": [
+    {
+      "bsn": "11G05",
+      "name": "Schule auf dem lichten Berg (Grundschule)",
+      "address": "Atzpodienstr. 19"
+    },
+    {
+      "bsn": "11G070",
+      "name": "7. Schule (Grundschule)",
+      "address": "Harnackstr. 17/25"
+    },
+    {
+      "bsn": "11G33",
+      "name": "Gerda-Lagerlöf-Grundschule",
+      "address": "Rüdigerstr. 76"
+    },
+    {
+      "bsn": "11K02",
+      "name": "Mildred-Harnack-Schule",
+      "address": "Schulze-Boysen-Str. 12"
+    },
+    {
+      "bsn": "11P01",
+      "name": "Katholische Schule Sankt Mauritius (Grundschule)",
+      "address": "Schulze-Boysen-Str. 28"
+    },
+    {
+      "bsn": "11P18",
+      "name": "Akademie für berufliche Bildung (AFBB) gGmbH",
+      "address": "Bornitzstr. 73-75"
+    },
+    {
+      "bsn": "11S05",
+      "name": "Schule am grünen Grund",
+      "address": "Herzbergstr. 79"
+    },
+    {
+      "bsn": "11S06",
+      "name": "Selma-Lagerlöf-Schule",
+      "address": "Rüdiger Str. 76"
+    }
+  ],
+  "13051": [
+    {
+      "bsn": "11G10",
+      "name": "Schule im Ostseekarree (Grundschule)",
+      "address": "Barther Str. 27"
+    },
+    {
+      "bsn": "11G25",
+      "name": "Schule am Wäldchen (Grundschule)",
+      "address": "Wustrower Str. 28"
+    },
+    {
+      "bsn": "11G26",
+      "name": "Randow-Schule (Grundschule)",
+      "address": "Wustrower Str. 22"
+    },
+    {
+      "bsn": "11K07",
+      "name": "Vincent-van-Gogh-Schule (Integrierte Sekundarschule)",
+      "address": "Wustrower Str. 26"
+    },
+    {
+      "bsn": "11K10",
+      "name": "Grüner Campus Malchow (Gemeinschaftsschule)",
+      "address": "Malchower Chaussee 2"
+    }
+  ],
+  "10319": [
+    {
+      "bsn": "11G11",
+      "name": "Bernhard-Grzimek-Schule (Grundschule)",
+      "address": "Sewanstr. 184"
+    },
+    {
+      "bsn": "11G31",
+      "name": "Schmetterlings-Grundschule",
+      "address": "Dolgenseestr. 60, Gebäude C"
+    },
+    {
+      "bsn": "11G35",
+      "name": "Grundschule am Tränkegraben",
+      "address": "Sewanstr. 41"
+    },
+    {
+      "bsn": "11K08",
+      "name": "Schule-am-Tierpark (Integrierte Sekundarschule)",
+      "address": "Sewanstr. 223"
+    },
+    {
+      "bsn": "11K12",
+      "name": "Paul-und-Charlotte-Kniese-Schule (Gemeinschaftsschule)",
+      "address": "Erich-Kurz-Str. 6-10"
+    },
+    {
+      "bsn": "11P02",
+      "name": "bbw Akademie für Betriebswirtschaftliche Weiterbildung GmbH",
+      "address": "Otto-Schmirgal-Str. 3"
+    },
+    {
+      "bsn": "11S04",
+      "name": "Paul-und-Charlotte-Kniese-Schule",
+      "address": "Erich-Kurz-Str. 6-10"
+    }
+  ],
+  "10318": [
+    {
+      "bsn": "11G12",
+      "name": "Lew-Tolstoi-Schule (Grundschule)",
+      "address": "Römerweg 120"
+    },
+    {
+      "bsn": "11G13",
+      "name": "Karlshorster Schule (Grundschule)",
+      "address": "Lisztstr. 6"
+    },
+    {
+      "bsn": "11G14",
+      "name": "Richard-Wagner-Schule (Grundschule)",
+      "address": "Ehrenfelsstr. 36"
+    },
+    {
+      "bsn": "11G37",
+      "name": "Seepark-Grundschule",
+      "address": "Blockdammweg 60"
+    },
+    {
+      "bsn": "11K171",
+      "name": "7. Schule (Integrierte Sekundarschule) Neugründung zum 01.08.2026",
+      "address": "Römerweg 29"
+    },
+    {
+      "bsn": "11P04",
+      "name": "KreativitätsGrundschule Berlin Lichtenberg",
+      "address": "Ehrlichstr. 63"
+    },
+    {
+      "bsn": "11P23",
+      "name": "Katholisches Schulzentrum Edith Stein",
+      "address": "Köpenicker Allee 39-57"
+    },
+    {
+      "bsn": "11Y05",
+      "name": "Hans-und-Hilde-Coppi-Gymnasium",
+      "address": "Römerweg 30-32"
+    }
+  ],
+  "13055": [
+    {
+      "bsn": "11G17",
+      "name": "Brodowin-Schule (Grundschule)",
+      "address": "Liebenwalder Str. 20-22"
+    },
+    {
+      "bsn": "11G18",
+      "name": "Schule am Wilhelmsberg (Grundschule)",
+      "address": "Sandinostr. 8"
+    },
+    {
+      "bsn": "11G34",
+      "name": "Orankesee Schule (Grundschule)",
+      "address": "Konrad-Wolf-Str. 11"
+    },
+    {
+      "bsn": "11G393",
+      "name": "9. Schule (Grundschule)",
+      "address": "Schleizer Str. 67"
+    },
+    {
+      "bsn": "11K04",
+      "name": "Gutenberg-Schule",
+      "address": "Sandinostr. 10"
+    },
+    {
+      "bsn": "11K09",
+      "name": "Philipp-Reis-Schule (Integrierte Sekundarschule)",
+      "address": "Werneuchener Str. 15"
+    },
+    {
+      "bsn": "11Y10",
+      "name": "Manfred-von-Ardenne-Gymnasium",
+      "address": "Werneuchener Str. 27-28"
+    }
+  ],
+  "13057": [
+    {
+      "bsn": "11G28",
+      "name": "Feldmark-Schule (Grundschule)",
+      "address": "Wartiner Str. 23"
+    },
+    {
+      "bsn": "11G36",
+      "name": "Phönix-Grundschule",
+      "address": "Wartiner Str. 6"
+    },
+    {
+      "bsn": "11K14",
+      "name": "Elsa-Neumann-Schule (Integrierte Sekundarschule)",
+      "address": "Wartiner Str. 1-3"
+    },
+    {
+      "bsn": "11Y09",
+      "name": "Barnim-Gymnasium",
+      "address": "Ahrensfelder Chaussee 41"
+    }
+  ],
+  "13059": [
+    {
+      "bsn": "11G29",
+      "name": "Matibi-Schule (Grundschule)",
+      "address": "Prendener Str. 15"
+    },
+    {
+      "bsn": "11G404",
+      "name": "0. Schule (Grundschule)",
+      "address": "Straße 3 Nr. 21"
+    },
+    {
+      "bsn": "11K05",
+      "name": "Fritz-Reuter-Schule",
+      "address": "Prendener Str. 29"
+    }
+  ],
+  "13437": [
+    {
+      "bsn": "12B02",
+      "name": "Emil-Fischer-Schule (OSZ Ernährung und Lebensmitteltechnik)",
+      "address": "Cyclopstr. 1-5"
+    },
+    {
+      "bsn": "12B03",
+      "name": "Ernst-Litfaß-Schule (OSZ Mediengestaltung und Medientechnologie)",
+      "address": "Cyclopstr. 1-5"
+    },
+    {
+      "bsn": "12G10",
+      "name": "Peter-Witte-Grundschule",
+      "address": "Rathauspromenade 75"
+    },
+    {
+      "bsn": "12G11",
+      "name": "Ringelnatz-Grundschule",
+      "address": "Wilhelm-Gericke-Str. 7-13"
+    },
+    {
+      "bsn": "12K07",
+      "name": "Jean-Krämer-Schule (Integrierte Sekundarschule) Wittenau",
+      "address": "Alt-Wittenau 8-12"
+    },
+    {
+      "bsn": "12S04",
+      "name": "Schule am Park",
+      "address": "Eichborndamm 276-284"
+    }
+  ],
+  "13507": [
+    {
+      "bsn": "12G01",
+      "name": "Havelmüller-Grundschule",
+      "address": "Namslaustr. 49-57"
+    },
+    {
+      "bsn": "12G13",
+      "name": "Franz-Marc-Grundschule",
+      "address": "Treskowstr. 26-31"
+    },
+    {
+      "bsn": "12G14",
+      "name": "Alfred-Brehm-Grundschule",
+      "address": "Ascheberger Weg 8A"
+    },
+    {
+      "bsn": "12K01",
+      "name": "Julius-Leber-Schule",
+      "address": "Treskowstr. 26-31"
+    },
+    {
+      "bsn": "12P13",
+      "name": "Euro Akademie Berlin",
+      "address": "Berliner Str. 66"
+    },
+    {
+      "bsn": "12P14",
+      "name": "Montessori Campus am Tegeler Forst",
+      "address": "Gabrielenstr. 12-18"
+    },
+    {
+      "bsn": "12P22",
+      "name": "Mosaik Fachschule für Sozialpädagogik",
+      "address": "Flohrstr. 21"
+    }
+  ],
+  "13407": [
+    {
+      "bsn": "12G02",
+      "name": "Grundschule am Schäfersee",
+      "address": "Holländerstr. 25-30"
+    },
+    {
+      "bsn": "12G04",
+      "name": "Till-Eulenspiegel-Grundschule",
+      "address": "Humboldtstr. 8-13"
+    },
+    {
+      "bsn": "12K04",
+      "name": "Paul-Löbe-Schule",
+      "address": "Lindauer Allee 23-25"
+    },
+    {
+      "bsn": "12Y01",
+      "name": "Friedrich-Engels-Gymnasium",
+      "address": "Emmentaler Str. 67"
+    }
+  ],
+  "13403": [
+    {
+      "bsn": "12G07",
+      "name": "Mark-Twain-Grundschule",
+      "address": "Auguste-Viktoria-Allee 95"
+    },
+    {
+      "bsn": "12G29",
+      "name": "Hermann-Schulz-Grundschule",
+      "address": "Kienhorststr. 67-79"
+    },
+    {
+      "bsn": "12G30",
+      "name": "Reineke-Fuchs-Grundschule",
+      "address": "Foxweg 15"
+    },
+    {
+      "bsn": "12K03",
+      "name": "Max-Beckmann-Schule (Integrierte Sekundarschule)",
+      "address": "Auguste-Viktoria-Allee 37"
+    }
+  ],
+  "13439": [
+    {
+      "bsn": "12G09",
+      "name": "Grundschule an der Peckwisch",
+      "address": "Tornower Weg 26-34"
+    },
+    {
+      "bsn": "12G26",
+      "name": "Märkische Grundschule",
+      "address": "Dannenwalder Weg 165"
+    },
+    {
+      "bsn": "12G32",
+      "name": "Charlie-Chaplin-Grundschule",
+      "address": "Wilhelmsruher Damm 90-94"
+    },
+    {
+      "bsn": "12P02",
+      "name": "Waldorfschule Märkisches Viertel Berlin",
+      "address": "Treuenbrietzener Str. 28"
+    },
+    {
+      "bsn": "12Y08",
+      "name": "Thomas-Mann-Gymnasium",
+      "address": "Königshorster Str. 10"
+    }
+  ],
+  "13509": [
+    {
+      "bsn": "12G12",
+      "name": "Borsigwalder Grundschule",
+      "address": "Miraustr. 100"
+    },
+    {
+      "bsn": "12G15",
+      "name": "Hoffmann-von-Fallersleben-Grundschule",
+      "address": "Ziekowstr. 80-88"
+    },
+    {
+      "bsn": "12K06",
+      "name": "Benjamin-Franklin-Schule (Integrierte Sekundarschule)",
+      "address": "Sommerfelder Str. 5-7"
+    },
+    {
+      "bsn": "12P24",
+      "name": "G.A.L.B Förderung gGmbH",
+      "address": "Holzhauser Str. 180"
+    },
+    {
+      "bsn": "12S01",
+      "name": "Stötzner-Schule",
+      "address": "Tietzstr. 26-28"
+    },
+    {
+      "bsn": "12S06",
+      "name": "Toulouse-Lautrec-Schule",
+      "address": "Miraustr. 126"
+    },
+    {
+      "bsn": "12Y03",
+      "name": "Humboldt-Gymnasium",
+      "address": "Hatzfeldtallee 2-4"
+    },
+    {
+      "bsn": "12Y04",
+      "name": "Gabriele-von-Bülow-Gymnasium",
+      "address": "Tile-Brügge-Weg 63"
+    }
+  ],
+  "13503": [
+    {
+      "bsn": "12G17",
+      "name": "Ellef-Ringnes-Grundschule",
+      "address": "Im Erpelgrund 11-17"
+    },
+    {
+      "bsn": "12G34",
+      "name": "Otfried-Preußler-Grundschule",
+      "address": "Schulzendorfer Str. 99"
+    },
+    {
+      "bsn": "12K11",
+      "name": "Albrecht-Haushofer-Schule",
+      "address": "Kurzebracker Weg 40-46"
+    },
+    {
+      "bsn": "12P10",
+      "name": "Demokratische Schule X (Gemeinschaftsschule)",
+      "address": "Ruppiner Chaussee 209-211"
+    },
+    {
+      "bsn": "12P15",
+      "name": "EJF - Fachschule für soziale Berufe",
+      "address": "Keilerstr. 17A"
+    }
+  ],
+  "13505": [
+    {
+      "bsn": "12G18",
+      "name": "Grundschule am Tegelschen Ort",
+      "address": "Gerlindeweg 11-23"
+    },
+    {
+      "bsn": "12Y06",
+      "name": "Schulfarm Insel Scharfenberg",
+      "address": "Schwarzer Weg 101-105"
+    }
+  ],
+  "13469": [
+    {
+      "bsn": "12G19",
+      "name": "Münchhausen-Grundschule",
+      "address": "Artemisstr. 22-26"
+    },
+    {
+      "bsn": "12G20",
+      "name": "Grundschule am Vierrutenberg",
+      "address": "Am Freibad 2"
+    },
+    {
+      "bsn": "12G28",
+      "name": "Grundschule in den Rollbergen",
+      "address": "Waldshuter Zeile 6"
+    },
+    {
+      "bsn": "12P04",
+      "name": "Katholische Schule Salvator",
+      "address": "Fürst-Bismarck-Str. 8-10"
+    },
+    {
+      "bsn": "12P11",
+      "name": "Alternativschule Berlin (Gemeinschaftsschule)",
+      "address": "Bondickstr. 8-9"
+    },
+    {
+      "bsn": "12P19",
+      "name": "APEGO-Schule Berlin (Gemeinschaftsschule)",
+      "address": "Dianastr. 44-46"
+    },
+    {
+      "bsn": "12P23",
+      "name": "Eventus - Fachschule für Sozialpädagogik",
+      "address": "Dianastr. 42-43"
+    },
+    {
+      "bsn": "12Y07",
+      "name": "Romain-Rolland-Gymnasium",
+      "address": "Place Molière 4"
+    }
+  ],
+  "13467": [
+    {
+      "bsn": "12G21",
+      "name": "Grundschule am Fließtal",
+      "address": "Seebadstr. 42-43"
+    },
+    {
+      "bsn": "12G22",
+      "name": "Gustav-Dreyer-Grundschule",
+      "address": "Freiherr-vom-Stein-Str. 31"
+    },
+    {
+      "bsn": "12K09",
+      "name": "Carl-Benz-Schule (Integrierte Sekundarschule)",
+      "address": "Heidenheimer Str. 53-54"
+    },
+    {
+      "bsn": "12K10",
+      "name": "Carl-Bosch-Schule",
+      "address": "Frohnauer Str. 74-80"
+    },
+    {
+      "bsn": "12P06",
+      "name": "Elisabethstift-Schule (Gemeinschaftsschule)",
+      "address": "Falkentaler Steig 10"
+    },
+    {
+      "bsn": "12P25",
+      "name": "Elisabethstift-Schule",
+      "address": "Berliner Str. 118"
+    },
+    {
+      "bsn": "12P26",
+      "name": "Fachschule für Sozialpädagogik am Elisabethstift Berlin",
+      "address": "Berliner Str. 118"
+    },
+    {
+      "bsn": "12S02",
+      "name": "Schule am Tegeler Forst",
+      "address": "Frohnauer Str. 74-80"
+    },
+    {
+      "bsn": "12S05",
+      "name": "Waldseeschule",
+      "address": "Olafstr. 32-34"
+    },
+    {
+      "bsn": "12Y05",
+      "name": "Georg-Herwegh-Gymnasium",
+      "address": "Fellbacher Str. 18-19"
+    }
+  ],
+  "13465": [
+    {
+      "bsn": "12G23",
+      "name": "Victor-Gollancz-Grundschule",
+      "address": "Gollanczstr. 18-24"
+    },
+    {
+      "bsn": "12G24",
+      "name": "Renée-Sintenis-Grundschule",
+      "address": "Laurinsteig 39-45"
+    },
+    {
+      "bsn": "12P03",
+      "name": "Evangelische Schule Frohnau",
+      "address": "Benediktinerstr. 11-19"
+    }
+  ],
+  "13435": [
+    {
+      "bsn": "12G27",
+      "name": "Chamisso-Grundschule",
+      "address": "Senftenberger Ring 27"
+    },
+    {
+      "bsn": "12G33",
+      "name": "Lauterbach-Grundschule",
+      "address": "Senftenberger Ring 41"
+    },
+    {
+      "bsn": "12K02",
+      "name": "Bettina-von-Arnim-Schule",
+      "address": "Senftenberger Ring 49"
+    },
+    {
+      "bsn": "12K12",
+      "name": "Campus Hannah Höch (Gemeinschaftsschule)",
+      "address": "Finsterwalder Str. 52-56"
+    },
+    {
+      "bsn": "12P07",
+      "name": "Private Goethe-Schulen",
+      "address": "Wittenauer Str. 112"
+    },
+    {
+      "bsn": "12S03",
+      "name": "Lauterbach-Schule",
+      "address": "Senftenberger Ring 41"
+    }
+  ]
+}

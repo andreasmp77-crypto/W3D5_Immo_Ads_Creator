@@ -1,34 +1,49 @@
-"""Deterministic PLZ-based location lookup for ImmoAds.
+"""Deterministic PLZ-based location lookup for ImmoAds (M3).
 
-Loads the local amenity workbook, derives PLZ centroids from spatial points,
-and memoizes the heavy reads so repeated prompt generation stays fast.
+Design notes (see rag_decision.md and knowledge_base/AGENTS.md):
+- Kita data is static, sourced from Berlin's open-data Kitaliste, pre-processed into
+  data/kitas_by_plz.json (grouped by PLZ, sorted by licensed capacity).
+- PLZ -> centroid is a static, precomputed lookup (data/plz_centroids.json), sourced
+  from WZBSocialScienceCenter/plz_geocoord.
+- Public transport is fetched LIVE from v6.bvg.transport.rest at request time (no API
+  key, 100 req/min free tier) using the PLZ centroid. This is a deterministic lookup,
+  not a RAG/retrieval step.
+- Schools are sourced from the official Senatsverwaltung fuer Bildung directory via
+  scripts/fetch_schools.py into data/schools_by_plz.json, mirroring the Kita pattern.
+  If that file hasn't been generated yet, get_schools()/load_school_data() return an
+  "unavailable" result rather than a fabricated count.
+
+All facts here are injected as explicit prompt variables, kept separate from
+knowledge_base/ markdown context (never store PLZ facts inside knowledge_base/).
 """
 
 from __future__ import annotations
 
-import csv
+import json
 import logging
-import re
+import time
+import urllib.parse
+import urllib.request
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-import pandas as pd
-
-try:
-    import geopandas as gpd
-except ImportError:  # pragma: no cover - optional dependency
-    gpd = None
-
 logger = logging.getLogger(__name__)
 
-DATA_DIR = Path("data")
-AMENITY_WORKBOOK = Path("knowledge_base/secondary/kitaliste-nov-2025.xlsx")
-KITAS_FILE = DATA_DIR / "kitas_by_plz.csv"
-PROJECT_CRS = "EPSG:25833"
-WGS84_CRS = "EPSG:4326"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+KITAS_FILE = DATA_DIR / "kitas_by_plz.json"
+CENTROIDS_FILE = DATA_DIR / "plz_centroids.json"
+NEIGHBORS_FILE = DATA_DIR / "plz_neighbors.json"
+SCHOOLS_FILE = DATA_DIR / "schools_by_plz.json"
+BVG_BASE_URL = "https://v6.bvg.transport.rest"
 
+# Live transit lookups are cached in-memory for TRANSIT_CACHE_TTL_SECONDS so repeated
+# ad-generation runs for the same PLZ (e.g. during testing/demo) don't hammer the
+# free-tier BVG API (100 req/min)
+# a shared/persistent cache later
+TRANSIT_CACHE_TTL_SECONDS = 15 * 60
+_transit_cache: Dict[str, Tuple[float, str]] = {}
 
 @dataclass(frozen=True)
 class PlzSpatialSummary:
@@ -37,7 +52,6 @@ class PlzSpatialSummary:
     plz: str
     district: str
     record_count: int
-    centroid_xy: Optional[Tuple[float, float]] = None
     centroid_latlon: Optional[Tuple[float, float]] = None
 
 
@@ -45,220 +59,205 @@ def _normalize_plz(plz: str) -> str:
     return str(plz).strip()
 
 
-def _standardize_amenity_frame(frame: pd.DataFrame) -> pd.DataFrame:
-    """Normalize workbook and CSV inputs to one shared schema."""
-    column_map = {
-        "Einrichtungsbezirk": "district_code",
-        "Einrichtungsbezirk Name": "district",
-        "Einrichtungsnummer": "entry_id",
-        "Einrichtungsname": "name",
-        "Straße": "street",
-        "Hausnummer": "house_number",
-        "PLZ": "plz",
-        "Telefon": "phone",
-        "Einrichtungstyp": "facility_type",
-        "Trägernummer": "provider_id",
-        "Trägername": "provider",
-        "ETRS_YKOORDINATE": "etrs_y",
-        "ETRS_XKOORDINATE": "etrs_x",
-        "Erlaubte Plätze (BE)": "licensed_capacity",
-    }
-
-    frame = frame.rename(columns={key: value for key, value in column_map.items() if key in frame.columns}).copy()
-
-    if "plz" in frame.columns:
-        frame["plz"] = frame["plz"].astype(str).str.strip()
-    if "district" in frame.columns:
-        frame["district"] = frame["district"].astype(str).str.strip()
-    if "name" in frame.columns:
-        frame["name"] = frame["name"].astype(str).str.strip()
-    if "etrs_x" in frame.columns:
-        frame["etrs_x"] = pd.to_numeric(frame["etrs_x"], errors="coerce")
-    if "etrs_y" in frame.columns:
-        frame["etrs_y"] = pd.to_numeric(frame["etrs_y"], errors="coerce")
-
-    return frame
+@lru_cache(maxsize=1)
+def _load_kitas() -> Dict[str, List[Dict[str, object]]]:
+    if not KITAS_FILE.exists():
+        logger.warning("Kita data file not found at %s", KITAS_FILE)
+        return {}
+    with open(KITAS_FILE, encoding="utf-8") as f:
+        return json.load(f)
 
 
 @lru_cache(maxsize=1)
-def _load_amenity_frame() -> pd.DataFrame:
-    """Load the local amenity table once and keep it cached."""
-    if AMENITY_WORKBOOK.exists():
-        try:
-            frame = pd.read_excel(AMENITY_WORKBOOK, sheet_name=0, header=1)
-            return _standardize_amenity_frame(frame)
-        except Exception as exc:  # pragma: no cover - defensive fallback
-            logger.warning("Could not read amenity workbook %s: %s", AMENITY_WORKBOOK, exc)
-
-    if KITAS_FILE.exists():
-        try:
-            with open(KITAS_FILE, mode="r", encoding="utf-8") as handle:
-                frame = pd.DataFrame(csv.DictReader(handle))
-            return _standardize_amenity_frame(frame)
-        except Exception as exc:  # pragma: no cover - defensive fallback
-            logger.warning("Could not read amenity CSV %s: %s", KITAS_FILE, exc)
-
-    logger.warning("No amenity source file found for PLZ lookup.")
-    return pd.DataFrame()
-
-
-@lru_cache(maxsize=1)
-def _load_amenity_geodataframe():
-    """Build a GeoDataFrame when GeoPandas is available and coordinates exist."""
-    frame = _load_amenity_frame()
-    if frame.empty or gpd is None:
-        return None
-
-    required_columns = {"etrs_x", "etrs_y"}
-    if not required_columns.issubset(frame.columns):
-        return None
-
-    usable = frame.dropna(subset=["etrs_x", "etrs_y"]).copy()
-    if usable.empty:
-        return None
-
-    geometry = gpd.points_from_xy(usable["etrs_x"], usable["etrs_y"])
-    return gpd.GeoDataFrame(usable, geometry=geometry, crs=PROJECT_CRS)
-
-
-@lru_cache(maxsize=256)
-def _rows_for_plz(plz: str) -> List[Dict[str, str]]:
-    frame = _load_amenity_frame()
-    if frame.empty or "plz" not in frame.columns:
-        return []
-
-    normalized_plz = _normalize_plz(plz)
-    subset = frame[frame["plz"] == normalized_plz]
-    return subset.fillna("").to_dict(orient="records")
-
-
-def _is_kita_entry(name: str) -> bool:
-    lowered = name.lower()
-    return any(token in lowered for token in ("kita", "kindergarten", "kinderladen", "kindertages", "daycare"))
-
-
-def _is_school_entry(name: str) -> bool:
-    lowered = name.lower()
-    return bool(
-        re.search(
-            r"\b(school|schule|grundschule|gymnasium|oberschule|college|universit[aä]t)\b",
-            lowered,
-        )
-    )
+def _load_centroids() -> Dict[str, Dict[str, float]]:
+    if not CENTROIDS_FILE.exists():
+        logger.warning("PLZ centroid file not found at %s", CENTROIDS_FILE)
+        return {}
+    with open(CENTROIDS_FILE, encoding="utf-8") as f:
+        return json.load(f)
 
 
 @lru_cache(maxsize=256)
 def get_plz_spatial_summary(plz: str) -> PlzSpatialSummary:
     """Return cached spatial metadata for a single PLZ."""
     normalized_plz = _normalize_plz(plz)
-    rows = _rows_for_plz(normalized_plz)
-    if not rows:
-        return PlzSpatialSummary(plz=normalized_plz, district="unknown", record_count=0)
+    kitas = _load_kitas().get(normalized_plz, [])
+    centroid = _load_centroids().get(normalized_plz)
 
-    district_counts: Dict[str, int] = {}
-    for row in rows:
-        district = str(row.get("district", "")).strip() or "unknown"
-        district_counts[district] = district_counts.get(district, 0) + 1
-    district = max(district_counts, key=district_counts.get)
-
-    centroid_xy: Optional[Tuple[float, float]] = None
-    centroid_latlon: Optional[Tuple[float, float]] = None
-
-    amenity_gdf = _load_amenity_geodataframe()
-    if amenity_gdf is not None and "plz" in amenity_gdf.columns:
-        subset = amenity_gdf[amenity_gdf["plz"] == normalized_plz]
-        if not subset.empty:
-            try:
-                centroid_geometry = subset.geometry.unary_union.centroid
-                centroid_xy = (float(centroid_geometry.x), float(centroid_geometry.y))
-
-                if gpd is not None:
-                    centroid_point = gpd.GeoSeries([centroid_geometry], crs=PROJECT_CRS).to_crs(WGS84_CRS).iloc[0]
-                    centroid_latlon = (float(centroid_point.y), float(centroid_point.x))
-            except Exception as exc:  # pragma: no cover - defensive fallback
-                logger.warning("Could not compute centroid for PLZ %s: %s", normalized_plz, exc)
-    else:
-        x_values = [row.get("etrs_x") for row in rows if row.get("etrs_x") not in (None, "")]
-        y_values = [row.get("etrs_y") for row in rows if row.get("etrs_y") not in (None, "")]
-        try:
-            centroid_xy = (
-                float(sum(float(value) for value in x_values) / len(x_values)),
-                float(sum(float(value) for value in y_values) / len(y_values)),
-            )
-        except Exception:
-            centroid_xy = None
+    district = kitas[0]["district"] if kitas else "unknown"
+    centroid_latlon = (centroid["lat"], centroid["lng"]) if centroid else None
 
     return PlzSpatialSummary(
         plz=normalized_plz,
         district=district,
-        record_count=len(rows),
-        centroid_xy=centroid_xy,
+        record_count=len(kitas),
         centroid_latlon=centroid_latlon,
     )
 
 
+@lru_cache(maxsize=1)
+def _load_neighbors() -> Dict[str, List[str]]:
+    if not NEIGHBORS_FILE.exists():
+        logger.warning("PLZ neighbor file not found at %s", NEIGHBORS_FILE)
+        return {}
+    with open(NEIGHBORS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def get_neighboring_plz(plz: str) -> List[str]:
+    """Return real bordering PLZ codes for a given PLZ.
+
+    Precomputed once via geopandas polygon adjacency (shapely `.touches()`) on the
+    official 190 Berlin PLZ boundary polygons -- not a live geometric computation on
+    every call. See project_structure.md roadmap: "if Kita/school/transport info is
+    missing, pick up neighbouring pincode information."
+    """
+    return _load_neighbors().get(_normalize_plz(plz), [])
+
+
+def get_kitas(plz: str, top_n: int = 3) -> List[Dict[str, object]]:
+    """Return up to top_n Kitas for a PLZ, largest licensed capacity first."""
+    return _load_kitas().get(_normalize_plz(plz), [])[:top_n]
+
+
+@lru_cache(maxsize=1)
+def _load_schools() -> Dict[str, List[Dict[str, object]]]:
+    if not SCHOOLS_FILE.exists():
+        logger.warning(
+            "Schools data file not found at %s -- run scripts/fetch_schools.py first",
+            SCHOOLS_FILE,
+        )
+        return {}
+    with open(SCHOOLS_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def get_schools(plz: str, top_n: int = 3) -> List[Dict[str, object]]:
+    """Return up to top_n schools for a PLZ.
+
+    Source: data/schools_by_plz.json, generated by scripts/fetch_schools.py from
+    the official Senatsverwaltung fuer Bildung schools directory. Returns []
+    if the PLZ is unknown or the data file hasn't been generated yet.
+    """
+    return _load_schools().get(_normalize_plz(plz), [])[:top_n]
+
+
+@lru_cache(maxsize=256)
+def load_school_data(plz: str) -> str:
+    """Return a human-readable summary of real schools for the given PLZ.
+
+    Falls back to a real neighboring PLZ (same pattern as load_kita_data) if this
+    PLZ has none. Returns an "unavailable" string if scripts/fetch_schools.py
+    hasn't been run yet -- never a fabricated count.
+    """
+    if not SCHOOLS_FILE.exists():
+        return "Schools: data not yet available (run scripts/fetch_schools.py)."
+
+    normalized_plz = _normalize_plz(plz)
+    schools = get_schools(normalized_plz)
+    if schools:
+        names = ", ".join(s["name"] for s in schools)
+        total = len(_load_schools().get(normalized_plz, []))
+        return f"Schools: {total} registered in this PLZ, including {names}."
+
+    for neighbor_plz in get_neighboring_plz(normalized_plz):
+        neighbor_schools = get_schools(neighbor_plz)
+        if neighbor_schools:
+            names = ", ".join(s["name"] for s in neighbor_schools)
+            return (
+                f"Schools: none registered directly in this PLZ; nearby PLZ "
+                f"{neighbor_plz} has options including {names}."
+            )
+
+    return "Schools: no data available for this PLZ or its immediate neighbors."
+
+
 @lru_cache(maxsize=256)
 def load_kita_data(plz: str) -> str:
-    """Read daycare and school counts for the given PLZ from the local dataset."""
-    rows = _rows_for_plz(plz)
-    if not rows:
-        return "Daycare/School infrastructure data unavailable."
+    """Return a human-readable summary of real Kitas for the given PLZ.
 
-    kitas = sum(1 for row in rows if _is_kita_entry(str(row.get("name", ""))))
-    schools = sum(1 for row in rows if _is_school_entry(str(row.get("name", ""))))
+    Falls back to a real neighboring PLZ (via geopandas-derived adjacency) if this
+    PLZ has no Kita data, per the project roadmap. The fallback is always labeled
+    explicitly -- never presented as if it were data for the requested PLZ itself.
+    """
+    normalized_plz = _normalize_plz(plz)
+    kitas = get_kitas(normalized_plz)
+    if kitas:
+        names = ", ".join(k["name"] for k in kitas)
+        total = get_plz_spatial_summary(normalized_plz).record_count
+        return f"Kitas: {total} registered in this PLZ, including {names}."
 
-    if kitas == 0 and schools == 0:
-        return "Daycare/School infrastructure data unavailable for this PLZ."
+    for neighbor_plz in get_neighboring_plz(normalized_plz):
+        neighbor_kitas = get_kitas(neighbor_plz)
+        if neighbor_kitas:
+            names = ", ".join(k["name"] for k in neighbor_kitas)
+            return (
+                f"Kitas: none registered directly in this PLZ; nearby PLZ {neighbor_plz} "
+                f"has options including {names}."
+            )
 
-    kita_label = "Kita" if kitas == 1 else "Kitas"
-    school_label = "school" if schools == 1 else "schools"
-    return f"Daycares & Schools: ~{kitas} {kita_label} and {schools} {school_label} in this PLZ area."
+    return "Kitas: no data available for this PLZ or its immediate neighbors."
 
 
-@lru_cache(maxsize=256)
-def fetch_nearby_transit(plz: str) -> str:
-    """Return a deterministic transit placeholder anchored on the PLZ centroid."""
-    summary = get_plz_spatial_summary(plz)
-    if summary.record_count == 0:
-        return "- Public transport data unavailable for this PLZ."
+def fetch_nearby_transit(plz: str, max_results: int = 5, max_distance_m: int = 800) -> str:
+    """Return a real nearby-transit summary via a live BVG API call.
 
-    if summary.centroid_latlon:
-        lat, lon = summary.centroid_latlon
-        return (
-            f"- Public transport: centroid-based lookup anchored at {summary.district} "
-            f"(approx. {lat:.4f}, {lon:.4f}) from {summary.record_count} local amenity points; "
-            "station-level dataset not bundled yet."
-        )
+    Fails closed: on any lookup/network problem, returns an explicit
+    "unavailable" string rather than a fabricated station name.
+    """
+    normalized_plz = _normalize_plz(plz)
 
-    if summary.centroid_xy:
-        x_coord, y_coord = summary.centroid_xy
-        return (
-            f"- Public transport: centroid-based lookup anchored at {summary.district} "
-            f"(projected centroid {x_coord:.1f}, {y_coord:.1f}) from {summary.record_count} local amenity points; "
-            "station-level dataset not bundled yet."
-        )
+    cached = _transit_cache.get(normalized_plz)
+    if cached is not None:
+        cached_at, cached_value = cached
+        if time.monotonic() - cached_at < TRANSIT_CACHE_TTL_SECONDS:
+            return cached_value
 
-    return (
-        f"- Public transport: centroid-based lookup anchored at {summary.district} "
-        f"from {summary.record_count} local amenity points; station-level dataset not bundled yet."
-    )
+    summary = get_plz_spatial_summary(normalized_plz)
+    if not summary.centroid_latlon:
+        return "Public transport: data unavailable for this PLZ."
+
+    lat, lng = summary.centroid_latlon
+    params = {
+        "latitude": lat,
+        "longitude": lng,
+        "results": max_results,
+        "distance": max_distance_m,
+        "poi": "false",
+        "pretty": "false",
+    }
+    url = f"{BVG_BASE_URL}/locations/nearby?{urllib.parse.urlencode(params)}"
+
+    try:
+        with urllib.request.urlopen(url, timeout=5) as resp:
+            stops = json.loads(resp.read().decode("utf-8"))
+    except Exception as exc:  # network/API failure: fail closed, never fabricate
+        logger.warning("BVG lookup failed for PLZ %s: %s", normalized_plz, exc)
+        return "Public transport: data unavailable for this PLZ."
+
+    named_stops = [f"{s['name']} ({s.get('distance')}m)" for s in stops if s.get("type") == "stop" and s.get("name")]
+    if not named_stops:
+        result = "Public transport: no stops found within range for this PLZ."
+    else:
+        result = "Public transport: nearby stops include " + ", ".join(named_stops[:max_results]) + "."
+
+    _transit_cache[normalized_plz] = (time.monotonic(), result)
+    return result
 
 
 @lru_cache(maxsize=256)
 def get_location_summary(plz: str) -> str:
     """Build the final fact block injected into prompts."""
     normalized_plz = _normalize_plz(plz)
-    summary = [f"=== FACTUAL LOCATION DATA (ZIP CODE {normalized_plz}) ==="]
-
-    summary.append(load_kita_data(normalized_plz))
-    summary.append(fetch_nearby_transit(normalized_plz))
-
-    return "\n\n".join(summary)
+    lines = [f"=== FACTUAL LOCATION DATA (ZIP CODE {normalized_plz}) ==="]
+    lines.append(load_kita_data(normalized_plz))
+    lines.append(load_school_data(normalized_plz))
+    lines.append(fetch_nearby_transit(normalized_plz))
+    return "\n\n".join(lines)
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     test_plz = "10115"
     print("\n--- TESTING LOCATION DATA RETRIEVAL ---")
-    result = get_location_summary(test_plz)
-    print(result)
+    print(get_location_summary(test_plz))
