@@ -7,3 +7,6 @@ python-dotenv>=1.0.1,<2.0.0
 requests>=2.32.0,<3.0.0
 gradio>=5.0.0,<6.0.0
 geopy>=2.4.1,<3.0.0
+# WYSIWYG PDF export. Needs native libs too: on macOS `brew install pango`
+# (or `conda install -c conda-forge pango gdk-pixbuf` under Anaconda).
+weasyprint>=60,<70

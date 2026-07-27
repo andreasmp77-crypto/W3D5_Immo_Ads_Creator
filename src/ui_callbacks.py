@@ -8,12 +8,12 @@ from typing import Any, Dict, Sequence
 try:
     from src.content_pipeline import ContentPipelineInputs
     from src.pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
-    from src.ui_layout import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
+    from src.ui_shared import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from src.ui_validation import normalize_listing_submission
 except ImportError:  # pragma: no cover - script execution fallback
     from content_pipeline import ContentPipelineInputs
     from pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
-    from ui_layout import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
+    from ui_shared import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from ui_validation import normalize_listing_submission
 
 
