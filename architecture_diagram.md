@@ -1,6 +1,12 @@
 # Pipeline Workflow
 
 ┌──────────────────────────────────────┐
+│ src/main.py                          │
+│ launches src.app.py (Gradio UI)      │
+└──────────────────┬───────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────┐
 │ Raw Owner Input                      │
 │ dict / JSON / TXT / file path        │
 └──────────────────┬───────────────────┘
@@ -13,8 +19,7 @@
                    │
                    ▼
 ┌──────────────────────────────────────┐
-│ content_pipeline.py                  │  <-- Orchestrates context collection,
-│                                      │      generation, review, and final payload (M5)
+│ content_pipeline.py                  │  <-- Orchestrates context collection
 └───────┬───────────────────┬──────────┘
         │                   │
         │                   │
@@ -22,10 +27,10 @@
 ┌──────────────────────┐  ┌──────────────────────────────────────┐
 │ knowledge_base.py    │  │ location_data.py                     │
 │                      │  │                                      │
-│ Loads primary +      │  │ Loads local amenity workbook / CSV,  │
-│ secondary markdown   │  │ derives cached PLZ spatial summaries,│
-│ context (M2)         │  │ optional GeoPandas centroid path,    │
-└──────────┬───────────┘  │ then returns deterministic facts (M3)│
+│ Loads primary +      │  │ Loads JSON PLZ data + centroids,     │
+│ secondary markdown   │  │ uses live BVG lookup, and falls back │
+│ context (M2)         │  │ to the nearest neighbor PLZ when     │
+└──────────┬───────────┘  │ exact data is missing (M3)           │
            │              └──────────┬───────────────────────────┘
            │                         │
            └──────────────┬──────────┘
@@ -37,7 +42,7 @@
                    │
                    ▼
 ┌──────────────────────────────────────┐
-│ llm_integration.py                  │  <-- Calls OpenAI Responses API and
+│ llm_integration.py                   │  <-- Calls OpenAI Responses API and
 │                                      │      normalizes draft text (M4)
 └──────────────────┬───────────────────┘
                    │
@@ -48,12 +53,20 @@
                    │
                    ▼
 ┌──────────────────────────────────────┐
-│ Reviewed / Publish-Ready Payload     │
-│ build_publish_payload()              │
+│ pdf_export.py                        │  <-- Optional PDF rendering branch used
+│                                      │      by the Gradio app (M6 / nice-to-have)
+└──────────────────┬───────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────┐
+│ Final PDF / UI Output                │
 └──────────────────────────────────────┘
 
 Notes:
 - `document_processor.py` currently supports dict, JSON, TXT, and file-path input.
-- `location_data.py` uses GeoPandas when available, but keeps a deterministic pandas
-  fallback so PLZ facts still load without a spatial dependency.
-
+- `location_data.py` uses JSON-backed PLZ centroids plus live BVG lookup; if a PLZ
+  is missing locally, it falls back to the nearest neighboring PLZ and labels that
+  fallback explicitly.
+- The Gradio app currently calls the draft-generation path and then renders PDF output.
+- `M6` is implemented via `pdf_export.py` in the current UI path; the publish/UI
+  branch remains the primary MVP target in `project_structure.md`.
