@@ -3,156 +3,16 @@
 from __future__ import annotations
 
 import re
-from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 try:
+    from src.document_parsing import build_listing_payload
     from src.document_processor import normalize_owner_listing
     from src.location_data import get_plz_spatial_summary, verify_address_with_geopy
 except ImportError:  # pragma: no cover - script execution fallback
+    from document_parsing import build_listing_payload
     from document_processor import normalize_owner_listing
     from location_data import get_plz_spatial_summary, verify_address_with_geopy
-
-
-def _clean_text(value: Any) -> Optional[str]:
-    if value is None:
-        return None
-    if isinstance(value, str):
-        stripped = value.strip()
-        return stripped or None
-    text = str(value).strip()
-    return text or None
-
-
-def _coerce_picture_value(value: Any) -> Optional[str]:
-    if value is None:
-        return None
-    if isinstance(value, str):
-        cleaned = value.strip()
-        return Path(cleaned).name if cleaned else None
-
-    for attr in ("orig_name", "name", "path", "filename"):
-        candidate = getattr(value, attr, None)
-        if candidate:
-            return Path(str(candidate)).name
-
-    cleaned = _clean_text(value)
-    return Path(cleaned).name if cleaned else None
-
-
-def _coerce_picture_list(uploaded_pictures: Optional[Sequence[Any]]) -> List[str]:
-    if not uploaded_pictures:
-        return []
-
-    pictures: List[str] = []
-    for item in uploaded_pictures:
-        picture_name = _coerce_picture_value(item)
-        if picture_name:
-            pictures.append(picture_name)
-    return pictures
-
-
-def build_listing_payload(
-    **form_values: Any,
-) -> Dict[str, Any]:
-    """Create the canonical intake payload for the parser."""
-
-    if "plz" in form_values or "postal_code" in form_values:
-        street_name = form_values.get("street_name")
-        house_number = form_values.get("house_number")
-        postal_code = form_values.get("postal_code") or form_values.get("plz") or ""
-        city = form_values.get("city")
-        full_name = form_values.get("full_name") or form_values.get("contact_name")
-        phone_number = form_values.get("phone_number") or form_values.get("phone")
-        living_area_sqm = form_values.get("living_area_sqm") or form_values.get("size_sqm")
-        rooms = form_values.get("rooms")
-        bedrooms = form_values.get("bedrooms")
-        bathrooms = form_values.get("bathrooms")
-        heating_type = form_values.get("heating_type")
-        energy_efficiency = form_values.get("energy_efficiency")
-        property_condition = form_values.get("property_condition")
-        cold_rent_eur = form_values.get("cold_rent_eur")
-        nebenkosten_eur = form_values.get("nebenkosten_eur")
-        total_warm_rent_eur = form_values.get("total_warm_rent_eur") or form_values.get("rent_eur")
-        property_type = form_values.get("property_type")
-        property_description = form_values.get("property_description") or form_values.get("description")
-        fixtures_and_fittings = form_values.get("fixtures_and_fittings")
-        tone = form_values.get("tone")
-        photos = form_values.get("photos") or form_values.get("pictures")
-        location_note = form_values.get("location_note")
-    else:
-        street_name = form_values.get("street_name")
-        house_number = form_values.get("house_number")
-        postal_code = form_values.get("postal_code") or ""
-        city = form_values.get("city")
-        full_name = form_values.get("full_name")
-        phone_number = form_values.get("phone_number")
-        living_area_sqm = form_values.get("living_area_sqm")
-        rooms = form_values.get("rooms")
-        bedrooms = form_values.get("bedrooms")
-        bathrooms = form_values.get("bathrooms")
-        heating_type = form_values.get("heating_type")
-        energy_efficiency = form_values.get("energy_efficiency")
-        property_condition = form_values.get("property_condition")
-        cold_rent_eur = form_values.get("cold_rent_eur")
-        nebenkosten_eur = form_values.get("nebenkosten_eur")
-        total_warm_rent_eur = form_values.get("total_warm_rent_eur")
-        property_type = form_values.get("property_type")
-        property_description = form_values.get("property_description")
-        fixtures_and_fittings = form_values.get("fixtures_and_fittings")
-        tone = form_values.get("tone")
-        photos = form_values.get("photos") or form_values.get("pictures")
-        location_note = form_values.get("location_note")
-
-    description_bits = [
-        _clean_text(property_description),
-        _clean_text(fixtures_and_fittings),
-        _clean_text(location_note),
-    ]
-    description = "\n\n".join(bit for bit in description_bits if bit)
-
-    payload: Dict[str, Any] = {
-        "street_name": _clean_text(street_name),
-        "house_number": _clean_text(house_number),
-        "plz": _clean_text(postal_code) or "",
-        "postal_code": _clean_text(postal_code) or "",
-        "city": _clean_text(city),
-        "full_name": _clean_text(full_name),
-        "phone_number": _clean_text(phone_number),
-        "living_area_sqm": living_area_sqm,
-        "size_sqm": living_area_sqm,
-        "rooms": rooms,
-        "bedrooms": bedrooms,
-        "bathrooms": bathrooms,
-        "heating_type": _clean_text(heating_type),
-        "energy_efficiency": _clean_text(energy_efficiency),
-        "property_condition": _clean_text(property_condition),
-        "cold_rent_eur": cold_rent_eur,
-        "nebenkosten_eur": nebenkosten_eur,
-        "total_warm_rent_eur": total_warm_rent_eur,
-        "rent_eur": total_warm_rent_eur,
-        "property_type": _clean_text(property_type),
-        "description": description,
-        "tone": _clean_text(tone),
-        "headline": " ".join(
-            part for part in [_clean_text(street_name), _clean_text(house_number), _clean_text(city)] if part
-        ),
-    }
-
-    if isinstance(photos, str):
-        photo_values: Sequence[Any] = [photos]
-    elif isinstance(photos, Sequence):
-        photo_values = photos
-    elif photos is None:
-        photo_values = []
-    else:
-        photo_values = [photos]
-
-    picture_names = _coerce_picture_list(photo_values)
-    if picture_names:
-        payload["pictures"] = picture_names
-
-    return {key: value for key, value in payload.items() if value not in (None, "")}
 
 
 _HOUSE_NUMBER_PATTERN = re.compile(r"^[0-9]+[a-zA-Z]?(?:\s*[/\-]\s*[0-9]+[a-zA-Z]?)?$")
