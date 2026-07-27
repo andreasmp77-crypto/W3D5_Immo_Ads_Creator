@@ -265,6 +265,63 @@ h1, h2, h3, h4 {
   letter-spacing: 0.01em;
 }
 
+/* Brand banner (icon + wordmark + tagline) shown at the top of every view.
+   Recreated in the page's cream/accent palette rather than embedding the
+   supplied dark-navy raster, which would clash with the theme. */
+.brand-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-right: auto;
+}
+
+.brand-logo {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  flex: none;
+}
+
+.brand-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 26px;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
+.brand-tagline {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 21px;
+  }
+  .brand-tagline {
+    font-size: 11.5px;
+  }
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+}
+
 .topbar-pill {
   display: inline-flex;
   align-items: center;
@@ -686,6 +743,34 @@ textarea.input {
 }
 """
 
+# Header banner: SVG building icon + wordmark + tagline, styled in the app's
+# cream/accent palette so it fits the theme (the supplied image was dark navy).
+BANNER_HTML = """
+<div class="brand-banner">
+  <span class="brand-logo">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="9" y="5" width="30" height="39" rx="5" fill="var(--color-accent)"/>
+      <g fill="var(--color-bg)">
+        <rect x="14" y="11" width="5" height="5" rx="1"/>
+        <rect x="21.5" y="11" width="5" height="5" rx="1"/>
+        <rect x="29" y="11" width="5" height="5" rx="1"/>
+        <rect x="14" y="19" width="5" height="5" rx="1"/>
+        <rect x="21.5" y="19" width="5" height="5" rx="1"/>
+        <rect x="29" y="19" width="5" height="5" rx="1"/>
+        <rect x="14" y="27" width="5" height="5" rx="1"/>
+        <rect x="29" y="27" width="5" height="5" rx="1"/>
+        <rect x="21" y="34" width="6" height="10" rx="1"/>
+      </g>
+    </svg>
+  </span>
+  <span class="brand-text">
+    <span class="brand-name">ImmoAds</span>
+    <span class="brand-tagline">A smarter way to write apartment ads.</span>
+  </span>
+</div>
+"""
+
+
 INTRO_HTML = """
 <div style="margin-bottom:var(--space-6)">
   <div class="topbar-pill">New Listing</div>
@@ -1058,7 +1143,7 @@ def create_app():
 
     with gr.Blocks(css=CUSTOM_CSS, title="ImmoAds") as demo:
         with gr.Row(elem_classes=["nav"]):
-            gr.HTML('<span class="nav-brand">ImmoAds</span>')
+            gr.HTML(BANNER_HTML)
 
         with gr.Column(elem_classes=["immo-shell"]):
             with gr.Column(elem_classes=["form-shell"]):
