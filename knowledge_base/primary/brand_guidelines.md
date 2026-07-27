@@ -41,7 +41,6 @@ ImmoAds helps apartment owners create clear, accurate, and brand-consistent list
 - Write in a human, natural style.
 - Use contractions when they sound natural.
 - Keep the language professional but not stiff.
-- If school and/or  kita infroamtion is not available in the same postcode find out the nearest school and kita in neighboring postcodes. 
 
 ## Don't
 - Don't invent amenities, distances, or neighborhood claims.
