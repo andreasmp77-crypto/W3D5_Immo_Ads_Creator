@@ -1071,11 +1071,29 @@ FORM_FIELD_NAMES = [
 ]
 
 
-def _generate_listing_callback(*form_values: Any):
+try:  # Marker default so Gradio injects a live Progress; gradio is otherwise
+    # imported lazily, so guard this for non-UI (test) environments.
+    import gradio as _gr_progress_mod
+    _PROGRESS_DEFAULT = _gr_progress_mod.Progress()
+except Exception:  # pragma: no cover - gradio not installed
+    _PROGRESS_DEFAULT = None
+
+
+def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
     """Run the content pipeline; the generated copy then replaces the Description
-    fields in place so the landlord can edit it directly on the same page."""
+    fields in place so the landlord can edit it directly on the same page. A
+    progress bar reports each stage, and the slow LLM call runs on a worker
+    thread so the percentage keeps advancing while we wait."""
 
     import gradio as gr
+    import threading
+    import time
+
+    def _tick(fraction: float, desc: str) -> None:
+        if progress is not None:
+            progress(fraction, desc=desc)
+
+    _tick(0.05, "Validating address…")
 
     form_values_map = dict(zip(FORM_FIELD_NAMES, form_values))
     form_values_map["photos"] = [
@@ -1084,38 +1102,8 @@ def _generate_listing_callback(*form_values: Any):
         form_values_map.pop("photo_3", None),
     ]
 
-    try:
-        normalized, summary = normalize_listing_submission(
-            strict_address_validation=True,
-            verify_external_address=True,
-            **form_values_map,
-        )
-    except ValueError as exc:
-        error_message = f"**Please complete the address fields before generating:** {exc}"
-        return (
-            gr.update(value="", visible=False),  # generated_ad_copy
-            gr.update(visible=True),  # property_description
-            gr.update(visible=True),  # fixtures_and_fittings
-            gr.update(visible=True),  # location_note
-            gr.update(visible=True),  # tone_section
-            gr.update(visible=True),  # submit
-            gr.update(visible=False),  # save_export_btn
-            gr.update(value=error_message, visible=True),  # generation_status
-        )
-
-    owner_info = normalized["owner_info"]
-
-    try:
-        inputs = ContentPipelineInputs(
-            owner_info=owner_info,
-            plz=normalized["plz"],
-            output_language=normalized["output_language"],
-            tone_hint=normalized["tone_hint"],
-            additional_instructions=normalized["additional_instructions"],
-        )
-        result = generate_content_draft(inputs)
-    except Exception as exc:  # pragma: no cover - depends on external API availability
-        error_message = f"**Could not generate the listing:** {exc}"
+    def _form_state(error_message: str):
+        """Outputs that keep the user on the form (page 1) and surface an error."""
         return (
             gr.update(value=INTRO_HTML),  # intro (stay on the form heading)
             gr.update(value="", visible=False),  # generated_ad_copy
@@ -1128,9 +1116,51 @@ def _generate_listing_callback(*form_values: Any):
             gr.update(value=error_message, visible=True),  # generation_status
         )
 
-    cleaned_copy = strip_markdown_for_plain_text(result.draft_text).strip()
+    try:
+        normalized, _summary = normalize_listing_submission(
+            strict_address_validation=True,
+            verify_external_address=True,
+            **form_values_map,
+        )
+    except ValueError as exc:
+        return _form_state(f"**Please complete the address fields before generating:** {exc}")
 
-    status_visible = "- Warning:" in summary
+    owner_info = normalized["owner_info"]
+    _tick(0.25, "Analyzing the neighborhood…")
+
+    # Run the (slow) LLM call on a worker thread so we can animate the progress
+    # bar from ~40% to ~90% while we wait, instead of freezing at one number.
+    _tick(0.4, "Writing your listing with AI…")
+    holder: Dict[str, Any] = {}
+
+    def _run() -> None:
+        try:
+            inputs = ContentPipelineInputs(
+                owner_info=owner_info,
+                plz=normalized["plz"],
+                output_language=normalized["output_language"],
+                tone_hint=normalized["tone_hint"],
+                additional_instructions=normalized["additional_instructions"],
+            )
+            holder["result"] = generate_content_draft(inputs)
+        except Exception as exc:  # pragma: no cover - depends on external API availability
+            holder["error"] = exc
+
+    worker = threading.Thread(target=_run, daemon=True)
+    worker.start()
+    pct = 0.4
+    while worker.is_alive():
+        time.sleep(0.4)
+        pct = min(pct + 0.03, 0.9)
+        _tick(pct, "Writing your listing with AI…")
+    worker.join()
+
+    if "error" in holder:
+        return _form_state(f"**Could not generate the listing:** {holder['error']}")
+
+    _tick(0.95, "Formatting your listing…")
+    cleaned_copy = strip_markdown_for_plain_text(holder["result"].draft_text).strip()
+    _tick(1.0, "Done")
 
     return (
         gr.update(value=REVIEW_INTRO_HTML),  # intro (switch to the review heading)
@@ -1141,7 +1171,9 @@ def _generate_listing_callback(*form_values: Any):
         gr.update(visible=False),  # tone_section
         gr.update(visible=False),  # submit
         gr.update(visible=True),  # save_export_btn
-        gr.update(value=summary if status_visible else "", visible=status_visible),  # generation_status
+        # The "Parsed intake" summary is developer-only info, so it is never
+        # shown to the landlord; only real errors above use this status box.
+        gr.update(value="", visible=False),  # generation_status
     )
 
 
