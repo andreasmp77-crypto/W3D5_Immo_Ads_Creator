@@ -7,12 +7,12 @@ from typing import Any, Dict, Sequence
 
 try:
     from src.content_pipeline import ContentPipelineInputs
-    from src.pdf_export import render_structured_listing_pdf, strip_markdown_for_plain_text
+    from src.pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
     from src.ui_layout import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from src.ui_validation import normalize_listing_submission
 except ImportError:  # pragma: no cover - script execution fallback
     from content_pipeline import ContentPipelineInputs
-    from pdf_export import render_structured_listing_pdf, strip_markdown_for_plain_text
+    from pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
     from ui_layout import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from ui_validation import normalize_listing_submission
 
@@ -122,73 +122,15 @@ SAVE_EXPORT_FIELD_NAMES = FORM_FIELD_NAMES[:-3] + ["generated_ad_copy"]
 
 
 def _save_and_export_pdf_callback(*form_values: Any) -> str:
-    """Package the current fields into a downloadable PDF."""
+    """Render the reviewed listing to a PDF that looks like the review page
+    (browser-style "Print to PDF"), with all photos on one dedicated page."""
 
     field_values = form_values[:-3]
     photo_paths = [p for p in form_values[-3:] if p]
     values_map = dict(zip(SAVE_EXPORT_FIELD_NAMES, field_values))
-
-    street = values_map.get("street_name") or ""
-    house_number = values_map.get("house_number") or ""
-    postal_code = values_map.get("postal_code") or ""
-    city = values_map.get("city") or ""
-    headline = " ".join(part for part in [street, house_number, city] if part) or "Apartment Listing"
-
-    fixtures_and_fittings = values_map.get("fixtures_and_fittings")
-    location_note = values_map.get("location_note")
     ad_copy = str(values_map.get("generated_ad_copy") or "").strip()
 
-    sections = [
-        (
-            "Address",
-            [
-                f"Street: {street}" if street else None,
-                f"House number: {house_number}" if house_number else None,
-                f"Pincode: {postal_code}" if postal_code else None,
-                f"City: {city}" if city else None,
-            ],
-        ),
-        (
-            "Contact",
-            [
-                f"Name: {values_map.get('full_name')}" if values_map.get("full_name") else None,
-                f"Phone: {values_map.get('phone_number')}" if values_map.get("phone_number") else None,
-            ],
-        ),
-        (
-            "Property details",
-            [
-                f"Living area: {values_map.get('living_area_sqm')} m²" if values_map.get("living_area_sqm") else None,
-                f"Rooms: {values_map.get('rooms')}" if values_map.get("rooms") else None,
-                f"Bedrooms: {values_map.get('bedrooms')}" if values_map.get("bedrooms") else None,
-                f"Bathrooms: {values_map.get('bathrooms')}" if values_map.get("bathrooms") else None,
-                f"Heating: {values_map.get('heating_type')}" if values_map.get("heating_type") else None,
-                f"Energy efficiency: {values_map.get('energy_efficiency')}" if values_map.get("energy_efficiency") else None,
-                f"Condition: {values_map.get('property_condition')}" if values_map.get("property_condition") else None,
-                f"Property type: {values_map.get('property_type')}" if values_map.get("property_type") else None,
-            ],
-        ),
-        (
-            "Costs",
-            [
-                f"Cold rent: {values_map.get('cold_rent_eur')} EUR" if values_map.get("cold_rent_eur") else None,
-                f"Warm costs: {values_map.get('nebenkosten_eur')} EUR" if values_map.get("nebenkosten_eur") else None,
-                f"Total rent: {values_map.get('total_warm_rent_eur')} EUR"
-                if values_map.get("total_warm_rent_eur")
-                else None,
-            ],
-        ),
-        (
-            "Description",
-            [
-                ad_copy,
-                f"Fixtures & fittings: {fixtures_and_fittings}" if fixtures_and_fittings else None,
-                f"Location notes: {location_note}" if location_note else None,
-            ],
-        ),
-    ]
-
-    pdf_bytes = render_structured_listing_pdf(headline, sections, image_paths=photo_paths)
+    pdf_bytes = render_listing_webpage_pdf(values_map, ad_copy, photo_paths)
     tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
     tmp_file.write(pdf_bytes)
     tmp_file.close()
