@@ -20,6 +20,7 @@ knowledge_base/ markdown context (never store PLZ facts inside knowledge_base/).
 from __future__ import annotations
 
 import json
+import os
 import logging
 import time
 import urllib.parse
@@ -27,7 +28,7 @@ import urllib.request
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,9 @@ CENTROIDS_FILE = DATA_DIR / "plz_centroids.json"
 NEIGHBORS_FILE = DATA_DIR / "plz_neighbors.json"
 SCHOOLS_FILE = DATA_DIR / "schools_by_plz.json"
 BVG_BASE_URL = "https://v6.bvg.transport.rest"
+GEOPY_USER_AGENT = os.getenv("IMMOADS_GEOPY_USER_AGENT", "ImmoAdsAddressVerifier/1.0")
+GEOPY_REQUEST_TIMEOUT_SECONDS = float(os.getenv("IMMOADS_GEOPY_REQUEST_TIMEOUT_SECONDS", "5"))
+GEOPY_MIN_DELAY_SECONDS = float(os.getenv("IMMOADS_GEOPY_MIN_DELAY_SECONDS", "1.0"))
 
 # Live transit lookups are cached in-memory for TRANSIT_CACHE_TTL_SECONDS so repeated
 # ad-generation runs for the same PLZ (e.g. during testing/demo) don't hammer the
@@ -55,8 +59,147 @@ class PlzSpatialSummary:
     centroid_latlon: Optional[Tuple[float, float]] = None
 
 
+@dataclass(frozen=True)
+class AddressVerificationResult:
+    """Outcome of an external geocoding verification lookup."""
+
+    status: str
+    query: str
+    verified: bool
+    message: str
+    display_name: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+
+
 def _normalize_plz(plz: str) -> str:
     return str(plz).strip()
+
+
+def _normalize_address_part(value: Any) -> str:
+    return str(value or "").strip()
+
+
+def _build_address_query(street_name: str, house_number: str, postal_code: str, city: str) -> str:
+    street_line = " ".join(part for part in (street_name, house_number) if part).strip()
+    locality_line = ", ".join(part for part in (postal_code, city, "Germany") if part)
+    return ", ".join(part for part in (street_line, locality_line) if part)
+
+
+@lru_cache(maxsize=1)
+def _get_geopy_geocode() -> Optional[Callable[..., Any]]:
+    """Build a rate-limited geopy geocoder if the dependency is installed."""
+
+    try:
+        from geopy.extra.rate_limiter import RateLimiter
+        from geopy.geocoders import Nominatim
+    except ImportError:
+        logger.info("geopy is not installed; address verification will be skipped.")
+        return None
+
+    geocoder = Nominatim(
+        user_agent=GEOPY_USER_AGENT,
+        timeout=GEOPY_REQUEST_TIMEOUT_SECONDS,
+    )
+    return RateLimiter(
+        geocoder.geocode,
+        min_delay_seconds=GEOPY_MIN_DELAY_SECONDS,
+        max_retries=0,
+        swallow_exceptions=False,
+    )
+
+
+@lru_cache(maxsize=512)
+def verify_address_with_geopy(
+    street_name: str,
+    house_number: str,
+    postal_code: str,
+    city: str,
+) -> AddressVerificationResult:
+    """Verify a submitted address through geopy/Nominatim.
+
+    The result is cached per normalized address so repeated submits do not
+    keep querying the external service. The geopy call itself is also
+    rate-limited to avoid accidental bursts.
+    """
+
+    street_name = _normalize_address_part(street_name)
+    house_number = _normalize_address_part(house_number)
+    postal_code = _normalize_address_part(postal_code)
+    city = _normalize_address_part(city)
+    query = _build_address_query(street_name, house_number, postal_code, city)
+
+    if not query:
+        return AddressVerificationResult(
+            status="skipped",
+            query=query,
+            verified=False,
+            message="Address verification skipped because the address is incomplete.",
+        )
+
+    geocode = _get_geopy_geocode()
+    if geocode is None:
+        return AddressVerificationResult(
+            status="unavailable",
+            query=query,
+            verified=False,
+            message="Address verification unavailable because geopy is not installed.",
+        )
+
+    try:
+        location = geocode(query, exactly_one=True, addressdetails=True, country_codes="de")
+    except Exception as exc:  # network/API failure: fail closed, never fabricate
+        logger.warning("Geopy address verification failed for %s: %s", query, exc)
+        return AddressVerificationResult(
+            status="unavailable",
+            query=query,
+            verified=False,
+            message="Address verification unavailable right now.",
+        )
+
+    if location is None:
+        return AddressVerificationResult(
+            status="not_verified",
+            query=query,
+            verified=False,
+            message="Address could not be verified by the external geocoding service.",
+        )
+
+    raw = getattr(location, "raw", {}) or {}
+    address_details = raw.get("address", {}) if isinstance(raw, dict) else {}
+    returned_postcode = _normalize_address_part(address_details.get("postcode"))
+    returned_city = _normalize_address_part(
+        address_details.get("city")
+        or address_details.get("town")
+        or address_details.get("village")
+        or address_details.get("municipality")
+    )
+
+    if postal_code and returned_postcode and returned_postcode != postal_code:
+        return AddressVerificationResult(
+            status="not_verified",
+            query=query,
+            verified=False,
+            message="Address could not be verified by the external geocoding service.",
+        )
+
+    if city and returned_city and returned_city.lower() != city.lower():
+        return AddressVerificationResult(
+            status="not_verified",
+            query=query,
+            verified=False,
+            message="Address could not be verified by the external geocoding service.",
+        )
+
+    return AddressVerificationResult(
+        status="verified",
+        query=query,
+        verified=True,
+        message="Address verified by the external geocoding service.",
+        display_name=getattr(location, "address", None) or raw.get("display_name"),
+        latitude=getattr(location, "latitude", None),
+        longitude=getattr(location, "longitude", None),
+    )
 
 
 @lru_cache(maxsize=1)
