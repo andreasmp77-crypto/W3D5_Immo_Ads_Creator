@@ -16,6 +16,23 @@ from src.app import (
 from src.location_data import verify_address_with_geopy
 
 
+CALLBACK_OUTPUT_NAMES = (
+    "intro",
+    "generated_ad_copy",
+    "property_description",
+    "fixtures_and_fittings",
+    "location_note",
+    "tone_section",
+    "submit",
+    "save_export_btn",
+    "generation_status",
+)
+
+
+def _callback_output_map(result):
+    return dict(zip(CALLBACK_OUTPUT_NAMES, result))
+
+
 def test_validate_address_payload_accepts_valid_berlin_address():
     errors, warnings = validate_address_payload(
         {
@@ -135,14 +152,14 @@ def test_generate_listing_callback_hides_debug_summary(monkeypatch):
     }
     ordered_values = [form_values.get(field, "") for field in FORM_FIELD_NAMES]
 
-    result = _generate_listing_callback(*ordered_values)
+    result = _callback_output_map(_generate_listing_callback(*ordered_values))
 
     # index 0 = intro (switched to the review heading), index 1 = generated copy,
     # last = generation_status (hidden, no parsed-intake / warning dump).
-    assert "Review your listing" in result[0]["value"]
-    assert result[1]["value"] == "Generated copy here"
-    assert result[-1]["visible"] is False
-    assert result[-1]["value"] == ""
+    assert "Review your listing" in result["intro"]["value"]
+    assert result["generated_ad_copy"]["value"] == "Generated copy here"
+    assert result["generation_status"]["visible"] is False
+    assert result["generation_status"]["value"] == ""
 
 
 def test_validate_address_payload_uses_cached_geopy_verification(monkeypatch):
