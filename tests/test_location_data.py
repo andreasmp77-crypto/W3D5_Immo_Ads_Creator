@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 
+from src import location_data as ld_module
 from src.location_data import (
     PlzSpatialSummary,
     fetch_nearby_transit,
@@ -9,6 +10,7 @@ from src.location_data import (
     get_neighboring_plz,
     get_plz_spatial_summary,
     load_kita_data,
+    load_school_data,
 )
 
 
@@ -138,11 +140,38 @@ def test_fetch_nearby_transit_caches_successful_result(monkeypatch):
     assert call_count["n"] == 1  # second call served from cache, no new network call
 
 
-def test_location_summary_omits_schools_until_sourced(monkeypatch):
+def test_load_school_data_reports_real_schools(monkeypatch, tmp_path):
+    schools_file = tmp_path / "schools_by_plz.json"
+    schools_file.write_text(json.dumps({"10115": [{"bsn": "01G01", "name": "Grundschule am Arkonaplatz", "address": "Ruppiner Str. 47"}]}))
+    monkeypatch.setattr("src.location_data.SCHOOLS_FILE", schools_file)
+    ld_module._load_schools.cache_clear()
+    load_school_data.cache_clear()
+
+    text = load_school_data("10115")
+    assert "Grundschule am Arkonaplatz" in text
+    assert "1 registered" in text
+
+
+def test_load_school_data_falls_back_to_neighbor(monkeypatch, tmp_path):
+    schools_file = tmp_path / "schools_by_plz.json"
+    schools_file.write_text(json.dumps({"88888": [{"bsn": "01G02", "name": "Neighbor School", "address": "Some Str. 1"}]}))
+    monkeypatch.setattr("src.location_data.SCHOOLS_FILE", schools_file)
+    monkeypatch.setattr("src.location_data._load_neighbors", lambda: {"99999": ["88888"]})
+    ld_module._load_schools.cache_clear()
+    load_school_data.cache_clear()
+
+    text = load_school_data("99999")
+    assert "none registered directly in this PLZ" in text
+    assert "Neighbor School" in text
+
+
+def test_location_summary_reports_schools_honestly_when_file_missing(monkeypatch):
     monkeypatch.setattr("src.location_data.fetch_nearby_transit", lambda plz: "Public transport: stub.")
+    monkeypatch.setattr("src.location_data.SCHOOLS_FILE", ld_module.DATA_DIR / "does_not_exist.json")
+    load_school_data.cache_clear()
 
     summary = get_location_summary("10115")
 
     assert "ZIP CODE 10115" in summary
     assert "Kitas:" in summary
-    assert "Schools:" not in summary
+    assert "Schools: data not yet available" in summary
