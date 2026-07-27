@@ -1,72 +1,82 @@
-# Pipeline Workflow
+# Pipeline Workflow (current architecture)
 
-┌──────────────────────────────────────┐
-│ src/main.py                          │
-│ launches src.app.py (Gradio UI)      │
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ Raw Owner Input                      │
-│ dict / JSON / TXT / file path        │
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ document_processor.py                │  <-- Cleans aliases, infers PLZ, builds
-│                                      │      ContentPipelineInputs (M1)
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ content_pipeline.py                  │  <-- Orchestrates context collection
-└───────┬───────────────────┬──────────┘
-        │                   │
+┌────────────────────────────────────────────┐
+│ Gradio UI (app.py)                         │
+│ ui_layout.py   -- page/form layout         │
+│ ui_shared.py   -- constants, sample listing│
+│ ui_callbacks.py -- generate / export clicks│
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ ui_validation.py                           │  <-- Validates address fields, checks
+│                                            │      PLZ against local lookup data,
+│                                            │      and (if enabled) verifies the
+│                                            │      address live via geopy/Nominatim
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ document_parsing.py                        │  <-- Low-level field aliasing / cleanup
+│ document_processor.py                      │  <-- Builds ContentPipelineInputs (M1)
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ content_pipeline.py (facade)               │
+│   -> content_service.py (real logic)       │  <-- Orchestrates context collection,
+│                                            │      generation, review, publish (M5)
+└───────┬───────────────────┬────────────────┘
         │                   │
         ▼                   ▼
-┌──────────────────────┐  ┌──────────────────────────────────────┐
-│ knowledge_base.py    │  │ location_data.py                     │
-│                      │  │                                      │
-│ Loads primary +      │  │ Loads JSON PLZ data + centroids,     │
-│ secondary markdown   │  │ uses live BVG lookup, and falls back │
-│ context (M2)         │  │ to the nearest neighbor PLZ when     │
-└──────────┬───────────┘  │ exact data is missing (M3)           │
-           │              └──────────┬───────────────────────────┘
-           │                         │
-           └──────────────┬──────────┘
-                          ▼
-┌──────────────────────────────────────┐
-│ prompt_templates.py                  │  <-- Separates owner info, KB context,
-│                                      │      and location facts into prompt blocks (M4)
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ llm_integration.py                   │  <-- Calls OpenAI Responses API and
-│                                      │      normalizes draft text (M4)
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ Human Review / Edit                  │  <-- Reviewer can accept or edit draft (M5)
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ pdf_export.py                        │  <-- Optional PDF rendering branch used
-│                                      │      by the Gradio app (M6 / nice-to-have)
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│ Final PDF / UI Output                │
-└──────────────────────────────────────┘
+┌───────────────────┐   ┌────────────────────────────────────────┐
+│ knowledge_base.py │   │ location_data.py (facade)              │
+│                   │   │   -> location_static.py                │
+│ Loads primary +   │   │      Kitas, schools, PLZ neighbors,    │
+│ secondary markdown│   │      centroids -- all precomputed,     │
+│ context (M2)      │   │      static JSON files (real open data)│
+└─────────┬─────────┘   │   -> location_live.py                  │
+          │             │      Live BVG transit lookup (cached   │
+          │             │      15 min) + live geopy/Nominatim    │
+          │             │      address verification (M3)         │
+          │             └──────────────┬─────────────────────────┘
+          │                            │
+          └──────────────┬─────────────┘
+                         ▼
+┌────────────────────────────────────────────┐
+│ prompt_templates.py                        │  <-- Separates owner info, KB context,
+│                                            │      and location facts into prompt
+│                                            │      blocks; instructs the model to
+│                                            │      surface Kita/transit facts and
+│                                            │      never invent unsupported ones (M4)
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ llm_integration.py                         │  <-- Calls OpenAI Responses API and
+│                                            │      normalizes draft text (M4)
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ Human Review                               │  <-- Reviewer edits draft inline (M5)
+└───────────────────┬────────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────────┐
+│ pdf_export.py                              │  <-- Renders the reviewed listing (with
+│                                            │      photos) as a downloadable PDF (M6)
+└────────────────────────────────────────────┘
 
 Notes:
-- `document_processor.py` currently supports dict, JSON, TXT, and file-path input.
-- `location_data.py` uses JSON-backed PLZ centroids plus live BVG lookup; if a PLZ
-  is missing locally, it falls back to the nearest neighboring PLZ and labels that
-  fallback explicitly.
-- The Gradio app currently calls the draft-generation path and then renders PDF output.
-- `M6` is implemented via `pdf_export.py` in the current UI path; the publish/UI
-  branch remains the primary MVP target in `project_structure.md`.
+- `location_data.py`, `content_pipeline.py` are thin compatibility facades kept stable
+  for the UI and tests; the real logic lives in `location_static.py` / `location_live.py`
+  and `content_service.py` respectively.
+- Static vs. live is a deliberate split, not an accident: Kitas/schools/neighbors/centroids
+  are precomputed once (see `rag_decision.md` - non-RAG context injection, static corpus);
+  transit and address verification are live lookups because they're either time-sensitive
+  (transit) or need real-time external validation (address).
+- If a PLZ has no local Kita/school data, the system falls back to a real neighboring PLZ
+  (computed once via geopandas polygon adjacency) - never a fabricated result.
+- Every location fact returned by `location_static.py` / `location_live.py` is either real
+  data or an explicit "unavailable" string; nothing is guessed.
