@@ -16,6 +16,14 @@
 - **Time:** MVP (UI input - document ingestion(2D Floor plan), both knowledge bases, PLZ-based data lookup, ad generation, PDF/UI export) must be complete within the 2-day project window.
 - **Cost:** Use free-tier LLM API access and free/open datasets for schools, transport, and Kita data; no paid data subscriptions.
 
+## Current module map
+- `src/app.py` is the compatibility entry point for the UI.
+- `src/ui_layout.py`, `src/ui_callbacks.py`, `src/ui_validation.py`, and `src/ui_shared.py` now hold the split UI implementation.
+- `src/document_processor.py` delegates raw intake parsing to `src/document_parsing.py`.
+- `src/location_data.py` delegates static PLZ logic to `src/location_static.py` and live verification to `src/location_live.py`.
+- `src/content_pipeline.py` delegates orchestration to `src/content_service.py`.
+- `src/pdf_export.py` remains the export path, and `deliverables/` stores sample output artifacts.
+
 
 ## Requirements → implementation
 
@@ -25,12 +33,12 @@
 
 | ID | Requirement | Maps to file/module | How verified |
 |---|---|---|---|
-| M1 | Ingest owner-provided listing details (rooms, size, rent,pictures(optional), #bathrooms, description, tone of the ad) | `document_processor.py` | Unit test: sample input on UI returns correctly parsed JSON |
+| M1 | Ingest owner-provided listing details (rooms, size, rent,pictures(optional), #bathrooms, description, tone of the ad) | `document_processor.py`, `document_parsing.py`, `ui_validation.py` | Unit test: sample input on UI returns correctly parsed JSON |
 | M2 | Load primary KB (brand/tone guidelines, past ads) and secondary KB (Berlin district and market-context markdown) from markdown | `knowledge_base.py` | Test loads sample `.md` files without error |
-| M3 | Look up schools, public transport, and Kita info by PLZ — Kitas from real Berlin open data, transport via live lookup | `location_data.py` | Returns non-empty Kita + transit result for 5 test PLZs across different Berlin districts |
+| M3 | Look up schools, public transport, and Kita info by PLZ — Kitas from real Berlin open data, transport via live lookup | `location_data.py`, `location_static.py`, `location_live.py` | Returns non-empty Kita + transit result for 5 test PLZs across different Berlin districts |
 | M4 | Generate ad copy via LLM using owner info + KB context + location data | `llm_integration.py`, `prompt_templates.py` | Manual review of output against brand tone checklist |
-| M5 | Human review/edit before finalizing PDF/UI Posting | `content_pipeline.py` | Manual test: reviewer can edit draft text before final PDF/UI is generated |
-| M6 | Render final ad as a PDF/UI posting | `pdf_export.py` (nice-to-have) and/or `publish_UI.py` — UI posting is the required MVP path; PDF export may be dropped if time-constrained | Generated post appears correctly on the UI and contains all required fields; PDF export tested only if built |
+| M5 | Human review/edit before finalizing PDF/UI Posting | `content_pipeline.py`, `content_service.py` | Manual test: reviewer can edit draft text before final PDF/UI is generated |
+| M6 | Render final ad as a PDF/UI posting | `pdf_export.py`, `ui_layout.py`, `ui_callbacks.py`, `ui_shared.py` — UI posting is the required MVP path and PDF export are available | Generated post appears correctly on the UI and contains all required fields |
 
 **Won't**
 - Won't support cities outside Berlin in the MVP
@@ -50,17 +58,26 @@
 3. **Core pipeline**
    3.1 Build `document_processor.py` (owner input ingestion)
    3.2 Build 2D floor plan ingestion within `document_processor.py`
-   3.3 Build `knowledge_base.py` (load/select KB content)
-   3.4 Build `location_data.py` (PLZ lookup)
-   3.5 Build `prompt_templates.py`
-   3.6 Build `llm_integration.py`
-   3.7 Build `content_pipeline.py` (orchestration)
+   3.3 Build `document_parsing.py` (raw intake parsing helpers)
+   3.4 Build `knowledge_base.py` (load/select KB content)
+   3.5 Build `location_data.py` (PLZ lookup facade)
+   3.6 Build `location_static.py` (static PLZ lookups and formatting)
+   3.7 Build `location_live.py` (live verification / transit)
+   3.8 Build `prompt_templates.py`
+   3.9 Build `llm_integration.py`
+   3.10 Build `content_service.py` (pipeline service layer)
+   3.11 Build `content_pipeline.py` (compatibility facade)
+   3.12 Build `ui_shared.py` (shared UI constants)
+   3.13 Build `ui_validation.py` (UI normalization and validation)
+   3.14 Build `ui_callbacks.py` (Generate / PDF callbacks)
+   3.15 Build `ui_layout.py` (Gradio layout)
 4. **Output & review**
    4.1 Build `pdf_export.py`
    4.2 Implement human review/edit step
 5. **Uniqueness & docs**
    5.1 Generate side-by-side comparison vs. generic ChatGPT
    5.2 Write README, `rag_decision.md`, finalize this file
+   5.3 Keep exported artifacts in `deliverables/`
 6. **PM & demo**
    6.1 Maintain Trello board, capture Day 1/Day 2 screenshots
    6.2 Prepare presentation
@@ -81,3 +98,5 @@ Our knowledge bases (brand/tone guidelines and Berlin market context) are expect
 - Check the rental cap information from the Govt websites/API and provide as an input for the owners
 - A barometer of how asked rent compares to the area
 
+## Deliverables
+- `deliverables/` stores exported sample PDFs and demo outputs generated from the current UI.

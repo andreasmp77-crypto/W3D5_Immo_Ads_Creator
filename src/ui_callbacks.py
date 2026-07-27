@@ -9,12 +9,16 @@ from typing import Any, Dict, Sequence
 
 try:
     from src.content_pipeline import ContentPipelineInputs
-    from src.pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
+    from src.pdf_export import (
+        render_listing_pdf,
+        render_listing_webpage_pdf,
+        strip_markdown_for_plain_text,
+    )
     from src.ui_shared import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from src.ui_validation import normalize_listing_submission
 except ImportError:  # pragma: no cover - script execution fallback
     from content_pipeline import ContentPipelineInputs
-    from pdf_export import render_listing_webpage_pdf, strip_markdown_for_plain_text
+    from pdf_export import render_listing_pdf, render_listing_webpage_pdf, strip_markdown_for_plain_text
     from ui_shared import FORM_FIELD_NAMES, INTRO_HTML, REVIEW_INTRO_HTML
     from ui_validation import normalize_listing_submission
 
@@ -148,7 +152,57 @@ def _save_and_export_pdf_callback(*form_values: Any) -> str:
     values_map = dict(zip(SAVE_EXPORT_FIELD_NAMES, field_values))
     ad_copy = str(values_map.get("generated_ad_copy") or "").strip()
 
-    pdf_bytes = render_listing_webpage_pdf(values_map, ad_copy, photo_paths)
+    try:
+        pdf_bytes = render_listing_webpage_pdf(values_map, ad_copy, photo_paths)
+    except ImportError:
+        fallback_sections = [
+            ("Address", [
+                f"{values_map.get('street_name') or ''} {values_map.get('house_number') or ''}".strip(),
+                f"{values_map.get('postal_code') or ''} {values_map.get('city') or ''}".strip(),
+            ]),
+            ("Contact", [
+                values_map.get("full_name"),
+                values_map.get("phone_number"),
+            ]),
+            ("Property details", [
+                values_map.get("living_area_sqm"),
+                values_map.get("rooms"),
+                values_map.get("bedrooms"),
+                values_map.get("bathrooms"),
+                values_map.get("heating_type"),
+                values_map.get("energy_efficiency"),
+                values_map.get("property_condition"),
+                values_map.get("property_type"),
+            ]),
+            ("Costs", [
+                values_map.get("cold_rent_eur"),
+                values_map.get("nebenkosten_eur"),
+                values_map.get("total_warm_rent_eur"),
+            ]),
+            ("Description", [
+                ad_copy,
+                values_map.get("fixtures_and_fittings"),
+                values_map.get("location_note"),
+            ]),
+        ]
+        pdf_bytes = render_listing_pdf(
+            " ".join(
+                str(part)
+                for part in (
+                    values_map.get("street_name"),
+                    values_map.get("house_number"),
+                    values_map.get("city"),
+                )
+                if part
+            )
+            or "Apartment Listing",
+            "\n".join(
+                str(line)
+                for _section_title, section_lines in fallback_sections
+                for line in section_lines
+                if line not in (None, "")
+            ),
+        )
 
     address_parts = [
         values_map.get("street_name"),

@@ -1,25 +1,22 @@
 # ImmoAds
 
-ImmoAds is a Gradio-based property ad generator for Berlin listings. It normalizes owner input, loads brand and market knowledge from Markdown, enriches the listing with PLZ-based truth location facts, generates ad copy with OpenAI, and can render a reviewed PDF export.
+ImmoAds is a Gradio-based property ad generator for Berlin listings. It normalizes owner input, loads brand and market knowledge from Markdown, enriches the listing with PLZ-based location facts, generates ad copy with OpenAI, and lets the user review the result before export.
 
 ## What It Does
 
-- Accepts landlord input from the UI, including listing details, tone, photos, and postal code.
-- Normalizes that input into `ContentPipelineInputs`.
+- Accepts listing details from the UI, including address, property facts, tone, and photos.
+- Normalizes the raw input into `ContentPipelineInputs`.
 - Loads primary and secondary knowledge base markdown files.
-- Looks up Kitas, schools, neighbor PLZ fallbacks, centroids, and transit details from local JSON data plus live BVG lookup.
-- Builds an LLM prompt with separated owner info, KB context, and location facts.
-- Generates draft copy with OpenAI Responses API.
-- Lets the user review and edit the draft before export.
-- Exports a PDF version of the listing through the UI.
+- Looks up Kitas, schools, neighbor-PLZ fallbacks, centroids, and transit details from local data plus live BVG/geopy verification.
+- Separates owner info, knowledge base context, and location facts before sending the prompt to the LLM.
+- Generates draft copy with the OpenAI Responses API.
+- Supports human review and PDF export from the UI.
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
-
-If you want to run the tests and `pytest` is not already available in your environment, install it separately in your dev setup.
 
 ## Run
 
@@ -29,7 +26,7 @@ Start the app:
 python src/main.py
 ```
 
-`src/main.py` loads `.env` and launches the Gradio UI in `src/app.py`.
+`src/main.py` loads `.env` and launches the Gradio UI through the compatibility wrapper in `src/app.py`.
 
 ## Tests
 
@@ -39,47 +36,59 @@ Run the test suite:
 pytest -q
 ```
 
-The current suite covers:
+The current tests cover:
 
 - owner listing normalization
-- KB scanning and formatting
-- PLZ location lookup and neighbor fallback
-- prompt / LLM integration helpers
+- address validation and warning handling
+- knowledge base scanning and formatting
+- PLZ location lookup, centroids, and neighbor fallback
+- prompt and LLM integration helpers
 - content pipeline orchestration
+- UI callback behavior, including PDF export fallback
 
 ## Repository Layout
 
-- `src/app.py` - Gradio UI and PDF export wiring
-- `src/main.py` - entry point that launches the UI
+- `src/main.py` - entry point for `python src/main.py`
+- `src/app.py` - compatibility wrapper for the UI surface
+- `src/ui_layout.py` - Gradio layout and page structure
+- `src/ui_callbacks.py` - generate/export callbacks
+- `src/ui_validation.py` - form validation and normalization
+- `src/ui_shared.py` - shared UI constants
 - `src/document_processor.py` - raw listing normalization
-- `src/content_pipeline.py` - orchestration from context collection to reviewed output
-- `src/knowledge_base.py` - markdown KB loading and formatting
-- `src/location_data.py` - PLZ lookup, neighbor fallback, centroids, transit, and school/Kita summaries
+- `src/document_parsing.py` - parsing helpers for owner intake
+- `src/content_pipeline.py` - compatibility facade for the content flow
+- `src/content_service.py` - pipeline orchestration service
+- `src/knowledge_base.py` - Markdown KB loading and formatting
+- `src/location_data.py` - compatibility facade for PLZ lookup
+- `src/location_static.py` - static PLZ data, centroids, and summaries
+- `src/location_live.py` - live geopy and BVG verification helpers
 - `src/prompt_templates.py` - prompt assembly helpers
 - `src/llm_integration.py` - OpenAI Responses API wrapper
 - `src/pdf_export.py` - PDF rendering for reviewed listings
 - `knowledge_base/primary/` - agency tone, listings, and examples
 - `knowledge_base/secondary/` - Berlin context summaries written in the project’s own words
-- `data/` - local lookup datasets used by `location_data.py`
+- `data/` - local lookup datasets used by the location layer
+- `deliverables/` - exported sample PDFs and demo outputs
 - `tests/` - pytest coverage for the implemented modules
+
+## Environment
+
+Expected environment variables:
+
+- `OPENAI_API_KEY` - required for ad generation
+
+Notes:
+
+- `geopy` is used for external address verification when installed.
+- PDF export uses a WeasyPrint-based path when available, and falls back to the built-in PDF renderer if WeasyPrint is missing.
 
 ## Workflow Notes
 
-- The user’s postal code is the input that selects location facts.
-- The ad generation prompt keeps owner info, KB context, and PLZ facts separate.
-- Location facts are not taken from the UI text verbatim; they are looked up from the data layer.
-- If exact PLZ data is missing, `location_data.py` falls back to the nearest neighboring PLZ and labels that fallback explicitly.
-- `content_pipeline.py` keeps orchestration separate from the lookup and prompt layers.
+- The user’s postal code drives the location lookup.
+- Owner input, KB context, and location facts stay separated in the prompt.
+- If exact PLZ data is missing, the location layer falls back to the nearest neighbor PLZ and labels that fallback explicitly.
+- `content_pipeline.py` keeps orchestration separate from lookup and prompt layers.
 
 ## Project Context
 
-The current implementation focuses on:
-
-- owner intake and normalization
-- KB loading from Markdown
-- deterministic PLZ enrichment
-- LLM copy generation
-- human review
-- PDF export
-
-See `project_structure.md`, `architecture_diagram.md`, and `AGENTS.md` for the current scope and working constraints.
+See `project_structure.md`, `architecture_diagram.md`, and `AGENTS.md` for the current scope, module map, and working rules.
