@@ -1,4 +1,4 @@
-# ag_decision.md - Niche Real Estate Pitch Engine
+# rag_decision.md - Niche Real Estate Pitch Engine
 
 ## RAG Decision
 

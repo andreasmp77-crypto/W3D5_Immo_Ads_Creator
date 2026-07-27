@@ -26,8 +26,8 @@
 | ID | Requirement | Maps to file/module | How verified |
 |---|---|---|---|
 | M1 | Ingest owner-provided listing details (rooms, size, rent,pictures(optional), #bathrooms, description, tone of the ad) | `document_processor.py` | Unit test: sample input on UI returns correctly parsed JSON |
-| M2 | Load primary KB (brand/tone guidelines, past ads) and secondary KB (Berlin market context - for a pincode provide names of schools, kita and nearest train station) from markdown | `knowledge_base.py` | Test loads sample `.md` files without error |
-| M3 | Look up schools, public transport, and Kita info by PLZ | `location_data.py` | Returns non-empty result for 5 test PLZs across different Berlin districts |
+| M2 | Load primary KB (brand/tone guidelines, past ads) and secondary KB (Berlin district and market-context markdown) from markdown | `knowledge_base.py` | Test loads sample `.md` files without error |
+| M3 | Look up schools, public transport, and Kita info by PLZ — Kitas from real Berlin open data, transport via live lookup; schools not yet sourced (see WBS 2.3) | `location_data.py` | Returns non-empty Kita + transit result for 5 test PLZs across different Berlin districts |
 | M4 | Generate ad copy via LLM using owner info + KB context + location data | `llm_integration.py`, `prompt_templates.py` | Manual review of output against brand tone checklist |
 | M5 | Human review/edit before finalizing PDF/UI Posting | `content_pipeline.py` | Manual test: reviewer can edit draft text before final PDF/UI is generated |
 | M6 | Render final ad as a PDF/UI posting | `pdf_export.py` (nice-to-have) and/or `publish_UI.py` — UI posting is the required MVP path; PDF export may be dropped if time-constrained | Generated post appears correctly on the UI and contains all required fields; PDF export tested only if built |

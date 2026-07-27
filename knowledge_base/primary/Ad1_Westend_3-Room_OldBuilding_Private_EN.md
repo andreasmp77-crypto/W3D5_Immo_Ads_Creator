@@ -10,7 +10,7 @@ Pincode:14050
 City:Berlin
 
 ## Contact
-Name: Max Muller
+Name: Max Müller
 Phone_Number: 01234567891
 
 ## Property Details

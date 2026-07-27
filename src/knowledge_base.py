@@ -10,7 +10,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 
-KB_ROOT = Path("knowledge_base")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+KB_ROOT = REPO_ROOT / "knowledge_base"
 PRIMARY_KB_DIR = KB_ROOT / "primary"
 SECONDARY_KB_DIR = KB_ROOT / "secondary"
 
