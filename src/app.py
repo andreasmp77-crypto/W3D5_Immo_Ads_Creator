@@ -655,6 +655,15 @@ input[type="number"] {
   padding-inline: 14px;
 }
 
+/* The pill radius (--input-radius: 999px) looks right on single-line inputs
+   but rounds multi-line text areas so hard that the corners eat the text
+   (notably the generated ad copy). Give text areas a gentle radius instead.
+   Literal px (not var(--radius-md)) because Gradio shadows that token locally. */
+textarea,
+textarea.input {
+  border-radius: 14px !important;
+}
+
 @media (max-width: 768px) {
   .immo-shell {
     padding-inline: 12px;
@@ -682,6 +691,16 @@ INTRO_HTML = """
   <div class="topbar-pill">New Listing</div>
   <h1 class="hero-title">List your property</h1>
   <p class="hero-copy">Fill in the details below. ImmoAds turns this into a polished listing with on-brand copy and neighborhood highlights - ready to publish or export as a PDF.</p>
+</div>
+"""
+
+# Shown in place of INTRO_HTML once the draft has been generated, turning the
+# page into a "review" step.
+REVIEW_INTRO_HTML = """
+<div style="margin-bottom:var(--space-6)">
+  <div class="topbar-pill">Review</div>
+  <h1 class="hero-title">Review your listing</h1>
+  <p class="hero-copy">Your draft version of the AI-generated listing is ready for review. Edit it in the text boxes and click the "Save and export to PDF" button to generate the PDF.</p>
 </div>
 """
 
@@ -915,6 +934,7 @@ def _generate_listing_callback(*form_values: Any):
     except Exception as exc:  # pragma: no cover - depends on external API availability
         error_message = f"**Could not generate the listing:** {exc}"
         return (
+            gr.update(value=INTRO_HTML),  # intro (stay on the form heading)
             gr.update(value="", visible=False),  # generated_ad_copy
             gr.update(visible=True),  # property_description
             gr.update(visible=True),  # fixtures_and_fittings
@@ -928,6 +948,7 @@ def _generate_listing_callback(*form_values: Any):
     cleaned_copy = strip_markdown_for_plain_text(result.draft_text).strip()
 
     return (
+        gr.update(value=REVIEW_INTRO_HTML),  # intro (switch to the review heading)
         gr.update(value=cleaned_copy, visible=True),  # generated_ad_copy
         gr.update(visible=False),  # property_description
         gr.update(visible=False),  # fixtures_and_fittings
@@ -1041,7 +1062,7 @@ def create_app():
 
         with gr.Column(elem_classes=["immo-shell"]):
             with gr.Column(elem_classes=["form-shell"]):
-                gr.HTML(INTRO_HTML)
+                intro = gr.HTML(INTRO_HTML)
                 with gr.Column(elem_classes=["card", "elev-sm", "form-card"]):
                     gr.HTML(_section_header("01", "Address", "📍"))
                     with gr.Row(elem_classes=["field-grid-2"]):
@@ -1133,11 +1154,22 @@ def create_app():
                         elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
                         variant="primary",
                     )
-                    save_export_btn = gr.DownloadButton(
+                    save_export_btn = gr.Button(
                         "💾 Save and export to PDF",
                         elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
                         variant="primary",
                         visible=False,
+                    )
+                    # The actual file download is delivered through this hidden
+                    # DownloadButton: save_export_btn builds the PDF into its value,
+                    # then a follow-up JS click triggers the browser download. Doing
+                    # it this way exports in a single click (a DownloadButton that
+                    # generates its own value needs two). Hidden via CSS, not
+                    # visible=False, so it still renders a clickable element.
+                    pdf_download = gr.DownloadButton(
+                        "download",
+                        elem_id="pdf-download",
+                        elem_classes=["hidden-output"],
                     )
                     generation_status = gr.Markdown(value="", visible=False)
 
@@ -1172,6 +1204,7 @@ def create_app():
                 fn=_generate_listing_callback,
                 inputs=form_fields,
                 outputs=[
+                    intro,
                     generated_ad_copy,
                     property_description,
                     fixtures_and_fittings,
@@ -1188,7 +1221,14 @@ def create_app():
                 # non-photo fields + generated copy, then the 3 photo components last
                 # (matches _save_and_export_pdf_callback's form_values[:-3] / [-3:] split)
                 inputs=form_fields[:-3] + [generated_ad_copy] + form_fields[-3:],
-                outputs=[save_export_btn],
+                # Build the PDF into the hidden DownloadButton, then click it from
+                # the browser so the file downloads in this same single click.
+                outputs=[pdf_download],
+            ).then(
+                None,
+                None,
+                None,
+                js="() => { document.querySelector('#pdf-download').click(); }",
             )
 
     return demo
