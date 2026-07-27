@@ -140,7 +140,6 @@ CUSTOM_CSS = """
   --border-color-secondary: var(--color-divider);
   --border-color-accent: var(--color-accent);
   --border-color-accent-subdued: var(--color-accent-300);
-  --color-accent: var(--color-accent);
   --color-accent-soft: var(--color-accent-100);
   --link-text-color: var(--color-accent);
   --link-text-color-hover: var(--color-accent-600);
@@ -159,10 +158,6 @@ CUSTOM_CSS = """
   --block-info-text-color: color-mix(in srgb, var(--color-text) 55%, transparent);
   --panel-background-fill: transparent;
   --panel-border-width: 0px;
-  --block-padding: 2px 0px;
-  --layout-gap: var(--space-3);
-  --form-gap-width: 0px;
-
   --input-background-fill: var(--color-surface);
   --input-background-fill-focus: var(--color-surface);
   --input-border-color: var(--color-divider);
@@ -244,7 +239,9 @@ h1, h2, h3, h4 {
 
 .immo-shell {
   margin: 0 auto;
-  padding: var(--space-6) var(--space-4) calc(2 * var(--space-8));
+  /* Extra bottom padding leaves room for the fixed .cta-bar so it never
+     covers the last card. */
+  padding: var(--space-6) var(--space-4) 120px;
 }
 
 .form-shell {
@@ -296,7 +293,6 @@ h1, h2, h3, h4 {
   font-size: 15.5px;
   color: var(--color-neutral-700);
   margin: 0;
-  max-width: 58ch;
 }
 
 .card {
@@ -347,9 +343,9 @@ h1, h2, h3, h4 {
 
 .field > label {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 5px;
-  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  color: var(--color-text);
 }
 
 .input {
@@ -519,7 +515,16 @@ textarea::placeholder {
   font-size: 16px;
 }
 
-.submit-btn button {
+/* Gradio locally redefines --color-accent to its own default orange
+   (#f97316) on primary buttons, which would shadow the brand accent. Reset
+   it here so var(--color-accent) below resolves to the design token
+   (#c67139 from :root) and the CTA matches the rest of the accent UI.
+   Covers both the Generate button (<button>) and the DownloadButton, which
+   Gradio may render as a nested <button> or <a>. */
+button.submit-btn,
+.submit-btn button,
+.submit-btn a {
+  --color-accent: #c67139;
   min-height: 52px !important;
   width: 100% !important;
   font-size: 16px !important;
@@ -530,6 +535,25 @@ textarea::placeholder {
   border: none !important;
   border-radius: var(--radius-md) !important;
   box-shadow: none !important;
+}
+
+/* Keep the primary CTA pinned to the bottom of the viewport so it stays
+   reachable no matter how far down the long form the user has scrolled.
+   position: fixed (not sticky) because Gradio's nested column wrappers set
+   overflow that would trap a sticky element. Centered to line up with the
+   880px form column; the translucent blurred backdrop stops form content
+   showing through as it scrolls behind the bar. */
+.cta-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(880px, calc(100vw - 24px));
+  z-index: 50;
+  padding: var(--space-3) 0 var(--space-4);
+  background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .field-grid-2 {
@@ -554,6 +578,17 @@ textarea::placeholder {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--space-4);
+}
+
+/* Gradio wraps adjacent form fields in an internal .form grouping div;
+   left as-is, that single wrapper becomes the only grid item and only
+   fills the first grid-template-columns track. Unwrap it so the actual
+   fields lay out directly on our grid. */
+.field-grid-2 > .form,
+.field-grid-2-equal > .form,
+.field-grid-3 > .form,
+.field-grid-3-top > .form {
+  display: contents;
 }
 
 .photo-grid {
@@ -1092,18 +1127,19 @@ def create_app():
                         elem_classes=["seg"],
                     )
 
-                submit = gr.Button(
-                    "Generate my listing ad",
-                    elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
-                    variant="primary",
-                )
-                save_export_btn = gr.DownloadButton(
-                    "💾 Save and export to PDF",
-                    elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
-                    variant="primary",
-                    visible=False,
-                )
-                generation_status = gr.Markdown(value="", visible=False)
+                with gr.Column(elem_classes=["cta-bar"]):
+                    submit = gr.Button(
+                        "Generate my listing ad",
+                        elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
+                        variant="primary",
+                    )
+                    save_export_btn = gr.DownloadButton(
+                        "💾 Save and export to PDF",
+                        elem_classes=["btn", "btn-primary", "btn-block", "submit-btn"],
+                        variant="primary",
+                        visible=False,
+                    )
+                    generation_status = gr.Markdown(value="", visible=False)
 
             form_fields = [
                 street_name,
