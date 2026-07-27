@@ -16,8 +16,7 @@ DEFAULT_BRAND_TONE_CHECKLIST: Sequence[str] = (
     "Use only facts present in the provided owner info, KB context, and location data.",
     "Do not invent amenities, distances, certifications, or neighborhood claims.",
     "Highlight the strongest property benefits without sounding generic or exaggerated.",
-    "Omit any detail that is missing or uncertain instead of filling gaps.",
-    "Do not invent fictional street names or district names if they are omitted from the owner info; rely solely on the provided PLZ and location context."
+    "Omit any detail that is missing or uncertain instead of filling gaps."
 )
 
 DEFAULT_OUTPUT_LANGUAGE = "English"
@@ -96,8 +95,9 @@ def build_ad_generation_bundle(
             f"Write the final copy in {output_language}.",
             "Use a professional, trustworthy, and distinctive tone.",
             "Stay strictly within the facts provided below.",
-            "If a fact is missing, omit it rather than inventing it.",
-            "Do not mention that you are an AI model or refer to internal prompting.",
+        "If a fact is missing, omit it rather than inventing it.",
+        "Always include the provided location facts when they exist, especially Kita and public transport facts.",
+        "Do not mention that you are an AI model or refer to internal prompting.",
         ]
     )
 
@@ -113,6 +113,8 @@ def build_ad_generation_bundle(
         "- Produce publish-ready ad copy.\n"
         "- Keep it concrete, natural, and non-generic.\n"
         "- Do not add unsupported claims.\n"
+        "- Include the provided Kita and public transport facts if they are present in the location data.\n"
+        "- If the public transport section says data unavailable, state that briefly rather than omitting it.\n"
         "- If useful, emphasize location and apartment strengths in a balanced way.",
     ]
 

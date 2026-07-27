@@ -114,7 +114,8 @@ def _generate_listing_callback(*form_values: Any, progress=_PROGRESS_DEFAULT):
         return _form_state(f"**Could not generate the listing:** {holder['error']}")
 
     _tick(0.95, "Formatting your listing…")
-    cleaned_copy = strip_markdown_for_plain_text(holder["result"].draft_text).strip()
+    rendered_text = getattr(holder["result"], "reviewed_text", None) or holder["result"].draft_text
+    cleaned_copy = strip_markdown_for_plain_text(rendered_text).strip()
     _tick(1.0, "Done")
 
     return (

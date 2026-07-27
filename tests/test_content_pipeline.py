@@ -48,7 +48,15 @@ def test_build_generation_request():
 def test_generate_content_draft_uses_llm_stub(monkeypatch):
     monkeypatch.setattr("src.content_pipeline.get_primary_kb_context", lambda: "PRIMARY CONTEXT")
     monkeypatch.setattr("src.content_pipeline.get_secondary_kb_context", lambda: "SECONDARY CONTEXT")
-    monkeypatch.setattr("src.content_pipeline.get_location_summary", lambda plz: f"LOCATION {plz}")
+    monkeypatch.setattr(
+        "src.content_pipeline.get_location_summary",
+        lambda plz: (
+            "=== FACTUAL LOCATION DATA (ZIP CODE 10115) ===\n\n"
+            "Kitas: 25 registered in this PLZ, including Example Kita.\n\n"
+            "Schools: 10 registered in this PLZ, including Example School.\n\n"
+            "Public transport: nearby stops include Example Stop (250m)."
+        ),
+    )
 
     def fake_generate_ad_copy(request, api_key=None):
         return AdGenerationResult(draft_text="Draft body", model="test-model")
@@ -58,7 +66,10 @@ def test_generate_content_draft_uses_llm_stub(monkeypatch):
     result = generate_content_draft(ContentPipelineInputs(owner_info={"headline": "Test"}, plz="10115"))
 
     assert result.draft_text == "Draft body"
-    assert result.location_summary == "LOCATION 10115"
+    assert "Kitas: 25 registered in this PLZ" in result.reviewed_text
+    assert "Public transport: nearby stops include Example Stop (250m)." in result.reviewed_text
+    assert "Location facts:" in result.reviewed_text
+    assert "Kitas: 25 registered in this PLZ" in result.location_summary
 
 
 def test_run_content_pipeline_allows_review_edit(monkeypatch):

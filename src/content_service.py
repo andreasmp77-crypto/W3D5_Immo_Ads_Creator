@@ -16,6 +16,29 @@ except ImportError:  # pragma: no cover - script execution fallback
 
 ReviewCallback = Callable[[str], str]
 
+_LOCATION_FACT_PREFIXES = ("Kitas:", "Schools:", "Public transport:")
+
+
+def _extract_location_fact_block(location_summary: str) -> str:
+    """Return a compact factual block suitable for appending to the draft."""
+
+    lines = [line.strip() for line in str(location_summary or "").splitlines()]
+    fact_lines = [line for line in lines if line.startswith(_LOCATION_FACT_PREFIXES)]
+    if not fact_lines:
+        return ""
+    return "Location facts:\n" + "\n".join(f"- {line}" for line in fact_lines)
+
+
+def _draft_mentions_location_facts(draft_text: str, location_summary: str) -> bool:
+    """Check whether the draft already surfaces the core location facts."""
+
+    draft = str(draft_text or "").lower()
+    for line in str(location_summary or "").splitlines():
+        stripped = line.strip()
+        if stripped.startswith(_LOCATION_FACT_PREFIXES) and stripped.lower() not in draft:
+            return False
+    return True
+
 
 @dataclass(frozen=True)
 class ContentPipelineInputs:
@@ -116,6 +139,9 @@ class ContentPipelineService:
         )
         generation_result = self.generation_runner(request, api_key=api_key)
         reviewed_text = generation_result.draft_text
+        location_fact_block = _extract_location_fact_block(context["location_summary"])
+        if location_fact_block and not _draft_mentions_location_facts(reviewed_text, context["location_summary"]):
+            reviewed_text = reviewed_text.rstrip() + "\n\n" + location_fact_block
 
         return ContentPipelineResult(
             owner_info=inputs.owner_info,
@@ -188,4 +214,3 @@ class ContentPipelineService:
 
 
 DEFAULT_SERVICE = ContentPipelineService()
-
