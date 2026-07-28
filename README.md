@@ -10,7 +10,7 @@ ImmoAds is a Gradio-based property ad generator for Berlin listings. It normaliz
 - Looks up Kitas, schools, neighbor-PLZ fallbacks, centroids, and transit details from local data plus live BVG/geopy verification.
 - Separates owner info, knowledge base context, and location facts before sending the prompt to the LLM.
 - Generates draft copy with the OpenAI Responses API.
-- Supports human review and PDF export from the UI.
+- Supports human review and PDF export from the UI; see `deliverables/` for sample exported listing PDFs.
 
 ## Setup
 
@@ -68,7 +68,7 @@ The current tests cover:
 - `knowledge_base/primary/` - agency tone, listings, and examples
 - `knowledge_base/secondary/` - Berlin context summaries written in the project’s own words
 - `data/` - local lookup datasets used by the location layer
-- `deliverables/` - exported sample PDFs and demo outputs
+- `deliverables/` - sample listing PDFs exported from the app (per-tone Berlin listing exports plus the generic-ChatGPT baseline used for comparison) and the final project presentation deck
 - `tests/` - pytest coverage for the implemented modules
 
 ## Environment
@@ -81,6 +81,7 @@ Notes:
 
 - `geopy` is used for external address verification when installed.
 - PDF export uses a WeasyPrint-based path when available, and falls back to the built-in PDF renderer if WeasyPrint is missing.
+- Exporting from the running app downloads the PDF through the browser; `deliverables/` holds example exports and the final presentation checked into the repo, not a live export destination.
 
 ## Workflow Notes
 
